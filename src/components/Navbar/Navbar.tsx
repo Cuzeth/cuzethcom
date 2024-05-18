@@ -1,7 +1,8 @@
 "use client"
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
 import styles from './Navbar.module.css';
@@ -12,6 +13,12 @@ export default function Navbar() {
     const [click, setClick] = useState(false);
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
+
+    const pathname = usePathname();
+
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, [pathname]);
 
     return (
         <IconContext.Provider value={{ color: 'var(--heading)' }}>
@@ -36,7 +43,7 @@ export default function Navbar() {
                         </li>
                         <li className={styles['nav-item']}>
                             <Link href="/daboiz" className={styles['nav-links']} onClick={closeMobileMenu}>
-                                Da Boiz Bot
+                                Da Boiz
                             </Link>
                         </li>
                         <li className={styles['nav-item']}>
