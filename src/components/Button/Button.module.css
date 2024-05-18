@@ -106,3 +106,11 @@
 .green:hover {
     background-color: #242424;
 }
+
+@media screen and (max-width: 600px) {
+    .btn--wide {
+        padding: 12px 220.5px;
+        font-size: 20px;
+        max-width: calc(100%);
+    }
+}

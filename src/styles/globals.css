@@ -1,6 +1,6 @@
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* @tailwind components;
+@tailwind utilities; */
 
 * {
   box-sizing: border-box;
@@ -34,6 +34,22 @@ small {
   padding-right: 50px;
   width: 100%;
   z-index: 1
+}
+
+@media screen and (max-width: 768px) {
+    .home__hero-text-wrapper {
+        padding-bottom:65px
+    }
+
+    .container {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+    .col {
+        flex-basis: 100%;
+        max-width: 100%
+    }
 }
 
 @media (prefers-color-scheme: dark) {
