@@ -11,6 +11,21 @@
   animation: bruh 0.5s;
 }
 
+*::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+small {
+  font-size: smaller;
+}
+
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -52,6 +67,7 @@
 }
 
 html {
+  scroll-behavior: smooth;
   background-color: var(--maincolor);
 }
 
