@@ -109,8 +109,7 @@
 
 @media screen and (max-width: 600px) {
     .btn--wide {
-        padding: 12px 220.5px;
+        width: 100%;
         font-size: 20px;
-        max-width: calc(100%);
     }
 }
