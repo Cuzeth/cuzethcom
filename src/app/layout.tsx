@@ -3,7 +3,6 @@ import { Poppins } from "next/font/google";
 import "../styles/globals.css";
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
-import Head from "next/head";
 
 const poppins = Poppins({
   weight: ['500', '600'],
@@ -16,6 +15,9 @@ export const metadata: Metadata = {
   title: {
     template: "%s | Cuzeth",
     default: "Cuzeth"
+  },
+  alternates: {
+    canonical: '/',
   },
   description: "Cuzeth - See my work, and what I do.",
   applicationName: "Cuzeth",
@@ -72,9 +74,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${poppins.variable} font-sans`}>
-      <Head>
-        <link rel="canonical" href="https://cuzeth.com" />
-      </Head>
       <body>
         <div className="root">
           <Navbar />
