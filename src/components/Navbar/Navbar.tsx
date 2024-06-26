@@ -25,7 +25,8 @@ export default function Navbar() {
             <div className={styles.navbar}>
                 <div className={`${styles['navbar-container']} ${styles.container}`}>
                     <Link href="/" className={styles['navbar-logo']} onClick={closeMobileMenu}>
-                        <Image src={logo} alt="Cuzeth" height={50} />
+                        {/* <Image src={logo} alt="Cuzeth" height={50} /> */}
+                        <h1 className={`${styles['footer-img']} cuzeth`}>C</h1>
                     </Link>
                     <div className={styles['menu-icon']} onClick={handleClick}>
                         {click ? <FaTimes /> : <FaBars />}

@@ -11,12 +11,13 @@ export default function Footer() {
                 <div className={styles['social-media-wrap']}>
                     <div className={styles['footer-logo']}>
                         <Link href="/" className={styles['social-logo']}>
-                            <Image
+                            {/* <Image
                                 src={logo}
                                 alt="Cuzeth"
                                 height={50}
                                 className={styles['footer-img']}
-                            />
+                            /> */}
+                            <h1 className={`${styles['footer-img']} cuzeth`}>C</h1>
                         </Link>
                     </div>
                     <small className={styles['website-rights']}>CUZETH &copy; {new Date().getFullYear()}</small>

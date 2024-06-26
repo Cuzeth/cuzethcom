@@ -109,7 +109,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 90%;
+    width: 100%;
+    height: 100%;
     max-width: 1000px;
     margin: 40px auto 0 auto;
 }
@@ -119,6 +120,7 @@
     justify-content: space-between;
     align-items: center;
     width: 240px;
+    transform: translateY(-40%);
 }
 
 .social-logo {
@@ -165,5 +167,9 @@
 
     .footer-img {
         transform: translateX(-15%);
+    }
+
+    .social-icons {
+        transform: translateY(0%);
     }
 }
