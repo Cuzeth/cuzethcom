@@ -1,9 +1,9 @@
 import logo from '../../public/images/Logo.svg';
-import myWork from '../../public/images/mywork.png';
+import myWork from '../../public/images/mywork.svg';
 import password from '../../public/images/password.svg';
 import daboiz from '../../public/images/DaBoiz.svg';
 import about from '../../public/images/about.png';
-import shorturl from '../../public/images/shorturl.png';
+import shorturl from '../../public/images/shorturl.svg';
 
 // Template
 export interface HeroData {
