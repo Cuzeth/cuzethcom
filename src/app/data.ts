@@ -3,6 +3,7 @@ import myWork from '../../public/images/mywork.png';
 import password from '../../public/images/password.svg';
 import daboiz from '../../public/images/DaBoiz.svg';
 import about from '../../public/images/about.png';
+import shorturl from '../../public/images/shorturl.png';
 
 // Template
 export interface HeroData {
@@ -72,6 +73,18 @@ export const tailosiveGaming: HeroData = {
     buttonLabel: 'PLAYLIST',
     sendTo: 'https://youtube.com/playlist?list=PLLeQ5Dw04o_L3qjqHRhkZIaUuZwXCT-6d',
     videoURL: 'https://www.youtube-nocookie.com/embed/Mf_RdWuf6e8'
+};
+
+export const shortURL: HeroData = {
+    lightBg: !startWhite,
+    lightText: startWhite,
+    lightTextDesc: startWhite,
+    topLine: 'URL SHORTENER',
+    headline: 'Personal URL shortener',
+    buttonLabel: 'CODE',
+    sendTo: 'https://github.com/Cuzeth/cuzurl',
+    // imgStart: 'start',
+    img: shorturl,
 };
 
 // Da Boiz

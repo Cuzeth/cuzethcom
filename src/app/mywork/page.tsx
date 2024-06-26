@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import HeroSection from '../../components/HeroSection/HeroSection';
-import { myworkObjOne, passwordGen, tailosiveGaming } from '../data';
+import { myworkObjOne, passwordGen, shortURL, tailosiveGaming } from '../data';
 
 export const metadata: Metadata = {
     title: 'My Work',
@@ -11,6 +11,7 @@ export default function MyWork() {
         <>
             <HeroSection {...myworkObjOne} />
             <HeroSection {...passwordGen} />
+            <HeroSection {...shortURL} />
             <HeroSection {...tailosiveGaming} />
         </>
     );
