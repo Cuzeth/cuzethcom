@@ -37,6 +37,11 @@
     font-size: 2rem;
     display: flex;
     align-items: center;
+    transition: all 0.25s ease-in-out;
+}
+
+.navbar-logo:hover {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.542);
 }
 
 .navbar-icon {
