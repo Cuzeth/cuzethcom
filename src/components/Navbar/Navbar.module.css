@@ -1,8 +1,8 @@
 .navbar {
-    /* background: rgba(255, 255, 255, 0.1); Lightly transparent background */
+    background: rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px); /* Blur effect for glassmorphism */
     -webkit-backdrop-filter: blur(10px); /* For Safari compatibility */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.5);
     height: 80px;
     display: flex;
     justify-content: center;

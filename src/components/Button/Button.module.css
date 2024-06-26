@@ -5,7 +5,7 @@
     border: none;
     cursor: pointer;
     white-space: nowrap;
-    box-shadow: 0 0 10px rgba(255, 0, 38, 0.7), 0 0 20px rgba(255, 0, 0, 0.5);
+    box-shadow: 0 8px 32px rgba(255, 0, 38, 0.5), 0 8px 32px rgba(255, 0, 0, 0.3);
     transition: all 0.3s ease-out;
 }
 
@@ -59,7 +59,7 @@
 .btn--wide:hover {
     color: #fff;
     background-color: #f00946;
-    box-shadow: 0 0 10px rgba(255, 0, 38, 0.902);
+    box-shadow: 0 8px 32px rgba(255, 0, 38, 0.3), 0 8px 32px rgba(255, 0, 0, 0.1);
 }
 
 .btn-link {
