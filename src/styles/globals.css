@@ -2,6 +2,19 @@
 /* @tailwind components;
 @tailwind utilities; */
 
+@font-face {
+  font-family: 'Cuzeth';
+  src: url('/fonts/Cuzeth.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.cuzeth {
+  font-family: 'Cuzeth', sans-serif;
+  font-size: 40px;
+  color: var(--text);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -54,7 +67,8 @@ small {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --maincolor: #1c2237;
+    /* 14191F */
+    --maincolor: #0a121b;
     --text: #fff;
     --heading: #f7f8fa;
     --primary: #fff;
@@ -106,6 +120,7 @@ iframe {
   max-width: 100%;
   vertical-align: middle;
   display: inline-block;
+  /* filter: drop-shadow(0 0 100px #480707); */
 }
 
 /* unselectable */
