@@ -1,5 +1,8 @@
 .navbar {
-    background: var(--maincolor);
+    /* background: rgba(255, 255, 255, 0.1); Lightly transparent background */
+    backdrop-filter: blur(10px); /* Blur effect for glassmorphism */
+    -webkit-backdrop-filter: blur(10px); /* For Safari compatibility */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     height: 80px;
     display: flex;
     justify-content: center;
@@ -52,10 +55,30 @@
 .nav-item {
     height: 80px;
     border-bottom: 2px solid transparent;
+    transition: all 0.25s ease-in-out;
 }
 
 .nav-item:hover {
     border-bottom: 2px solid #f00946;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.918);
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background: #f00946;
+    box-shadow: 0 0 15px rgba(240, 9, 70, 1);
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.25s ease-in-out;
+}
+
+.nav-item:hover::after {
+    opacity: 1;
 }
 
 .nav-links {
