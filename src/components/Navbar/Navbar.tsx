@@ -6,8 +6,8 @@ import { usePathname } from 'next/navigation';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
 import styles from './Navbar.module.css';
-import logo from '../../../public/images/Logo.svg';
-import Image from 'next/image';
+// import logo from '../../../public/images/Logo.svg';
+// import Image from 'next/image';
 
 export default function Navbar() {
     const [click, setClick] = useState(false);
