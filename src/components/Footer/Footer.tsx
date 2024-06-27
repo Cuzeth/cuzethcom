@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import Image from 'next/image';
+// import Image from 'next/image';
 import { FaInstagram, FaYoutube, FaTwitter, FaGithub, FaGitlab } from 'react-icons/fa';
 import styles from './Footer.module.css';
-import logo from '../../../public/images/Logo.svg';
+// import logo from '../../../public/images/Logo.svg';
 
 export default function Footer() {
     return (
@@ -11,12 +11,13 @@ export default function Footer() {
                 <div className={styles['social-media-wrap']}>
                     <div className={styles['footer-logo']}>
                         <Link href="/" className={styles['social-logo']}>
-                            <Image
+                            {/* <Image
                                 src={logo}
                                 alt="Cuzeth"
                                 height={50}
                                 className={styles['footer-img']}
-                            />
+                            /> */}
+                            <h1 className={`${styles['footer-img']} cuzeth`}>C</h1>
                         </Link>
                     </div>
                     <small className={styles['website-rights']}>CUZETH &copy; {new Date().getFullYear()}</small>

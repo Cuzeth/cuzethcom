@@ -2,6 +2,36 @@
 /* @tailwind components;
 @tailwind utilities; */
 
+@font-face {
+  font-family: 'Cuzeth';
+  src: url('/fonts/Cuzeth.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.cuzeth {
+  font-family: 'Cuzeth', sans-serif;
+  font-size: 40px;
+  color: var(--text);
+}
+
+:root {
+  color-scheme: dark;
+  /* 14191F */
+  --maincolor: #0a121b;
+  --supportingcolor: #0a121b;
+  --text: rgb(255, 255, 255);
+  --heading: #f7f8fa;
+  --primary: #fff;
+  --navbar-glass: rgba(0, 0, 0, 0.15);
+  --navbar-shadow: rgba(0, 0, 0, 0.5);
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--maincolor);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -25,6 +55,16 @@
 small {
   font-size: smaller;
 }
+
+/* .transition-1 {
+  background: linear-gradient(to bottom, var(--maincolor), var(--supportingcolor));
+  height: 80px;
+}
+
+.transition-2 {
+  background: linear-gradient(to bottom, var(--supportingcolor), var(--maincolor));
+  height: 80px;
+} */
 
 .container {
   margin-left: auto;
@@ -52,24 +92,6 @@ small {
     }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --maincolor: #1c2237;
-    --text: #fff;
-    --heading: #f7f8fa;
-    --primary: #fff;
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --maincolor: #ffffff;
-    --text: #000000;
-    --heading: #000;
-    --primary: #fff;
-  }
-}
-
 @keyframes bruh {
   0% {
     opacity: 0;
@@ -80,15 +102,6 @@ small {
     opacity: 1;
     top: 0
   }
-}
-
-html {
-  scroll-behavior: smooth;
-  background-color: var(--maincolor);
-}
-
-:root {
-  color-scheme: light dark;
 }
 
 code {
@@ -106,6 +119,7 @@ iframe {
   max-width: 100%;
   vertical-align: middle;
   display: inline-block;
+  filter: drop-shadow(0 0 100px #36363652);
 }
 
 /* unselectable */

@@ -1,7 +1,7 @@
 .home__hero-section {
     color: var(--text);
     padding: 160px 0;
-    background-color: var(--text);
+    background-color: var(--supportingcolor);
 }
 
 .home__hero-row {
@@ -36,18 +36,20 @@
     color: #f00946;
     font-size: 16px;
     line-height: 16px;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 1.4px;
     text-transform: uppercase;
     margin-bottom: 16px;
+    text-shadow: 0 0 10px rgba(255, 0, 38, 0.7), 0 0 20px rgba(255, 0, 0, 0.5);
 }
 
 .heading {
-    margin-bottom: 24px;
+    margin-bottom: 40px;
     font-size: 48px;
     line-height: 1.1;
-    font-weight: 600;
+    font-weight: 800;
     color: var(--heading);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
 .dark {

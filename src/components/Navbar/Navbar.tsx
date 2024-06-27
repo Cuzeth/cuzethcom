@@ -6,8 +6,8 @@ import { usePathname } from 'next/navigation';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
 import styles from './Navbar.module.css';
-import logo from '../../../public/images/Logo.svg';
-import Image from 'next/image';
+// import logo from '../../../public/images/Logo.svg';
+// import Image from 'next/image';
 
 export default function Navbar() {
     const [click, setClick] = useState(false);
@@ -25,7 +25,8 @@ export default function Navbar() {
             <div className={styles.navbar}>
                 <div className={`${styles['navbar-container']} ${styles.container}`}>
                     <Link href="/" className={styles['navbar-logo']} onClick={closeMobileMenu}>
-                        <Image src={logo} alt="Cuzeth" height={50} />
+                        {/* <Image src={logo} alt="Cuzeth" height={50} /> */}
+                        <h1 className="cuzeth">C</h1>
                     </Link>
                     <div className={styles['menu-icon']} onClick={handleClick}>
                         {click ? <FaTimes /> : <FaBars />}

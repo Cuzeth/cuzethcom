@@ -5,7 +5,7 @@ import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
 
 const poppins = Poppins({
-  weight: ['500', '600'],
+  weight: ['500', '600', '800'],
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-poppins',
@@ -61,9 +61,7 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#FFFFFF" },
-    { media: "(prefers-color-scheme: dark)", color: "#1c2237" },
-    { color: "#FF0000" },
+    { color: "#0A0F16" },
   ],
 };
 
