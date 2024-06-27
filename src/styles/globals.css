@@ -19,8 +19,8 @@
   color-scheme: dark;
   /* 14191F */
   --maincolor: #0a121b;
-  --supportingcolor: #ffffff;
-  --text: #fff;
+  --supportingcolor: #0a121b;
+  --text: rgb(255, 255, 255);
   --heading: #f7f8fa;
   --primary: #fff;
   --navbar-glass: rgba(0, 0, 0, 0.15);
@@ -55,6 +55,16 @@ html {
 small {
   font-size: smaller;
 }
+
+/* .transition-1 {
+  background: linear-gradient(to bottom, var(--maincolor), var(--supportingcolor));
+  height: 80px;
+}
+
+.transition-2 {
+  background: linear-gradient(to bottom, var(--supportingcolor), var(--maincolor));
+  height: 80px;
+} */
 
 .container {
   margin-left: auto;
@@ -109,7 +119,7 @@ iframe {
   max-width: 100%;
   vertical-align: middle;
   display: inline-block;
-  /* filter: drop-shadow(0 0 100px #bdbdbd2b); */
+  filter: drop-shadow(0 0 100px #36363652);
 }
 
 /* unselectable */

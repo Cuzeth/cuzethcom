@@ -54,14 +54,26 @@ export const myworkObjOne: HeroData = {
 
 export const passwordGen: HeroData = {
     lightBg: !startWhite,
-    lightText: startWhite,
-    lightTextDesc: startWhite,
+    lightText: !startWhite,
+    lightTextDesc: !startWhite,
     topLine: 'PASSWORD GENERATOR',
     headline: 'Memorable Password Generator',
     buttonLabel: 'TRY OUT',
     sendTo: 'https://pwgen.cuzeth.com',
     imgStart: 'start',
     img: password,
+};
+
+export const shortURL: HeroData = {
+    lightBg: !startWhite,
+    lightText: !startWhite,
+    lightTextDesc: !startWhite,
+    topLine: 'URL SHORTENER',
+    headline: 'Personal URL shortener',
+    buttonLabel: 'CODE',
+    sendTo: 'https://github.com/Cuzeth/cuzurl',
+    // imgStart: 'start',
+    img: shorturl,
 };
 
 export const tailosiveGaming: HeroData = {
@@ -71,20 +83,9 @@ export const tailosiveGaming: HeroData = {
     topLine: 'TAILOSIVE GAMING (DISCONTINUED)',
     headline: 'Previous highlights I made for Tailosive Gaming',
     buttonLabel: 'PLAYLIST',
+    imgStart: 'start',
     sendTo: 'https://youtube.com/playlist?list=PLLeQ5Dw04o_L3qjqHRhkZIaUuZwXCT-6d',
     videoURL: 'https://www.youtube-nocookie.com/embed/Mf_RdWuf6e8'
-};
-
-export const shortURL: HeroData = {
-    lightBg: !startWhite,
-    lightText: startWhite,
-    lightTextDesc: startWhite,
-    topLine: 'URL SHORTENER',
-    headline: 'Personal URL shortener',
-    buttonLabel: 'CODE',
-    sendTo: 'https://github.com/Cuzeth/cuzurl',
-    // imgStart: 'start',
-    img: shorturl,
 };
 
 // Da Boiz
