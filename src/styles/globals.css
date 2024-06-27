@@ -69,18 +69,24 @@ small {
   :root {
     /* 14191F */
     --maincolor: #0a121b;
+    --supportingcolor: #ffffff;
     --text: #fff;
     --heading: #f7f8fa;
     --primary: #fff;
+    --navbar-glass: rgba(0, 0, 0, 0.15);
+    --navbar-shadow: rgba(0, 0, 0, 0.5);
   }
 }
 
 @media (prefers-color-scheme: light) {
   :root {
     --maincolor: #ffffff;
+    --supportingcolor: #000000;
     --text: #000000;
     --heading: #000;
     --primary: #fff;
+    --navbar-glass: rgba(255, 255, 255, 0.15);
+    --navbar-shadow: rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -120,7 +126,7 @@ iframe {
   max-width: 100%;
   vertical-align: middle;
   display: inline-block;
-  /* filter: drop-shadow(0 0 100px #480707); */
+  /* filter: drop-shadow(0 0 100px #bdbdbd2b); */
 }
 
 /* unselectable */

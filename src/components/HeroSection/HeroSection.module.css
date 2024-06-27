@@ -1,7 +1,7 @@
 .home__hero-section {
     color: var(--text);
     padding: 160px 0;
-    background-color: var(--text);
+    background-color: var(--supportingcolor);
 }
 
 .home__hero-row {
