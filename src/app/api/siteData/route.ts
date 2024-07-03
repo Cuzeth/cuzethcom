@@ -7,7 +7,7 @@ import {
     tailosiveGaming,
     daBoizObj,
     aboutObj
-} from '../../data'
+} from '@/app/data'
 
 export async function GET(request: NextRequest) {
 

@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import HeroSection from '../components/HeroSection/HeroSection';
+import HeroSection from '@/components/HeroSection/HeroSection';
 import fourOhFour from '../../public/images/404.svg';
 
 export const metadata: Metadata = {

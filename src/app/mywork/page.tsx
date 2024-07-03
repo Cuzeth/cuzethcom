@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import HeroSection from '../../components/HeroSection/HeroSection';
+import HeroSection from '@/components/HeroSection/HeroSection';
 import { myworkObjOne, passwordGen, shortURL, tailosiveGaming } from '../data';
 
 export const metadata: Metadata = {
