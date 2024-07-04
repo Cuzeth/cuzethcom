@@ -1,0 +1,32 @@
+.dropdown-container {
+    margin: 20px;
+    text-align: center;
+}
+
+.dropdown-button {
+    background-color: var(--maincolor);
+    color: var(--text);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-button:hover {
+    background-color: var(--supportingcolor);
+}
+
+.dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.dropdown-content.show {
+    max-height: 600px; /* Set a max height for scrollable content */
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-width: 12000px; /* Increase the max width */
+    margin: 0 auto; /* Center the content */
+}
