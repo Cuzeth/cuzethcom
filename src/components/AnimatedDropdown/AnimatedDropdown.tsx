@@ -18,9 +18,12 @@ export default function AnimatedDropdown({ title, markdownText }: AnimatedDropdo
 
     return (
         <div className={styles['dropdown-container']}>
-            <button onClick={toggleDropdown} className={styles['dropdown-button']}>
-                {title}
-            </button>
+            <div className={styles['button-wrapper']}>
+                <button onClick={toggleDropdown} className={styles['dropdown-button']}>
+                    {title}
+                    <span className={`${styles['dropdown-arrow']} ${isOpen ? styles['open'] : ''}`}>▼</span>
+                </button>
+            </div>
             <div className={`${styles['dropdown-content']} ${isOpen ? styles['show'] : ''}`}>
                 <CenteredTextSection markdownText={markdownText} />
             </div>
