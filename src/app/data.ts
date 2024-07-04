@@ -125,7 +125,7 @@ function calculateAge(birthday: Date) { // birthday is a date
 
 // Da Boiz TOS
 export const daBoizTOS = `
-# Da Boiz Bot Terms of Use
+# Da Boiz Terms of Use
 
 **1. Acceptance of Terms**
 * By using Da Boiz Bot, you agree to be bound by these Terms of Use. If you disagree with any part of the terms, you may not use our bot.
@@ -168,7 +168,7 @@ export const daBoizTOS = `
 
 // Da Boiz Privacy Policy
 export const daBoizPrivacyPolicy = `
-# Privacy Policy for Da Boiz Bot
+# Da Boiz Privacy Policy
 
 **1. Introduction**
 * Welcome to Da Boiz Bot! This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our Discord bot. By using Da Boiz Bot, you agree to the collection and use of information in accordance with this policy.
