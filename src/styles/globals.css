@@ -38,7 +38,15 @@ html {
   padding: 0;
   font-family: var(--font-poppins), sans-serif;
   position: relative;
-  animation: bruh 0.5s;
+  animation: bruh 0.35s ease-out;
+  will-change: transform, opacity;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none;
+  }
 }
 
 *::-webkit-scrollbar {
@@ -46,10 +54,8 @@ html {
 }
 
 * {
-  -ms-overflow-style: none;
-  /* IE and Edge */
-  scrollbar-width: none;
-  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 small {
@@ -73,34 +79,34 @@ small {
   padding-left: 50px;
   padding-right: 50px;
   width: 100%;
-  z-index: 1
+  z-index: 1;
+  contain: layout;
 }
 
 @media screen and (max-width: 768px) {
-    .home__hero-text-wrapper {
-        padding-bottom:65px
-    }
+  .home__hero-text-wrapper {
+    padding-bottom: 65px;
+  }
 
-    .container {
-      padding-left: 30px;
-      padding-right: 30px;
-    }
+  .container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 
-    .col {
-        flex-basis: 100%;
-        max-width: 100%
-    }
+  .col {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
 }
 
 @keyframes bruh {
   0% {
     opacity: 0;
-    top: 20px
+    transform: translateY(20px);
   }
-
   to {
     opacity: 1;
-    top: 0
+    transform: translateY(0);
   }
 }
 
