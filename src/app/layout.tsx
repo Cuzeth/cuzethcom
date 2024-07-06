@@ -31,6 +31,7 @@ export const metadata: Metadata = {
     { rel: "mask-icon", url: "/safari-pinned-tab.svg?v=3r", color: "#dc1616" },
   ],
   openGraph: {
+    siteName: "Cuzeth",
     type: "website",
     url: "https://cuzeth.com/",
     title: "Cuzeth",
