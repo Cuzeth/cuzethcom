@@ -23,12 +23,12 @@ export const metadata: Metadata = {
   applicationName: "Cuzeth",
   metadataBase: new URL("https://cuzeth.com"),
   icons: [
-    { rel: "icon", url: "/favicon.ico?v=0" },
-    { rel: "apple-touch-icon", url: "/apple-touch-icon.png?v=0", sizes: "180x180" },
-    { rel: "icon", url: "/favicon-32x32.png?v=0", type: "image/png", sizes: "32x32" },
-    { rel: "icon", url: "/favicon-16x16.png?v=0", type: "image/png", sizes: "16x16" },
+    { rel: "icon", url: "/favicon.ico?v=3r" },
+    { rel: "apple-touch-icon", url: "/apple-touch-icon.png?v=3r", sizes: "180x180" },
+    { rel: "icon", url: "/favicon-32x32.png?v=3r", type: "image/png", sizes: "32x32" },
+    { rel: "icon", url: "/favicon-16x16.png?v=3r", type: "image/png", sizes: "16x16" },
     { rel: "manifest", url: "/site.webmanifest?v=1rmni3" },
-    { rel: "mask-icon", url: "/safari-pinned-tab.svg?v=0", color: "#dc1616" },
+    { rel: "mask-icon", url: "/safari-pinned-tab.svg?v=3r", color: "#dc1616" },
   ],
   openGraph: {
     type: "website",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
       url: "https://cuzeth.com",
     },
   ],
-  manifest: "/site.webmanifest?v=1rnfi3",
+  manifest: "/site.webmanifest?v=3r",
 };
 
 export const viewport: Viewport = {
