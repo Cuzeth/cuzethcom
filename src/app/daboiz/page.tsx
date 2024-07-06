@@ -5,6 +5,7 @@ import { daBoizObj, daBoizPrivacyPolicy, daBoizTOS } from '../data';
 
 export const metadata: Metadata = {
     title: 'Da Boiz',
+    description: 'Da Boiz Discord bot. Multipurpose Discord Bot, completely free.'
 };
 
 export default function DaBoiz() {
