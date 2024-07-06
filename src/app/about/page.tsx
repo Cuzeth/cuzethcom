@@ -4,7 +4,10 @@ import HeroSection from '@/components/HeroSection/HeroSection';
 
 export const metadata: Metadata = {
     title: 'About Me',
-    description: ''
+    description: '',
+    twitter: {
+        description: '',
+    }
 };
 
 export default function About() {

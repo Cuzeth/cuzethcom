@@ -4,7 +4,10 @@ import { myworkObjOne, passwordGen, shortURL, tailosiveGaming } from '../data';
 
 export const metadata: Metadata = {
     title: 'My Work',
-    description: 'View my work.'
+    description: 'View my work.',
+    twitter: {
+        description: 'View my work.',
+    }
 };
 
 export default function MyWork() {
