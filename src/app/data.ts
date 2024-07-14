@@ -60,6 +60,7 @@ export const passwordGen: HeroData = {
     sendTo: 'https://pwgen.cuzeth.com',
     imgStart: true,
     img: password,
+    alt: 'Memorable Password Generator'
 };
 
 export const shortURL: HeroData = {
@@ -72,6 +73,7 @@ export const shortURL: HeroData = {
     sendTo: 'https://github.com/Cuzeth/cuzurl',
     // imgStart: true,
     img: shorturl,
+    alt: 'URL Shortener GitHub'
 };
 
 export const tailosiveGaming: HeroData = {
