@@ -13,7 +13,7 @@ export default function HeroSection(data: HeroData) {
                         className={`${styles.row} ${styles['home__hero-row']}`}
                         style={{
                             display: 'flex',
-                            flexDirection: data.imgStart === 'start' ? 'row-reverse' : 'row'
+                            flexDirection: data.imgStart ? 'row-reverse' : 'row'
                         }}
                     >
                         <div className={styles.col}>

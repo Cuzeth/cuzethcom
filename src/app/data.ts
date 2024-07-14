@@ -16,11 +16,11 @@ export interface HeroData {
     buttonLabel?: string,
     img?: any,
     alt?: string | any,
-    imgStart?: string,
     linkTo?: string | any,
     sendTo?: string,
     videoURL?: string,
 };
+    imgStart?: boolean;
 
 // Home
 export const homeObjOne: HeroData = {
@@ -31,7 +31,6 @@ export const homeObjOne: HeroData = {
     headline: 'Welcome',
     // description: 'noooo my airpods',
     // buttonLabel: 'nooo',
-    imgStart: '',
     img: logo,
     alt: 'Cuzeth Logo'
 };
@@ -48,7 +47,6 @@ export const myworkObjOne: HeroData = {
     description:
         "Although I don't have much to show off at the moment, I hope to expand this page as I grow and work on more projects.",
     img: myWork,
-    imgStart: '',
     alt: 'My Work'
 };
 
@@ -60,7 +58,7 @@ export const passwordGen: HeroData = {
     headline: 'Memorable Password Generator',
     buttonLabel: 'TRY OUT',
     sendTo: 'https://pwgen.cuzeth.com',
-    imgStart: 'start',
+    imgStart: true,
     img: password,
 };
 
@@ -72,7 +70,7 @@ export const shortURL: HeroData = {
     headline: 'Personal URL shortener',
     buttonLabel: 'CODE',
     sendTo: 'https://github.com/Cuzeth/cuzurl',
-    // imgStart: 'start',
+    // imgStart: true,
     img: shorturl,
 };
 
@@ -83,7 +81,7 @@ export const tailosiveGaming: HeroData = {
     topLine: 'TAILOSIVE GAMING (DISCONTINUED)',
     headline: 'Previous highlights I made for Tailosive Gaming',
     buttonLabel: 'PLAYLIST',
-    imgStart: 'start',
+    imgStart: true,
     sendTo: 'https://youtube.com/playlist?list=PLLeQ5Dw04o_L3qjqHRhkZIaUuZwXCT-6d',
     videoURL: 'https://www.youtube-nocookie.com/embed/Mf_RdWuf6e8'
 };
@@ -98,7 +96,7 @@ export const daBoizObj: HeroData = {
     description: 'Da Boiz Bot is a Discord bot that I created using TypeScript. It is free and open source.',
     buttonLabel: 'Invite',
     sendTo: 'https://discordapp.com/api/oauth2/authorize?client_id=636595833801801748&permissions=8&scope=bot%20applications.commands',
-    imgStart: '',
+    // imgStart: true,
     img: daboiz,
     alt: 'Da Boiz Bot',
 };
@@ -111,7 +109,6 @@ export const aboutObj: HeroData = {
     topLine: 'ABOUT ME',
     headline: 'Hey!',
     description: `I'm Cuzeth, a ${calculateAge(new Date('2004-10-27T00:00:00'))} year old developer looking to major in Computer Science.\nI have a passion for technology, programming, and self teaching. I am actively expanding my expertise with these coding languages and frameworks with the projects I continue to pursue: JavaScript/TypeScript, MongoDB, React, Swift/SwiftUI, and C++.`,
-    imgStart: '',
     img: about,
     alt: 'Website',
 };
