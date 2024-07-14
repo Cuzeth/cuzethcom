@@ -15,7 +15,6 @@ const notFound = {
     description: 'Try sticking to the navbar next time.',
     buttonLabel: 'Go Home',
     linkTo: '/',
-    imgStart: '',
     img: fourOhFour,
     alt: '404'
 };
