@@ -5,6 +5,15 @@ import styles from './HeroSection.module.css';
 import { HeroData } from '@/app/data';
 
 export default function HeroSection(data: HeroData) {
+    const renderHeadline = (headline: string | any[]) => {
+        if (typeof headline === 'string') {
+            return headline;
+        }
+        return headline.map((segment, index) =>
+            segment.emphasize ? <em key={index}>{segment.text}</em> : <span key={index}>{segment.text}</span>
+        );
+    };
+
     return (
         <>
             <div className={data.lightBg ? styles['home__hero-section'] : `${styles['home__hero-section']} ${styles.darkBg}`}>
@@ -21,7 +30,7 @@ export default function HeroSection(data: HeroData) {
                                 {data.topLine && <div className={styles['top-line']}>{data.topLine}</div>}
                                 {data.headline && (
                                     <h1 className={data.lightText ? styles.heading : `${styles.heading} ${styles.dark}`}>
-                                        {data.headline}
+                                        {renderHeadline(data.headline)}
                                     </h1>
                                 )}
                                 {data.description && (

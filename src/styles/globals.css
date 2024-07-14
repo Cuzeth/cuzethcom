@@ -119,6 +119,12 @@ code {
     Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
+em {
+  color: #F8D664;
+  text-shadow: 0 0 60px #f8d66461;
+  font-style: normal;
+}
+
 img,
 iframe {
   border: 0;

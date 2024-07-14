@@ -7,20 +7,20 @@ import shorturl from '../../public/images/shorturl.svg';
 
 // Template
 export interface HeroData {
-    lightBg: boolean,
-    lightText: boolean,
-    lightTextDesc: boolean,
-    topLine: string,
-    headline: string,
-    description?: string,
-    buttonLabel?: string,
-    img?: any,
-    alt?: string | any,
-    linkTo?: string | any,
-    sendTo?: string,
-    videoURL?: string,
-};
+    lightBg: boolean;
+    lightText: boolean;
+    lightTextDesc: boolean;
+    topLine: string;
+    headline: string | Array<{ text: string; emphasize: boolean }>;
+    description?: string;
+    buttonLabel?: string;
+    img?: any;
+    alt?: string | any;
     imgStart?: boolean;
+    linkTo?: string | any;
+    sendTo?: string;
+    videoURL?: string;
+}
 
 // Home
 export const homeObjOne: HeroData = {
@@ -94,7 +94,10 @@ export const daBoizObj: HeroData = {
     lightText: true,
     lightTextDesc: true,
     topLine: 'New Update',
-    headline: 'Multipurpose Discord Bot, completely free.',
+    headline: [
+        { text: 'Multipurpose Discord Bot, ', emphasize: false },
+        { text: 'completely free.', emphasize: true }
+    ],
     description: 'Da Boiz Bot is a Discord bot that I created using TypeScript. It is free and open source.',
     buttonLabel: 'Invite',
     sendTo: 'https://discordapp.com/api/oauth2/authorize?client_id=636595833801801748&permissions=8&scope=bot%20applications.commands',
