@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     { rel: "apple-touch-icon", url: "/apple-touch-icon.png?v=3r", sizes: "180x180" },
     { rel: "icon", url: "/favicon-32x32.png?v=3r", type: "image/png", sizes: "32x32" },
     { rel: "icon", url: "/favicon-16x16.png?v=3r", type: "image/png", sizes: "16x16" },
-    { rel: "manifest", url: "/site.webmanifest?v=1rmni3" },
+    { rel: "manifest", url: "/site.webmanifest?v=3r" },
     { rel: "mask-icon", url: "/safari-pinned-tab.svg?v=3r", color: "#dc1616" },
   ],
   openGraph: {
