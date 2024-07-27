@@ -1,24 +1,5 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 
-import {
-    homeObjOne,
-    myworkObjOne,
-    passwordGen,
-    tailosiveGaming,
-    daBoizObj,
-    aboutObj
-} from '@/app/data'
-
-export async function GET(request: NextRequest) {
-
-    const data = {
-        homeObjOne,
-        myworkObjOne,
-        passwordGen,
-        tailosiveGaming,
-        daBoizObj,
-        aboutObj,
-    };
-
-    return NextResponse.json(data);
+export async function GET() {
+    return NextResponse.json({ error: 'Invalid path. Route should be /api/siteData/[object]' }, { status: 400 });
 }
