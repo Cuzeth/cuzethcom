@@ -40,9 +40,9 @@
     transition: all 0.25s ease-in-out;
 }
 
-.navbar-logo:hover {
+/* .navbar-logo:hover {
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.542);
-}
+} */
 
 .navbar-icon {
     margin-right: 0.5rem;
@@ -153,7 +153,8 @@
         position: absolute;
         top: 0;
         left: 0;
-        transform: translate(60%, 17%);
+        /* transform: translate(60%, 17%); */
+        transform: translate(50%, 30%);
     }
 
     .menu-icon {
