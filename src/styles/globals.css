@@ -95,9 +95,14 @@ code {
     Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
+h1 {
+  overflow: visible;
+}
+
 em {
   color: #F8D664;
   text-shadow: 0 0 60px #f8d66461;
+  display: inline-block;
   font-style: normal;
 }
 
