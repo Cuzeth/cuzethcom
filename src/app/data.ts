@@ -113,7 +113,7 @@ export const aboutObj: HeroData = {
     lightTextDesc: true,
     topLine: 'ABOUT ME',
     headline: 'Hey!',
-    description: `I'm Cuzeth, a ${calculateAge(new Date('2004-10-27T00:00:00'))} year old developer looking to major in Computer Science.\nI have a passion for technology, programming, and self teaching. I am actively expanding my expertise with these coding languages and frameworks with the projects I continue to pursue: JavaScript/TypeScript, MongoDB, React, Swift/SwiftUI, and C++.`,
+    description: `I'm Cuzeth, a ${calculateAge(new Date('2004-10-27T00:00:00'))} year old developer currently majoring in Computer Science.\nI have a passion for technology, programming, and self teaching. I am actively expanding my expertise with these coding languages and frameworks with the projects I continue to pursue: JavaScript/TypeScript, MongoDB, React, Swift/SwiftUI, and C++.`,
     img: about,
     alt: 'Website',
 };
