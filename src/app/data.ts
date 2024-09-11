@@ -45,7 +45,7 @@ export const myworkObjOne: HeroData = {
     topLine: 'VIEW MY WORK',
     headline: 'My Work',
     description:
-        "Although I don't have much to show off at the moment, I hope to expand this page as I grow and work on more projects.",
+        "I'm still in the process of expanding my portfolio, but here's a look at what I've worked on so far.",
     img: myWork,
     alt: 'My Work'
 };
