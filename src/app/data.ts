@@ -98,7 +98,7 @@ export const daBoizObj: HeroData = {
         { text: 'Multipurpose Discord Bot, ', emphasize: false },
         { text: 'completely free.', emphasize: true }
     ],
-    description: 'Da Boiz Bot is a Discord bot that I created using TypeScript. It is free and open source.',
+    description: 'Da Boiz Bot is a free and open source Discord bot created using TypeScript.',
     buttonLabel: 'Invite',
     sendTo: 'https://discordapp.com/api/oauth2/authorize?client_id=636595833801801748&permissions=8&scope=bot%20applications.commands',
     // imgStart: true,
@@ -113,7 +113,7 @@ export const aboutObj: HeroData = {
     lightTextDesc: true,
     topLine: 'ABOUT ME',
     headline: 'Hey!',
-    description: `I'm Cuzeth, a ${calculateAge(new Date('2004-10-27T00:00:00'))} year old developer currently majoring in Computer Science.\nI have a passion for technology, programming, and self teaching. I am actively expanding my expertise with these coding languages and frameworks with the projects I continue to pursue: JavaScript/TypeScript, MongoDB, React, Swift/SwiftUI, and C++.`,
+    description: `I'm Cuzeth, a ${calculateAge(new Date('2004-10-27T00:00:00'))} year old developer currently majoring in Computer Science. I have a passion for tech and software development. I'm always improving my coding abilities by taking on challenging projects.`,
     img: about,
     alt: 'Website',
 };
