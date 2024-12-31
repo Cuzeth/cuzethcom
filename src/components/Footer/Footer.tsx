@@ -1,6 +1,6 @@
 import Link from 'next/link';
 // import Image from 'next/image';
-import { FaInstagram, FaYoutube, FaTwitter, FaGithub, FaGitlab, FaTwitch, FaMailBulk, FaEnvelope } from 'react-icons/fa';
+import { FaInstagram, FaYoutube, FaTwitter, FaGithub, FaGitlab, FaTwitch, FaMailBulk, FaEnvelope, FaChartLine } from 'react-icons/fa';
 import styles from './Footer.module.css';
 // import logo from '../../../public/images/Logo.svg';
 
@@ -84,6 +84,15 @@ export default function Footer() {
                             aria-label="GitLab"
                         >
                             <FaGitlab />
+                        </a>
+                        <a
+                            className={styles['social-icon-link']}
+                            href="https://status.cuzeth.com/"
+                            target="_blank"
+                            rel="noreferrer"
+                            aria-label="Status Page"
+                        >
+                            <FaChartLine />
                         </a>
                     </div>
                 </div>
