@@ -15,12 +15,12 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: {
     template: "%s | Cuzeth",
-    default: "Cuzeth"
+    default: "Cuzeth - Web Developer & CS Student"
   },
   alternates: {
     canonical: '/',
   },
-  description: "Cuzeth - Showcasing my work and projects in web development and software engineering.",
+  description: "Portfolio of Cuzeth, a Computer Science student and developer specializing in modern web applications and software solutions.",
   applicationName: "Cuzeth",
   metadataBase: new URL("https://cuzeth.com"),
   icons: [
@@ -35,21 +35,25 @@ export const metadata: Metadata = {
     siteName: "Cuzeth",
     type: "website",
     url: "https://cuzeth.com/",
-    title: "Cuzeth",
-    description: "Showcasing my work and projects in web development and software engineering.",
+    title: "Cuzeth - Web Developer & CS Student",
+    description: "Portfolio of Cuzeth, a Computer Science student and developer specializing in modern web applications and software solutions.",
     images: [
       {
         url: "/images/banner.png",
+        width: 1200,
+        height: 630,
+        alt: "Cuzeth Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cuzeth",
-    description: "Showcasing my work and projects in web development and software engineering.",
+    title: "Cuzeth - Web Developer & CS Student",
+    description: "Portfolio of Cuzeth, a Computer Science student and developer specializing in modern web applications and software solutions.",
     images: "/images/banner.png",
+    creator: "@Cuzeth",
   },
-  keywords: "Cuzeth, developer, web development, portfolio, projects, software engineering",
+  keywords: "Cuzeth, developer, web development, portfolio, projects, software engineering, discord bot, full stack, computer science, student developer",
   authors: [
     {
       name: "Cuzeth",
@@ -57,6 +61,14 @@ export const metadata: Metadata = {
     },
   ],
   manifest: "/site.webmanifest?v=3r",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
 };
 
 export const viewport: Viewport = {

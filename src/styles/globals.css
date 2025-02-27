@@ -25,7 +25,7 @@
   --primary: #fff;
   --accent: #f00946;
   --accent-hover: #e0083d;
-  --accent-glow: rgba(255, 255, 255, 0.15);
+  --accent-glow: rgba(238, 27, 69, 0.15);
   --card-bg: rgba(20, 30, 45, 0.4);
   --navbar-glass: rgba(10, 15, 25, 0.7);
   --navbar-shadow: rgba(0, 0, 0, 0.2);
@@ -176,7 +176,7 @@ em::after {
   height: 3px;
   bottom: 0;
   left: 0;
-  background-color: var(--accent);
+  background-color: #F8D664;
   transform: scaleX(0);
   transform-origin: bottom right;
   transition: transform 0.3s ease;
