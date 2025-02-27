@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "@/styles/globals.css";
 import Navbar from '@/components/Navbar/Navbar';
 import Footer from '@/components/Footer/Footer';
+import ScrollToTop from '@/components/ScrollToTop/ScrollToTop';
 
 const poppins = Poppins({
   weight: ['500', '600', '800'],
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
-  description: "Cuzeth - See my work, and what I do.",
+  description: "Cuzeth - Showcasing my work and projects in web development and software engineering.",
   applicationName: "Cuzeth",
   metadataBase: new URL("https://cuzeth.com"),
   icons: [
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://cuzeth.com/",
     title: "Cuzeth",
-    description: "Cuzeth. See my work, and what I do.",
+    description: "Showcasing my work and projects in web development and software engineering.",
     images: [
       {
         url: "/images/banner.png",
@@ -45,10 +46,10 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Cuzeth",
-    description: "Cuzeth. See my work, and what I do.",
+    description: "Showcasing my work and projects in web development and software engineering.",
     images: "/images/banner.png",
   },
-  keywords: "Cuzeth, work, portfolio",
+  keywords: "Cuzeth, developer, web development, portfolio, projects, software engineering",
   authors: [
     {
       name: "Cuzeth",
@@ -78,6 +79,7 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Footer />
+          <ScrollToTop />
         </div>
       </body>
     </html>
