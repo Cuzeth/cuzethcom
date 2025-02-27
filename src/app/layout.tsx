@@ -74,13 +74,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${poppins.variable} font-sans`}>
-      <body>
+      <body style={{ position: 'relative', minHeight: '100vh' }}>
         <div className="root">
           <Navbar />
           {children}
           <Footer />
-          <ScrollToTop />
         </div>
+        <ScrollToTop />
       </body>
     </html>
   );

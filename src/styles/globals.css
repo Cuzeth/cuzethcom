@@ -17,14 +17,18 @@
 
 :root {
   color-scheme: dark;
-  /* 14191F */
-  --maincolor: #0a121b;
-  --supportingcolor: #0a121b;
-  --text: rgb(255, 255, 255);
-  --heading: #f7f8fa;
+  /* Updated color scheme for more modern look */
+  --maincolor: #0a0f16;
+  --supportingcolor: #0c121c;
+  --text: rgba(255, 255, 255, 0.9);
+  --heading: #ffffff;
   --primary: #fff;
-  --navbar-glass: rgba(0, 0, 0, 0.15);
-  --navbar-shadow: rgba(0, 0, 0, 0.5);
+  --accent: #f00946;
+  --accent-hover: #e0083d;
+  --accent-glow: rgba(240, 9, 70, 0.15);
+  --card-bg: rgba(20, 30, 45, 0.4);
+  --navbar-glass: rgba(10, 15, 25, 0.7);
+  --navbar-shadow: rgba(0, 0, 0, 0.2);
 }
 
 html {
@@ -38,7 +42,7 @@ html {
   padding: 0;
   font-family: var(--font-poppins), sans-serif;
   position: relative;
-  animation: bruh 0.35s ease-out;
+  animation: fadeIn 0.35s ease-out;
   will-change: transform, opacity;
   transform: translate3d(0, 0, 0);
 
@@ -46,10 +50,15 @@ html {
   scrollbar-width: none; /* Firefox */
 }
 
-@keyframes bruh {
+/* More subtle entrance animation for content */
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
   0% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -86,13 +95,70 @@ small {
   contain: layout;
 }
 
+/* Modern card styling */
+.card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Glass effect for modern UI */
+.glass {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Accent glow effect */
+.accent-glow {
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+/* Modern button styling */
+.btn {
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: white;
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px var(--accent-glow);
+}
+
 code {
-  background: #1f1f1f;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
+  background: rgba(15, 15, 20, 0.8);
+  border-radius: 8px;
+  padding: 0.85rem;
+  font-size: 0.95rem;
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  overflow-x: auto;
+  transition: transform 0.2s ease;
 }
 
 em {
@@ -100,6 +166,27 @@ em {
   text-shadow: 0 0 60px #f8d66461;
   display: inline-block;
   font-style: normal;
+  position: relative;
+}
+
+em::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--accent);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+  opacity: 0.5;
+  border-radius: 3px;
+}
+
+em:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 img,
@@ -108,7 +195,12 @@ iframe {
   max-width: 100%;
   vertical-align: middle;
   display: inline-block;
-  filter: drop-shadow(0 0 100px #36363652);
+  filter: drop-shadow(0 0 40px rgba(0, 0, 0, 0.2));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+img:hover {
+  filter: drop-shadow(0 0 60px rgba(190, 190, 190, 0.1));
 }
 
 /* unselectable */
@@ -133,12 +225,44 @@ img {
   }
 
   .container {
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 
   .col {
     flex-basis: 100%;
     max-width: 100%;
+  }
+  
+  /* Improved mobile styling */
+  .card {
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .btn {
+    padding: 0.5rem 1.25rem;
+    width: 100%;
+    margin-bottom: 0.75rem;
+  }
+  
+  /* Removed scroll-to-top styles as they are now in the component */
+}
+
+/* Larger screens */
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: 1400px;
+  }
+  
+  .card {
+    border-radius: 16px;
+  }
+}
+
+/* Dark mode optimization */
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
   }
 }
