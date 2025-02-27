@@ -1,22 +1,37 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET(request: NextRequest) {
-    // Extract the path segments from the request URL
-    const { pathname } = new URL(request.url);
-    const pathSegments = pathname.split('/').filter(Boolean);
+    try {
+        // Enhanced path parsing with validation
+        const { pathname } = new URL(request.url);
+        const pathSegments = pathname.split('/').filter(Boolean);
 
-    // Assume the dynamic segment starts after 'api/siteData'
-    const dynamicPath = pathSegments.slice(2).join('/'); // 'api' is at index 0, 'siteData' is at index 1
+        // Guard clause for invalid path length
+        if (pathSegments.length < 3) {
+            return NextResponse.json({ error: 'Invalid path' }, { status: 400 });
+        }
 
-    // Dynamically import all exports from data.ts
-    const data = await import('@/app/data');
+        const dynamicPath = pathSegments.slice(2).join('/');
 
-    // Select the appropriate object based on the dynamic path
-    const responseData = (data as Record<string, any>)[dynamicPath];
+        // Safe dynamic import with error handling
+        let data;
+        try {
+            data = await import('@/app/data');
+        } catch (importError) {
+            console.error('Data import failed', importError);
+            return NextResponse.json({ error: 'Data loading failed' }, { status: 500 });
+        }
 
-    if (responseData) {
-        return NextResponse.json(responseData);
-    } else {
-        return NextResponse.json({ error: 'Object not found' }, { status: 404 });
+        const responseData = (data as Record<string, any>)[dynamicPath];
+
+        // More granular response handling
+        if (responseData) {
+            return NextResponse.json(responseData);
+        } else {
+            return NextResponse.json({ error: 'Object not found' }, { status: 404 });
+        }
+    } catch (unexpectedError) {
+        console.error('Unexpected error in GET handler', unexpectedError);
+        return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
     }
 }

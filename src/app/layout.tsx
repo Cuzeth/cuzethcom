@@ -5,7 +5,7 @@ import Navbar from '@/components/Navbar/Navbar';
 import Footer from '@/components/Footer/Footer';
 
 const poppins = Poppins({
-  weight: ['500', '600', '800'],
+  weight: ['400', '500', '600', '700', '800'],
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-poppins',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     description: "Cuzeth. See my work, and what I do.",
     images: "/images/banner.png",
   },
-  keywords: "Cuzeth, work, portfolio",
+  keywords: "Cuzeth, work, portfolio, development, programming",
   authors: [
     {
       name: "Cuzeth",
@@ -73,12 +73,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${poppins.variable} font-sans`}>
-      <body>
-        <div className="root">
+      <body className="min-h-screen flex flex-col bg-dark-900 text-white overflow-x-hidden">
+        <div className="flex flex-col min-h-screen">
           <Navbar />
-          {children}
+          <main className="flex-grow pt-20">
+            {children}
+          </main>
           <Footer />
         </div>
+
+        {/* Background gradient elements */}
+        <div className="fixed top-0 right-0 w-1/3 h-1/3 bg-primary-700/10 rounded-full filter blur-[150px] -z-10"></div>
+        <div className="fixed bottom-0 left-0 w-1/3 h-1/3 bg-primary-700/5 rounded-full filter blur-[150px] -z-10"></div>
       </body>
     </html>
   );
