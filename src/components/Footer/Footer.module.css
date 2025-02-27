@@ -1,10 +1,13 @@
 .footer-container {
     background-color: var(--maincolor);
+    background: linear-gradient(to top, rgba(10, 15, 22, 0.95), transparent);
     padding: 4rem 0 2rem 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
 }
 
 .footer-subscription {
@@ -95,14 +98,23 @@
 /* Social Icons */
 .social-icon-link {
     color: var(--text);
-    font-size: 24px;
-    /* filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5)); */
-    transition: all 0.2s ease-in-out;
+    font-size: 22px;
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    padding: 10px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .social-icon-link:hover {
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
-    transform: translateY(-2px);
+    color: var(--heading);
+    filter: drop-shadow(0 0 8px var(--accent-glow));
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .social-media {
@@ -122,10 +134,11 @@
 
 .social-icons {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    width: 280px;
-    transform: translateY(-40%);
+    gap: 16px;
+    width: auto;
+    flex-wrap: wrap;
 }
 
 .social-logo {
@@ -138,17 +151,24 @@
     display: flex;
     align-items: center;
     margin-bottom: 16px;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    filter: drop-shadow(0 0 8px var(--accent-glow));
 }
 
 .social-logo:hover {
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 15px var(--accent-glow));
 }
 
 .website-rights {
     color: var(--text);
     margin-bottom: 16px;
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 @media screen and (max-width: 820px) {
