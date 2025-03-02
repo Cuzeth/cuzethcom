@@ -2,17 +2,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    text-align: left;
     color: var(--text);
-    padding: 60px 20px;
-    background-color: var(--supportingcolor);
+    width: 100%;
 }
 
 .centered-text-markdown {
-    max-width: 1200px;
+    width: 100%;
     margin-bottom: 20px;
     font-size: 18px;
-    line-height: 1.8; /* Increased line height for better readability */
+    line-height: 1.8;
     color: var(--text);
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
@@ -24,11 +23,23 @@
 .centered-text-markdown h4,
 .centered-text-markdown h5,
 .centered-text-markdown h6 {
-    margin: 30px 0 15px; /* Increased margin for better spacing */
+    margin: 30px 0 20px;
     font-weight: 700;
     line-height: 1.3;
     color: var(--heading);
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    position: relative;
+}
+
+.centered-text-markdown h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 2px;
 }
 
 .centered-text-markdown h1 {
@@ -63,13 +74,27 @@
 /* Lists */
 .centered-text-markdown ul,
 .centered-text-markdown ol {
-    margin: 15px 0; /* Increased margin for better spacing */
-    padding-left: 20px;
+    margin: 20px 0;
+    padding-left: 5px;
     text-align: left;
+    list-style-type: none;
 }
 
 .centered-text-markdown li {
-    margin: 5px 0;
+    margin: 12px 0;
+    position: relative;
+    padding-left: 25px;
+}
+
+.centered-text-markdown ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 6px;
+    height: 6px;
+    background-color: var(--accent);
+    border-radius: 50%;
 }
 
 /* Bold and Italic */

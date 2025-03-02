@@ -112,10 +112,15 @@ export const aboutObj: HeroData = {
     lightText: true,
     lightTextDesc: true,
     topLine: 'ABOUT ME',
-    headline: 'Hey!',
-    description: `I'm Cuzeth, a ${calculateAge(new Date('2004-10-27T00:00:00'))} year old developer currently majoring in Computer Science. I have a passion for tech and software development. I'm always improving my coding abilities by taking on challenging projects.`,
+    headline: [
+        { text: 'Developer, ', emphasize: false },
+        { text: 'Creator, ', emphasize: true },
+        { text: 'Student', emphasize: false }
+    ],
+    description: `I'm Cuzeth, a ${calculateAge(new Date('2004-10-27T00:00:00'))} year old developer currently majoring in Computer Science. I have a passion for tech and software development, focusing on creating modern digital experiences and efficient solutions. When I'm not coding, I enjoy exploring new technologies and working on creative projects.`,
     img: about,
     alt: 'Website',
+    imgStart: true,
 };
 
 function calculateAge(birthday: Date) { // birthday is a date
@@ -124,6 +129,23 @@ function calculateAge(birthday: Date) { // birthday is a date
     var ageDate = new Date(ageDifMs); // miliseconds from epoch
     return Math.abs(ageDate.getUTCFullYear() - 1970);
 }
+
+export const skillsAndInterests: string = `
+## Skills & Technologies
+
+- **Frontend Development:** React, Next.js, TypeScript, Tailwind CSS
+- **Backend Development:** Node.js, Express, MongoDB
+- **Tools & Platforms:** Git, GitHub, Vercel, Firebase
+- **Other:** UI/UX Design, Motion Graphics, Video Editing
+
+## Interests & Hobbies
+
+Beyond coding, I'm passionate about technology, design, and creating meaningful digital experiences. I enjoy exploring new frameworks and tools to expand my skill set and stay current with industry trends.
+
+## Education
+
+Currently pursuing a Bachelor's degree in Computer Science, with a focus on software development and system architecture. Continuously expanding my knowledge through online courses and hands-on projects.
+`;
 
 // Da Boiz TOS
 export const daBoizTOS = `

@@ -1,6 +1,7 @@
-import { aboutObj } from '../data';
+import { aboutObj, skillsAndInterests } from '../data';
 import { Metadata } from 'next';
 import HeroSection from '@/components/HeroSection/HeroSection';
+import CenteredTextSection from '@/components/CenteredTextSection/CenteredTextSection';
 
 export const metadata: Metadata = {
     title: 'About Me',
@@ -18,6 +19,9 @@ export default function About() {
     return (
         <>
             <HeroSection {...aboutObj} />
+            <div className="glass-card mx-auto max-w-3xl my-12 p-8">
+                <CenteredTextSection markdownText={skillsAndInterests} />
+            </div>
         </>
     );
 }
