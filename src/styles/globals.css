@@ -115,9 +115,12 @@ small {
   background: var(--card-bg);
   border-radius: 12px;
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   padding: 1.5rem;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .card:hover {
@@ -129,8 +132,29 @@ small {
 .glass {
   background: rgba(15, 23, 42, 0.6);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.05);
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Glass morphism card */
+.glass-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
 /* Accent glow effect */
@@ -152,15 +176,25 @@ small {
 }
 
 .btn-primary {
-  background: var(--accent);
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-hover) 100%);
   color: white;
-  box-shadow: 0 4px 12px var(--accent-glow);
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px var(--accent-glow);
+  border: none;
+  display: inline-block;
+  text-decoration: none;
 }
 
 .btn-primary:hover {
-  background: var(--accent-hover);
   transform: translateY(-2px);
-  box-shadow: 0 8px 16px var(--accent-glow);
+  box-shadow: 0 8px 20px var(--accent-glow);
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
 }
 
 code {
@@ -260,11 +294,34 @@ img {
     width: 100%;
     margin-bottom: 0.75rem;
   }
-  
-  /* Removed scroll-to-top styles as they are now in the component */
 }
 
 /* Larger screens */
+/* Section styles */
+.section {
+  padding: 100px 0;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: 800;
+  color: var(--heading);
+  position: relative;
+  display: inline-block;
+}
+
+.section-title:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 60px;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
 @media screen and (min-width: 1440px) {
   .container {
     max-width: 1400px;
@@ -272,6 +329,16 @@ img {
   
   .card {
     border-radius: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section {
+    padding: 60px 0;
+  }
+  
+  .section-title {
+    font-size: 2rem;
   }
 }
 

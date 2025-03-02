@@ -1,9 +1,10 @@
 import logo from '../../public/images/Logo.svg';
 import myWork from '../../public/images/mywork.svg';
-import password from '../../public/images/password.svg';
+import pwgenImg from '../../public/images/password.svg';
 import daboiz from '../../public/images/DaBoiz.svg';
 import about from '../../public/images/about.png';
-import shorturl from '../../public/images/shorturl.svg';
+import shorturlImg from '../../public/images/shorturl.svg';
+import thumbnail from '../../public/images/youtube-thumbnail.png';
 
 // Template
 export interface HeroData {
@@ -59,7 +60,7 @@ export const passwordGen: HeroData = {
     buttonLabel: 'TRY OUT',
     sendTo: 'https://pwgen.cuzeth.com',
     imgStart: true,
-    img: password,
+    img: pwgenImg,
     alt: 'Memorable Password Generator'
 };
 
@@ -72,7 +73,7 @@ export const shortURL: HeroData = {
     buttonLabel: 'CODE',
     sendTo: 'https://github.com/Cuzeth/cuzurl',
     // imgStart: true,
-    img: shorturl,
+    img: shorturlImg,
     alt: 'URL Shortener GitHub'
 };
 
@@ -246,3 +247,41 @@ Specifically:
 **10. Contact Us**
 * If you have any questions about this Privacy Policy, please contact us at [cuz@cuzeth.com](mailto://cuz@cuzeth.com).
 `
+
+// Project Data
+export const projectsData = [
+    {
+        id: 1,
+        title: "Memorable Password Generator",
+        description: "A web app that generates memorable and secure passwords. Built with Flask and styled-components for a modern UI.",
+        image: pwgenImg,
+        technologies: ["Flask", "Python", "CSS", "Vercel"],
+        liveLink: "https://pwgen.cuzeth.com",
+        repoLink: "https://github.com/Cuzeth/memorable-password-generator"
+    },
+    {
+        id: 2,
+        title: "URL Shortener",
+        description: "A personal URL shortener service built with Next.js and PostgreSQL.",
+        image: shorturlImg,
+        technologies: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind CSS"],
+        repoLink: "https://github.com/Cuzeth/cuzurl"
+    },
+    {
+        id: 3,
+        title: "Tailosive Gaming (DISCONTINUED)",
+        description: "Previous highlights I made for Tailosive Gaming.",
+        image: thumbnail,
+        technologies: ["Adobe After Effects", "Motion Graphics", "Video Editing"],
+        liveLink: "https://youtube.com/playlist?list=PLLeQ5Dw04o_L3qjqHRhkZIaUuZwXCT-6d"
+    },
+    // {
+    //     id: 3,
+    //     title: "Da Boiz Discord Bot",
+    //     description: "A multipurpose Discord bot created using TypeScript. Features moderation tools, utility commands, and fun interactions.",
+    //     image: dabotImg,
+    //     technologies: ["TypeScript", "Discord.js", "Node.js", "MongoDB"],
+    //     liveLink: "https://discordapp.com/api/oauth2/authorize?client_id=636595833801801748&permissions=8&scope=bot%20applications.commands",
+    //     repoLink: "https://github.com/Cuzeth/daboiz"
+    // }
+];

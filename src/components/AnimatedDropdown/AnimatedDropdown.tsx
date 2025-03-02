@@ -25,7 +25,9 @@ export default function AnimatedDropdown({ title, markdownText }: AnimatedDropdo
                 </button>
             </div>
             <div className={`${styles['dropdown-content']} ${isOpen ? styles['show'] : ''}`}>
-                <CenteredTextSection markdownText={markdownText} />
+                <div className="glass-card mx-auto max-w-3xl my-12 p-8">
+                    <CenteredTextSection markdownText={markdownText} />
+                </div>
             </div>
         </div>
     );

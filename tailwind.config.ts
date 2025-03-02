@@ -19,6 +19,8 @@ const config: Config = {
         'accent-glow': 'var(--accent-glow)',
         'card-bg': 'var(--card-bg)',
         'navbar-glass': 'var(--navbar-glass)',
+        'primary-500': '#f00946',
+        'primary-700': '#d00840',
       },
       fontFamily: {
         sans: ['var(--font-poppins)']
