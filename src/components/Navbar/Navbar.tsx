@@ -16,9 +16,24 @@ export default function Navbar() {
 
     const pathname = usePathname();
 
+    // Close mobile menu when pathname changes
     useEffect(() => {
+        closeMobileMenu();
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }, [pathname]);
+    
+    // Prevent body scroll when mobile menu is open
+    useEffect(() => {
+        if (click) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+        
+        return () => {
+            document.body.style.overflow = '';
+        };
+    }, [click]);
 
     return (
         <IconContext.Provider value={{ color: 'var(--heading)' }}>
@@ -28,10 +43,15 @@ export default function Navbar() {
                         <Image src={logo} alt="Cuzeth" height={50} />
                         {/* <h1 className="cuzeth">C</h1> */}
                     </Link>
-                    <div className={styles['menu-icon']} onClick={handleClick}>
+                    <div 
+                        className={styles['menu-icon']} 
+                        onClick={handleClick}
+                        aria-expanded={click}
+                        aria-controls="nav-menu"
+                        aria-label="Toggle navigation menu">
                         {click ? <FaTimes /> : <FaBars />}
                     </div>
-                    <ul className={click ? `${styles['nav-menu']} ${styles.active}` : styles['nav-menu']}>
+                    <ul id="nav-menu" className={click ? `${styles['nav-menu']} ${styles.active}` : styles['nav-menu']}>
                         <li className={styles['nav-item']}>
                             <Link href="/" className={styles['nav-links']} onClick={closeMobileMenu}>
                                 Home

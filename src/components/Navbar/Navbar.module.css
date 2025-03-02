@@ -32,6 +32,13 @@
     padding-left: 50px;
 }
 
+@media screen and (max-width: 768px) {
+    .container {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+}
+
 .navbar-logo {
     color: var(--text);
     justify-self: start;
@@ -120,21 +127,19 @@
 }
 
 @media screen and (max-width: 960px) {
-    .NavbarItems {
-        position: relative;
-    }
-
     .nav-menu {
         display: flex;
         flex-direction: column;
         width: 100%;
-        height: calc(100vh - 80px);
+        height: 100%; /* Use a better height approach */
+        max-height: calc(100vh - 80px);
         position: absolute;
         top: 80px;
         left: -100%;
         opacity: 0;
         transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
         pointer-events: none;
+        padding-bottom: env(safe-area-inset-bottom, 20px); /* iOS safe area support */
     }
 
     .nav-menu.active {
@@ -157,7 +162,8 @@
         text-align: center;
         padding: 1.5rem;
         width: 100%;
-        display: table;
+        display: flex;
+        justify-content: center;
         font-weight: 600;
         letter-spacing: 0.05em;
         transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -167,6 +173,11 @@
         transform: translateX(4px);
         background: rgba(255, 255, 255, 0.05);
         border-radius: 8px;
+    }
+    
+    .nav-links:active {
+        transform: scale(0.98);
+        background: rgba(255, 255, 255, 0.1);
     }
 
     .nav-item {
@@ -185,20 +196,16 @@
     }
 
     .navbar-logo {
-        position: absolute;
-        top: 0;
-        left: 0;
-        transform: translate(50%, 30%);
+        position: relative;
+        margin-left: 10px;
         filter: drop-shadow(0 0 10px var(--accent-glow));
         transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
     .menu-icon {
         display: block;
-        position: absolute;
-        top: 0;
-        right: 0;
-        transform: translate(-100%, 90%);
+        position: relative;
+        margin-right: 10px;
         font-size: 1.5rem;
         cursor: pointer;
         padding: 8px;
@@ -210,7 +217,7 @@
 
     .menu-icon:hover {
         background: rgba(255, 255, 255, 0.1);
-        transform: translate(-100%, 90%) scale(1.05);
+        transform: scale(1.05);
     }
 
     .fa-times {
