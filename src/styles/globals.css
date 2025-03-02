@@ -9,6 +9,21 @@
   font-style: normal;
 }
 
+/* Add backdrop blur when mobile menu is open */
+body.menu-open::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 998; /* Below the menu but above everything else */
+  background-color: rgba(10, 15, 25, 0.4);
+  pointer-events: none;
+}
+
 .cuzeth {
   font-family: 'Cuzeth', sans-serif;
   font-size: 40px;

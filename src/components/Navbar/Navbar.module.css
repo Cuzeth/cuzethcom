@@ -143,19 +143,23 @@
     }
 
     .nav-menu.active {
-        background: rgba(10, 15, 25, 0.9);
+        background: rgba(10, 15, 25, 0.8); /* More transparent to show blur effect */
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         left: 0;
         opacity: 1;
         transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
-        z-index: 1;
+        z-index: 999; /* Higher z-index to ensure it's above content */
         pointer-events: all;
         border-bottom-left-radius: 16px;
         border-bottom-right-radius: 16px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         border: 1px solid rgba(255, 255, 255, 0.03);
         border-top: none;
+        /* Add a pseudo element to blur what's behind the menu */
+        position: fixed;
+        width: 100vw;
+        max-width: 100%;
     }
 
     .nav-links {

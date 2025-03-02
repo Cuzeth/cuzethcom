@@ -22,16 +22,20 @@ export default function Navbar() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }, [pathname]);
     
-    // Prevent body scroll when mobile menu is open
+    // Prevent body scroll when mobile menu is open and add backdrop blur
     useEffect(() => {
         if (click) {
             document.body.style.overflow = 'hidden';
+            // Add a class to the body for additional styling when menu is open
+            document.body.classList.add('menu-open');
         } else {
             document.body.style.overflow = '';
+            document.body.classList.remove('menu-open');
         }
         
         return () => {
             document.body.style.overflow = '';
+            document.body.classList.remove('menu-open');
         };
     }, [click]);
 
