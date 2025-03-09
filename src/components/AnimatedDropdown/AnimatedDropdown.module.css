@@ -29,6 +29,16 @@
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
 }
 
+@media (prefers-color-scheme: light) {
+    .dropdown-button {
+        box-shadow: 0 4px 6px rgba(15, 23, 42, 0.08);
+    }
+    
+    .dropdown-button:hover {
+        box-shadow: 0 6px 8px rgba(15, 23, 42, 0.12);
+    }
+}
+
 .dropdown-arrow {
     margin-left: 10px;
     transition: transform 0.3s ease;

@@ -16,6 +16,12 @@
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
+@media (prefers-color-scheme: light) {
+    .centered-text-markdown {
+        text-shadow: none;
+    }
+}
+
 /* Headers */
 .centered-text-markdown h1,
 .centered-text-markdown h2,
@@ -29,6 +35,17 @@
     color: var(--heading);
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
     position: relative;
+}
+
+@media (prefers-color-scheme: light) {
+    .centered-text-markdown h1,
+    .centered-text-markdown h2,
+    .centered-text-markdown h3,
+    .centered-text-markdown h4,
+    .centered-text-markdown h5,
+    .centered-text-markdown h6 {
+        text-shadow: 0 0 20px rgba(15, 23, 42, 0.08);
+    }
 }
 
 .centered-text-markdown h2::after {
@@ -116,14 +133,29 @@
     color: #f8f8f2;
 }
 
+@media (prefers-color-scheme: light) {
+    .centered-text-markdown code {
+        background: #f1f5f9;
+        color: #1e293b;
+        border: 1px solid rgba(15, 23, 42, 0.1);
+    }
+}
+
 /* Blockquotes */
 .centered-text-markdown blockquote {
     margin: 20px 0; /* Increased margin for better spacing */
     padding: 10px 20px;
-    border-left: 5px solid #ccc;
-    background-color: #f9f9f9;
-    color: #666;
+    border-left: 5px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text);
     text-align: left;
+}
+
+@media (prefers-color-scheme: light) {
+    .centered-text-markdown blockquote {
+        border-left: 5px solid rgba(15, 23, 42, 0.2);
+        background-color: rgba(15, 23, 42, 0.03);
+    }
 }
 
 /* Links */

@@ -24,6 +24,12 @@ body.menu-open::before {
   pointer-events: none;
 }
 
+@media (prefers-color-scheme: light) {
+  body.menu-open::before {
+    background-color: rgba(240, 242, 245, 0.6);
+  }
+}
+
 .cuzeth {
   font-family: 'Cuzeth', sans-serif;
   font-size: 40px;
@@ -31,8 +37,9 @@ body.menu-open::before {
 }
 
 :root {
+  /* Default dark theme */
   color-scheme: dark;
-  /* Updated color scheme for more modern look */
+  /* Dark theme colors */
   --maincolor: #0a0f16;
   --supportingcolor: #0c121c;
   --text: rgba(255, 255, 255, 0.9);
@@ -44,6 +51,25 @@ body.menu-open::before {
   --card-bg: rgba(20, 30, 45, 0.4);
   --navbar-glass: rgba(10, 15, 25, 0.7);
   --navbar-shadow: rgba(0, 0, 0, 0.2);
+}
+
+/* Light theme */
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+    /* Light theme colors - sleek and modern */
+    --maincolor: #f8f9fc;
+    --supportingcolor: #edf0f7;
+    --text: rgba(30, 41, 59, 0.9);
+    --heading: #1e293b;
+    --primary: #1e293b;
+    --accent: #f00946;
+    --accent-hover: #e0083d;
+    --accent-glow: rgba(238, 27, 69, 0.12);
+    --card-bg: rgba(255, 255, 255, 0.8);
+    --navbar-glass: rgba(255, 255, 255, 0.9);
+    --navbar-shadow: rgba(0, 0, 0, 0.05);
+  }
 }
 
 html {
@@ -139,6 +165,14 @@ small {
   will-change: transform;
 }
 
+@media (prefers-color-scheme: light) {
+  .glass {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(30, 41, 59, 0.08);
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+  }
+}
+
 /* Glass morphism card */
 .glass-card {
   background: var(--card-bg);
@@ -155,6 +189,17 @@ small {
 .glass-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+@media (prefers-color-scheme: light) {
+  .glass-card {
+    border: 1px solid rgba(30, 41, 59, 0.05);
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+  }
+  
+  .glass-card:hover {
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.1);
+  }
 }
 
 /* Accent glow effect */
@@ -210,6 +255,15 @@ code {
   transition: transform 0.2s ease;
 }
 
+@media (prefers-color-scheme: light) {
+  code {
+    background: rgba(240, 242, 245, 0.9);
+    color: #1e293b;
+    border: 1px solid rgba(30, 41, 59, 0.08);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+  }
+}
+
 em {
   color: #F8D664;
   text-shadow: 0 0 60px #f8d66461;
@@ -238,6 +292,17 @@ em:hover::after {
   transform-origin: bottom left;
 }
 
+@media (prefers-color-scheme: light) {
+  em {
+    color: #e5690c;
+    text-shadow: 0 0 30px rgba(229, 105, 12, 0.2);
+  }
+  
+  em::after {
+    background-color: #e5690c;
+  }
+}
+
 img,
 iframe {
   border: 0;
@@ -250,6 +315,17 @@ iframe {
 
 img:hover {
   filter: drop-shadow(0 0 60px rgba(190, 190, 190, 0.1));
+}
+
+@media (prefers-color-scheme: light) {
+  img,
+  iframe {
+    filter: drop-shadow(0 0 30px rgba(15, 23, 42, 0.08));
+  }
+  
+  img:hover {
+    filter: drop-shadow(0 0 40px rgba(15, 23, 42, 0.15));
+  }
 }
 
 /* unselectable */
@@ -342,9 +418,76 @@ img {
   }
 }
 
-/* Dark mode optimization */
+/* Theme optimizations */
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  html {
+    color-scheme: light;
+  }
+  
+  /* Project card styles for light mode */
+  .project-description {
+    color: var(--text);
+  }
+  
+  .tech-tag {
+    color: var(--text);
+    border: 1px solid rgba(15, 23, 42, 0.2);
+  }
+  
+  .code-button {
+    color: var(--text);
+    border-color: rgba(15, 23, 42, 0.2);
+  }
+  
+  .code-button:hover {
+    background-color: rgba(15, 23, 42, 0.05);
+  }
+  
+  .project-index {
+    color: var(--accent);
+    text-shadow: 0 0 10px rgba(255, 0, 38, 0.3), 0 0 20px rgba(255, 0, 0, 0.2);
+  }
+  
+  .project-divider {
+    background-color: rgba(229, 105, 12, 0.3);
+  }
+  
+  .github-icon {
+    color: var(--text);
+  }
+}
+
+/* Project card styles for dark mode */
+@media (prefers-color-scheme: dark) {
+  .project-description {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .tech-tag {
+    color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .code-button {
+    color: white;
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .project-index {
+    text-shadow: 0 0 10px rgba(255, 0, 38, 1), 0 0 20px rgba(255, 0, 0, 0.5);
+  }
+  
+  .project-divider {
+    background-color: rgba(240, 9, 70, 0.3);
+  }
+  
+  .github-icon {
+    color: white;
   }
 }

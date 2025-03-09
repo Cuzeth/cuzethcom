@@ -61,7 +61,7 @@ export default function ProjectCard({
                                     href={repoLink}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="bg-supportingcolor hover:bg-maincolor text-white p-3 rounded-full shadow-lg transform transition-transform duration-300 hover:scale-110"
+                                    className="github-icon bg-supportingcolor hover:bg-maincolor p-3 rounded-full shadow-lg transform transition-transform duration-300 hover:scale-110"
                                     aria-label={`${title} repository`}
                                 >
                                     <FaGithub size={18} />
@@ -74,21 +74,21 @@ export default function ProjectCard({
                 {/* Content section */}
                 <div className="w-full md:w-1/2 flex flex-col justify-center">
                     <div className="flex items-center mb-4">
-                        <span className="text-primary-500 font-mono text-sm" style={{ textShadow: "0 0 10px rgba(255, 0, 38, 1), 0 0 20px rgba(255, 0, 0, 0.5)" }}>Project {index}</span>
-                        <div className="h-px bg-primary-700/30 flex-grow ml-4"></div>
+                        <span className="project-index text-primary-500 font-mono text-sm">Project {index}</span>
+                        <div className="project-divider h-px flex-grow ml-4"></div>
                     </div>
 
                     <h3 className="text-2xl md:text-3xl font-bold mb-4">{title}</h3>
 
                     <div className="glass-card p-6 mb-6">
-                        <p className="text-gray-300">{description}</p>
+                        <p className="project-description">{description}</p>
                     </div>
 
                     <div className="flex flex-wrap gap-2 mb-6">
                         {technologies.map((tech, index) => (
                             <span
                                 key={index}
-                                className="text-xs font-medium px-3 py-1 rounded-full bg-supportingcolor text-gray-300 border border-gray-700"
+                                className="tech-tag text-xs font-medium px-3 py-1 rounded-full bg-supportingcolor"
                             >
                                 {tech}
                             </span>
@@ -112,7 +112,7 @@ export default function ProjectCard({
                                 href={repoLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="bg-transparent hover:bg-supportingcolor text-white border border-gray-700 px-4 py-2 rounded-md transition-colors duration-300"
+                                className="code-button bg-transparent hover:bg-supportingcolor border px-4 py-2 rounded-md transition-colors duration-300"
                             >
                                 View Code
                             </a>
