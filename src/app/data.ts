@@ -4,6 +4,7 @@ import pwgenImg from '../../public/images/password.svg';
 import daboiz from '../../public/images/DaBoiz.svg';
 import about from '../../public/images/about.png';
 import shorturlImg from '../../public/images/shorturl.svg';
+import tetris from '../../public/images/tetris-solver.svg';
 import thumbnail from '../../public/images/youtube-thumbnail.png';
 
 // Template
@@ -269,6 +270,14 @@ export const projectsData = [
     },
     {
         id: 3,
+        title: "Tetris Solver",
+        description: "An AI-powered decision-making system that evaluates the best placement for each piece based on a scoring system.",
+        image: tetris,
+        technologies: ["Python", "Numpy", "AI"],
+        repoLink: "https://github.com/Cuzeth/tetris-solver"
+    },
+    {
+        id: 4,
         title: "Tailosive Gaming (DISCONTINUED)",
         description: "Previous highlights I made for Tailosive Gaming.",
         image: thumbnail,
