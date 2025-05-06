@@ -13,7 +13,7 @@
 body.menu-open::before {
   content: '';
   position: fixed;
-  top: 0;
+  top: 80px; /* Start below navbar height */
   left: 0;
   right: 0;
   bottom: 0;

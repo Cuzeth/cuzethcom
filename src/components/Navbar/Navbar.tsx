@@ -21,7 +21,7 @@ export default function Navbar() {
         closeMobileMenu();
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }, [pathname]);
-    
+
     // Prevent body scroll when mobile menu is open and add backdrop blur
     useEffect(() => {
         if (click) {
@@ -32,7 +32,7 @@ export default function Navbar() {
             document.body.style.overflow = '';
             document.body.classList.remove('menu-open');
         }
-        
+
         return () => {
             document.body.style.overflow = '';
             document.body.classList.remove('menu-open');
@@ -47,15 +47,15 @@ export default function Navbar() {
                         <Image src={logo} alt="Cuzeth" height={50} />
                         {/* <h1 className="cuzeth">C</h1> */}
                     </Link>
-                    <div 
-                        className={styles['menu-icon']} 
+                    <div
+                        className={styles['menu-icon']}
                         onClick={handleClick}
                         aria-expanded={click}
                         aria-controls="nav-menu"
                         aria-label="Toggle navigation menu">
                         {click ? <FaTimes /> : <FaBars />}
                     </div>
-                    <ul id="nav-menu" className={click ? `${styles['nav-menu']} ${styles.active}` : styles['nav-menu']}>
+                    <ul className={click ? `${styles['nav-menu']} ${styles.active}` : styles['nav-menu']}>
                         <li className={styles['nav-item']}>
                             <Link href="/" className={styles['nav-links']} onClick={closeMobileMenu}>
                                 Home
