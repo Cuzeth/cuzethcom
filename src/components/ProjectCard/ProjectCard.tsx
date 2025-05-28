@@ -38,7 +38,7 @@ export default function ProjectCard({
                                 alt={title}
                                 width={800}
                                 height={450}
-                                className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                                className="w-full h-auto object-cover transition-all duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"
                             />
                         )}
 
