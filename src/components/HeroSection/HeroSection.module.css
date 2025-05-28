@@ -167,12 +167,6 @@
     height: auto;
     margin: 0;
     padding: 0;
-    filter: grayscale(70%);
-    transition: filter 0.3s ease;
-}
-
-.home__hero-img:hover {
-    filter: grayscale(0%);
 }
 
 @media (min-width: 640px) {
