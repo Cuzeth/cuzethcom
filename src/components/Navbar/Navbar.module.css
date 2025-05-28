@@ -1,8 +1,8 @@
 .navbar {
-    background: rgba(10, 15, 25, 0.75);
-    backdrop-filter: blur(15px); /* Enhanced blur effect */
-    -webkit-backdrop-filter: blur(15px); /* For Safari compatibility */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 1px 0 rgba(255, 255, 255, 0.05);
+    background: var(--navbar-glass);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 10px 30px var(--color-shadow-medium), 0 1px 0 var(--color-border-light);
     height: 80px;
     display: flex;
     justify-content: center;
@@ -11,15 +11,15 @@
     position: sticky;
     top: 0;
     z-index: 999;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid var(--color-border-light);
     transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 @media (prefers-color-scheme: light) {
     .navbar {
-        background: rgba(255, 255, 255, 0.75);
-        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.07), 0 1px 0 rgba(15, 23, 42, 0.05);
-        border-bottom: 1px solid rgba(15, 23, 42, 0.03);
+        background: var(--navbar-glass);
+        box-shadow: 0 10px 30px var(--color-shadow-light), 0 1px 0 var(--color-border-light);
+        border-bottom: 1px solid var(--color-border-light);
     }
 }
 
@@ -115,7 +115,7 @@
 
 .nav-links:hover {
     color: var(--heading);
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+    text-shadow: 0 0 8px var(--color-gray-medium);
 }
 
 .fa-bars {
@@ -144,20 +144,19 @@
     }
 
     .nav-menu.active {
-        background: rgba(10, 15, 25, 0.8); /* More transparent to show blur effect */
+        background: var(--navbar-glass);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         left: 0;
         opacity: 1;
         transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
-        z-index: 999; /* Higher z-index to ensure it's above content */
+        z-index: 999;
         pointer-events: all;
         border-bottom-left-radius: 16px;
         border-bottom-right-radius: 16px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        border: 1px solid rgba(255, 255, 255, 0.03);
+        box-shadow: 0 10px 30px var(--color-shadow-dark);
+        border: 1px solid var(--color-border-light);
         border-top: none;
-        /* Add a pseudo element to blur what's behind the menu */
         position: fixed;
         width: 100vw;
         max-width: 100%;
@@ -165,9 +164,9 @@
     
     @media (prefers-color-scheme: light) {
         .nav-menu.active {
-            background: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.1);
-            border: 1px solid rgba(15, 23, 42, 0.03);
+            background: var(--navbar-glass);
+            box-shadow: 0 10px 30px var(--color-shadow-medium);
+            border: 1px solid var(--color-border-light);
             border-top: none;
         }
     }
@@ -185,22 +184,22 @@
 
     .nav-links:hover {
         transform: translateX(4px);
-        background: rgba(255, 255, 255, 0.05);
+        background: var(--color-overlay-light);
         border-radius: 8px;
     }
     
     .nav-links:active {
         transform: scale(0.98);
-        background: rgba(255, 255, 255, 0.1);
+        background: var(--color-overlay-medium);
     }
     
     @media (prefers-color-scheme: light) {
         .nav-links:hover {
-            background: rgba(15, 23, 42, 0.05);
+            background: var(--color-overlay-light);
         }
         
         .nav-links:active {
-            background: rgba(15, 23, 42, 0.08);
+            background: var(--color-overlay-medium);
         }
     }
 
@@ -235,23 +234,23 @@
         padding: 8px;
         border-radius: 50%;
         transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.05);
+        background: var(--color-overlay-light);
+        border: 1px solid var(--color-border-light);
     }
 
     .menu-icon:hover {
-        background: rgba(255, 255, 255, 0.1);
+        background: var(--color-overlay-medium);
         transform: scale(1.05);
     }
     
     @media (prefers-color-scheme: light) {
         .menu-icon {
-            background: rgba(15, 23, 42, 0.05);
-            border: 1px solid rgba(15, 23, 42, 0.05);
+            background: var(--color-overlay-light);
+            border: 1px solid var(--color-border-light);
         }
         
         .menu-icon:hover {
-            background: rgba(15, 23, 42, 0.1);
+            background: var(--color-overlay-medium);
         }
     }
 

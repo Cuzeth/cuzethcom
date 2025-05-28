@@ -40,7 +40,7 @@ export default function Navbar() {
     }, [click]);
 
     return (
-        <IconContext.Provider value={{ color: 'var(--heading)' }}>
+        <IconContext.Provider value={{ color: 'var(--text)' }}>
             <div className={styles.navbar}>
                 <div className={`${styles['navbar-container']} ${styles.container}`}>
                     <Link href="/" className={styles['navbar-logo']} onClick={closeMobileMenu}>
