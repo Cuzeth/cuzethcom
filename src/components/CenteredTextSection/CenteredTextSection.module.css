@@ -13,14 +13,8 @@
     font-size: 18px;
     line-height: 1.8;
     color: var(--text);
-    text-shadow: 0 0 10px var(--color-gray-dark);
 }
 
-@media (prefers-color-scheme: light) {
-    .centered-text-markdown {
-        text-shadow: none;
-    }
-}
 
 /* Headers */
 .centered-text-markdown h1,
@@ -33,20 +27,9 @@
     font-weight: 700;
     line-height: 1.3;
     color: var(--heading);
-    text-shadow: 0 0 20px var(--color-gray-medium);
     position: relative;
 }
 
-@media (prefers-color-scheme: light) {
-    .centered-text-markdown h1,
-    .centered-text-markdown h2,
-    .centered-text-markdown h3,
-    .centered-text-markdown h4,
-    .centered-text-markdown h5,
-    .centered-text-markdown h6 {
-        text-shadow: 0 0 20px var(--color-shadow-medium);
-    }
-}
 
 .centered-text-markdown h2::after {
     content: '';

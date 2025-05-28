@@ -2,7 +2,6 @@
     background: var(--navbar-glass);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    box-shadow: 0 10px 30px var(--color-shadow-medium), 0 1px 0 var(--color-border-light);
     height: 80px;
     display: flex;
     justify-content: center;
@@ -18,7 +17,6 @@
 @media (prefers-color-scheme: light) {
     .navbar {
         background: var(--navbar-glass);
-        box-shadow: 0 10px 30px var(--color-shadow-light), 0 1px 0 var(--color-border-light);
         border-bottom: 1px solid var(--color-border-light);
     }
 }
@@ -49,12 +47,10 @@
     display: flex;
     align-items: center;
     transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
-    filter: drop-shadow(0 0 8px var(--accent-glow));
 }
 
 .navbar-logo:hover {
     transform: scale(1.05);
-    filter: drop-shadow(0 0 12px var(--accent-glow));
 }
 
 .navbar-icon {
@@ -89,7 +85,6 @@
     width: 0;
     height: 2px;
     background: linear-gradient(to right, transparent, var(--accent), transparent);
-    box-shadow: 0 0 15px var(--accent-glow);
     pointer-events: none;
     opacity: 0;
     transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -115,7 +110,6 @@
 
 .nav-links:hover {
     color: var(--heading);
-    text-shadow: 0 0 8px var(--color-gray-medium);
 }
 
 .fa-bars {
@@ -154,7 +148,6 @@
         pointer-events: all;
         border-bottom-left-radius: 16px;
         border-bottom-right-radius: 16px;
-        box-shadow: 0 10px 30px var(--color-shadow-dark);
         border: 1px solid var(--color-border-light);
         border-top: none;
         position: fixed;
@@ -165,7 +158,6 @@
     @media (prefers-color-scheme: light) {
         .nav-menu.active {
             background: var(--navbar-glass);
-            box-shadow: 0 10px 30px var(--color-shadow-medium);
             border: 1px solid var(--color-border-light);
             border-top: none;
         }
@@ -221,7 +213,6 @@
     .navbar-logo {
         position: relative;
         margin-left: 10px;
-        filter: drop-shadow(0 0 10px var(--accent-glow));
         transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 

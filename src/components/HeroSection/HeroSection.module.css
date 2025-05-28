@@ -40,7 +40,6 @@
     letter-spacing: 1.4px;
     text-transform: uppercase;
     margin-bottom: 16px;
-    text-shadow: 0 0 10px var(--accent-glow), 0 0 20px var(--accent-hover);
 }
 
 .heading {
@@ -49,14 +48,8 @@
     line-height: 1.1;
     font-weight: 800;
     color: var(--heading);
-    text-shadow: 0 0 20px var(--color-gray-medium);
 }
 
-@media (prefers-color-scheme: light) {
-    .heading {
-        text-shadow: 0 0 20px var(--color-shadow-medium);
-    }
-}
 
 .dark {
     color: var(--maincolor);

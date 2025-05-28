@@ -28,11 +28,6 @@ const config: Config = {
           medium: 'var(--color-gray-medium)',
           dark: 'var(--color-gray-dark)',
         },
-        shadow: {
-          light: 'var(--color-shadow-light)',
-          medium: 'var(--color-shadow-medium)',
-          dark: 'var(--color-shadow-dark)',
-        },
         border: {
           light: 'var(--color-border-light)',
           medium: 'var(--color-border-medium)',
@@ -43,14 +38,12 @@ const config: Config = {
         },
         success: 'var(--color-success)',
         'success-hover': 'var(--color-success-hover)',
-        'success-glow': 'var(--color-success-glow)',
         code: {
           bg: 'var(--color-code-bg)',
           text: 'var(--color-code-text)',
           border: 'var(--color-code-border)',
         },
         emphasis: 'var(--color-emphasis)',
-        'emphasis-glow': 'var(--color-emphasis-glow)',
         scroll: {
           button: 'var(--color-scroll-button)',
           'button-hover': 'var(--color-scroll-button-hover)',
@@ -86,7 +79,12 @@ const config: Config = {
         'fade-in': 'fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
         'scale-in': 'scaleIn 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
         'slide-up': 'slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+        'slide-down': 'slideDown 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+        'slide-left': 'slideLeft 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+        'slide-right': 'slideRight 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
         'subtle-pulse': 'subtlePulse 2s ease-in-out infinite',
+        'smooth-bounce': 'smoothBounce 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+        'float': 'float 3s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -119,12 +117,58 @@ const config: Config = {
             transform: 'translateY(0)',
           },
         },
+        slideDown: {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(-16px)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateY(0)',
+          },
+        },
+        slideLeft: {
+          '0%': {
+            opacity: '0',
+            transform: 'translateX(16px)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateX(0)',
+          },
+        },
+        slideRight: {
+          '0%': {
+            opacity: '0',
+            transform: 'translateX(-16px)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateX(0)',
+          },
+        },
         subtlePulse: {
           '0%, 100%': {
             opacity: '1',
           },
           '50%': {
             opacity: '0.8',
+          },
+        },
+        smoothBounce: {
+          '0%, 100%': {
+            transform: 'translateY(0)',
+          },
+          '50%': {
+            transform: 'translateY(-4px)',
+          },
+        },
+        float: {
+          '0%, 100%': {
+            transform: 'translateY(0px)',
+          },
+          '50%': {
+            transform: 'translateY(-6px)',
           },
         },
       },

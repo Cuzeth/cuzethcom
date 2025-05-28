@@ -170,12 +170,10 @@
     align-items: center;
     margin-bottom: 16px;
     transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
-    filter: drop-shadow(0 0 8px var(--accent-glow));
 }
 
 .social-logo:hover {
     transform: scale(1.05);
-    filter: drop-shadow(0 0 15px var(--accent-glow));
 }
 
 .website-rights {
