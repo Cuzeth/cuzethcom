@@ -60,7 +60,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ['var(--font-poppins)']
+        sans: ['Junicode', 'Georgia', 'Times New Roman', 'serif'],
+        serif: ['Junicode', 'Georgia', 'Times New Roman', 'serif']
       },
       spacing: {
         '128': '32rem',
@@ -75,21 +76,55 @@ const config: Config = {
         '4xl+': '2.5rem',
       },
       boxShadow: {
-        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.15)',
-        'glow': '0 0 20px rgba(255, 255, 255, 0.15)',
-        'card': '0 10px 30px -5px rgba(0, 0, 0, 0.1)',
+        'flat-sm': '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+        'flat': '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
+        'flat-md': '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+        'flat-lg': '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+        'modern': '0 2px 8px 0 rgba(0, 0, 0, 0.08)',
       },
       animation: {
-        'float': 'float 3s ease-in-out infinite',
-        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'fade-in': 'fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+        'scale-in': 'scaleIn 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+        'slide-up': 'slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+        'subtle-pulse': 'subtlePulse 2s ease-in-out infinite',
       },
       keyframes: {
-        float: {
-          '0%, 100%': {
+        fadeIn: {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(8px)',
+          },
+          '100%': {
+            opacity: '1',
             transform: 'translateY(0)',
           },
+        },
+        scaleIn: {
+          '0%': {
+            opacity: '0',
+            transform: 'scale(0.95)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'scale(1)',
+          },
+        },
+        slideUp: {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(16px)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateY(0)',
+          },
+        },
+        subtlePulse: {
+          '0%, 100%': {
+            opacity: '1',
+          },
           '50%': {
-            transform: 'translateY(-10px)',
+            opacity: '0.8',
           },
         },
       },

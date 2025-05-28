@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* @import url('https://fonts.googleapis.com/css2?family=Junicode:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap'); */
 @font-face {
   font-family: 'Cuzeth';
   src: url('/fonts/Cuzeth.ttf') format('truetype');
@@ -31,88 +32,88 @@ body.menu-open::before {
 }
 
 :root {
-  /* Default dark theme */
+  /* Default dark theme - Modern flat colors */
   color-scheme: dark;
   /* Dark theme colors */
-  --maincolor: #0a0f16;
-  --supportingcolor: #0c121c;
-  --text: rgba(255, 255, 255, 0.9);
-  --heading: #ffffff;
-  --primary: #fff;
-  --accent: #f00946;
-  --accent-hover: #e0083d;
-  --accent-glow: rgba(238, 27, 69, 0.15);
-  --card-bg: rgba(20, 30, 45, 0.4);
-  --navbar-glass: rgba(10, 15, 25, 0.7);
-  --navbar-shadow: rgba(0, 0, 0, 0.2);
+  --maincolor: #0a0e13;
+  --supportingcolor: #161b26;
+  --text: rgba(255, 255, 255, 0.88);
+  --heading: #f8fafc;
+  --primary: #f8fafc;
+  --accent: #e11d1d;
+  --accent-hover: #be1818;
+  --accent-glow: rgba(225, 29, 29, 0.4);
+  --card-bg: #1a1f2a;
+  --navbar-glass: #0a0e13;
+  --navbar-shadow: rgba(0, 0, 0, 0.15);
   
-  /* Unified color system - Dark theme */
+  /* Unified color system - Dark theme - Modern flat colors */
   --color-white: #ffffff;
   --color-black: #000000;
-  --color-gray-light: rgba(255, 255, 255, 0.8);
-  --color-gray-medium: rgba(255, 255, 255, 0.5);
-  --color-gray-dark: rgba(255, 255, 255, 0.1);
-  --color-shadow-light: rgba(0, 0, 0, 0.08);
-  --color-shadow-medium: rgba(0, 0, 0, 0.15);
-  --color-shadow-dark: rgba(0, 0, 0, 0.2);
-  --color-blur-backdrop: rgba(10, 15, 25, 0.4);
-  --color-border-light: rgba(255, 255, 255, 0.05);
-  --color-border-medium: rgba(255, 255, 255, 0.1);
-  --color-overlay-light: rgba(255, 255, 255, 0.03);
+  --color-gray-light: rgba(255, 255, 255, 0.7);
+  --color-gray-medium: rgba(255, 255, 255, 0.45);
+  --color-gray-dark: rgba(255, 255, 255, 0.12);
+  --color-shadow-light: rgba(0, 0, 0, 0.04);
+  --color-shadow-medium: rgba(0, 0, 0, 0.08);
+  --color-shadow-dark: rgba(0, 0, 0, 0.12);
+  --color-blur-backdrop: rgba(15, 20, 25, 0.8);
+  --color-border-light: rgba(255, 255, 255, 0.08);
+  --color-border-medium: rgba(255, 255, 255, 0.12);
+  --color-overlay-light: rgba(255, 255, 255, 0.04);
   --color-overlay-medium: rgba(255, 255, 255, 0.08);
-  --color-success: #25ce4a;
-  --color-success-hover: #1ca33a;
-  --color-success-glow: rgba(37, 206, 74, 0.3);
-  --color-code-bg: #1f1f1f;
-  --color-code-text: #f8f8f2;
-  --color-code-border: rgba(255, 255, 255, 0.05);
-  --color-emphasis: #f8d664;
-  --color-emphasis-glow: rgba(248, 214, 100, 0.38);
-  --color-scroll-button: rgba(240, 9, 70, 0.9);
-  --color-scroll-button-hover: rgba(224, 8, 61, 0.95);
+  --color-success: #22c55e;
+  --color-success-hover: #16a34a;
+  --color-success-glow: rgba(34, 197, 94, 0.2);
+  --color-code-bg: #1e1e1e;
+  --color-code-text: #e4e4e7;
+  --color-code-border: rgba(255, 255, 255, 0.08);
+  --color-emphasis: #fbbf24;
+  --color-emphasis-glow: rgba(251, 191, 36, 0.5);
+  --color-scroll-button: #e11d48;
+  --color-scroll-button-hover: #be185d;
 }
 
 /* Light theme */
 @media (prefers-color-scheme: light) {
   :root {
     color-scheme: light;
-    /* Light theme colors - sleek and modern */
-    --maincolor: #f8f9fc;
-    --supportingcolor: #edf0f7;
-    --text: rgba(30, 41, 59, 0.9);
+    /* Light theme colors - Modern flat design */
+    --maincolor: #fafbfc;
+    --supportingcolor: #f1f3f4;
+    --text: rgba(30, 41, 59, 0.85);
     --heading: #1e293b;
     --primary: #1e293b;
-    --accent: #f00946;
-    --accent-hover: #e0083d;
-    --accent-glow: rgba(238, 27, 69, 0.12);
-    --card-bg: rgba(255, 255, 255, 0.8);
-    --navbar-glass: rgba(255, 255, 255, 0.9);
-    --navbar-shadow: rgba(0, 0, 0, 0.05);
+    --accent: #e11d48;
+    --accent-hover: #be185d;
+    --accent-glow: rgba(225, 29, 72, 0.25);
+    --card-bg: #ffffff;
+    --navbar-glass: #fafbfc;
+    --navbar-shadow: rgba(0, 0, 0, 0.04);
     
-    /* Unified color system - Light theme */
+    /* Unified color system - Light theme - Modern flat colors */
     --color-white: #ffffff;
     --color-black: #000000;
-    --color-gray-light: rgba(30, 41, 59, 0.8);
-    --color-gray-medium: rgba(30, 41, 59, 0.5);
-    --color-gray-dark: rgba(30, 41, 59, 0.2);
-    --color-shadow-light: rgba(15, 23, 42, 0.05);
-    --color-shadow-medium: rgba(15, 23, 42, 0.08);
-    --color-shadow-dark: rgba(15, 23, 42, 0.12);
-    --color-blur-backdrop: rgba(240, 242, 245, 0.6);
-    --color-border-light: rgba(15, 23, 42, 0.05);
-    --color-border-medium: rgba(15, 23, 42, 0.1);
-    --color-overlay-light: rgba(15, 23, 42, 0.03);
+    --color-gray-light: rgba(30, 41, 59, 0.7);
+    --color-gray-medium: rgba(30, 41, 59, 0.45);
+    --color-gray-dark: rgba(30, 41, 59, 0.15);
+    --color-shadow-light: rgba(15, 23, 42, 0.03);
+    --color-shadow-medium: rgba(15, 23, 42, 0.06);
+    --color-shadow-dark: rgba(15, 23, 42, 0.1);
+    --color-blur-backdrop: rgba(250, 251, 252, 0.8);
+    --color-border-light: rgba(15, 23, 42, 0.08);
+    --color-border-medium: rgba(15, 23, 42, 0.12);
+    --color-overlay-light: rgba(15, 23, 42, 0.04);
     --color-overlay-medium: rgba(15, 23, 42, 0.08);
-    --color-success: #25ce4a;
-    --color-success-hover: #1ca33a;
-    --color-success-glow: rgba(37, 206, 74, 0.3);
-    --color-code-bg: #f1f5f9;
+    --color-success: #22c55e;
+    --color-success-hover: #16a34a;
+    --color-success-glow: rgba(34, 197, 94, 0.2);
+    --color-code-bg: #f8f9fa;
     --color-code-text: #1e293b;
-    --color-code-border: rgba(15, 23, 42, 0.1);
-    --color-emphasis: #e5690c;
-    --color-emphasis-glow: rgba(229, 105, 12, 0.2);
-    --color-scroll-button: rgba(240, 9, 70, 0.9);
-    --color-scroll-button-hover: rgba(224, 8, 61, 0.95);
+    --color-code-border: rgba(15, 23, 42, 0.12);
+    --color-emphasis: #f59e0b;
+    --color-emphasis-glow: rgba(245, 158, 11, 0.3);
+    --color-scroll-button: #e11d48;
+    --color-scroll-button-hover: #be185d;
   }
 }
 
@@ -125,8 +126,12 @@ html {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: var(--font-poppins), sans-serif;
+  font-family: 'Junicode', Georgia, 'Times New Roman', serif;
   position: relative;
+  font-feature-settings: 'kern' 1, 'liga' 1, 'hist' 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   
   /* Optimize scrollbars */
   -ms-overflow-style: none; /* IE and Edge */
@@ -137,10 +142,10 @@ html {
   display: none;
 }
 
-/* Optimized animations */
+/* Modern smooth animations */
 .fade-in,
 * {
-  animation: fadeIn 0.35s ease-out;
+  animation: fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform, opacity;
   transform: translate3d(0, 0, 0);
 }
@@ -148,11 +153,33 @@ html {
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Smooth scale animation for interactive elements */
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Subtle pulse for emphasis elements */
+@keyframes subtlePulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
   }
 }
 
@@ -172,101 +199,90 @@ small {
   contain: layout;
 }
 
-/* Modern glass effects - consolidated */
+/* Modern flat design - clean and minimal */
 .card,
 .glass,
 .glass-card {
   background: var(--card-bg);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   border: 1px solid var(--color-border-light);
   transform: translateZ(0);
   will-change: transform;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card {
-  border-radius: 12px;
+  border-radius: 8px;
   padding: 1.5rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 20px var(--color-shadow-light);
+  box-shadow: 0 1px 3px var(--color-shadow-light);
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px var(--color-shadow-medium);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--color-shadow-medium);
+  border-color: var(--color-border-medium);
 }
 
 .glass {
-  border-radius: 8px;
-}
-
-@media (prefers-color-scheme: light) {
-  .glass {
-    box-shadow: 0 4px 20px var(--color-shadow-light);
-  }
+  border-radius: 6px;
+  box-shadow: 0 1px 2px var(--color-shadow-light);
 }
 
 .glass-card {
-  border-radius: 16px;
-  box-shadow: 0 4px 30px var(--color-shadow-medium);
-  border: 1px solid var(--color-border-medium);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px var(--color-shadow-light);
+  border: 1px solid var(--color-border-light);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .glass-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 40px var(--color-shadow-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px var(--color-shadow-medium);
+  border-color: var(--color-border-medium);
 }
 
-@media (prefers-color-scheme: light) {
-  .glass-card {
-    border: 1px solid var(--color-border-light);
-    box-shadow: 0 4px 20px var(--color-shadow-light);
-  }
-  
-  .glass-card:hover {
-    box-shadow: 0 10px 30px var(--color-shadow-medium);
-  }
-}
-
-/* Accent glow effect */
-.accent-glow {
-  box-shadow: 0 0 20px var(--accent-glow);
-}
-
-/* Modern button styling */
+/* Modern flat button styling */
 .btn {
-  padding: 0.6rem 1.5rem;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  border: none;
+  font-size: 0.875rem;
+  letter-spacing: 0.025em;
 }
 
 .btn-primary {
-  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-hover) 100%);
+  background: var(--accent);
   color: white;
-  padding: 10px 24px;
+  padding: 12px 24px;
   border-radius: 6px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px var(--accent-glow);
+  font-weight: 500;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px var(--color-shadow-medium);
   border: none;
   display: inline-block;
   text-decoration: none;
+  font-size: 0.875rem;
+  letter-spacing: 0.025em;
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px var(--accent-glow);
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 
+    0 4px 12px var(--accent-glow),
+    0 0 20px var(--accent-glow),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .btn-primary:active {
-  transform: translateY(1px);
+  transform: translateY(0px);
+  box-shadow: 0 1px 3px var(--color-shadow-medium);
 }
 
 code {
@@ -285,25 +301,31 @@ code {
 
 em {
   color: var(--color-emphasis);
-  text-shadow: 0 0 60px var(--color-emphasis-glow);
+  text-shadow: 
+    0 0 20px var(--color-emphasis-glow),
+    0 0 40px var(--color-emphasis-glow),
+    0 0 80px var(--color-emphasis-glow);
   display: inline-block;
-  font-style: normal;
+  font-style: italic;
+  font-weight: 500;
   position: relative;
+  letter-spacing: 0.02em;
 }
 
 em::after {
   content: '';
   position: absolute;
   width: 100%;
-  height: 3px;
-  bottom: 0;
+  height: 2px;
+  bottom: -2px;
   left: 0;
-  background-color: var(--color-emphasis);
+  background: linear-gradient(90deg, var(--color-emphasis), transparent);
   transform: scaleX(0);
   transform-origin: bottom right;
-  transition: transform 0.3s ease;
-  opacity: 0.5;
-  border-radius: 3px;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0.7;
+  border-radius: 2px;
+  box-shadow: 0 0 8px var(--color-emphasis-glow);
 }
 
 em:hover::after {
@@ -380,27 +402,29 @@ img {
 }
 
 /* Larger screens */
-/* Section styles */
+/* Modern section styles */
 .section {
-  padding: 100px 0;
+  padding: 80px 0;
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: 2.25rem;
   margin-bottom: 2rem;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--heading);
   position: relative;
   display: inline-block;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
 }
 
 .section-title:after {
   content: '';
   position: absolute;
   left: 0;
-  bottom: -10px;
-  width: 60px;
-  height: 4px;
+  bottom: -8px;
+  width: 48px;
+  height: 3px;
   background: var(--accent);
   border-radius: 2px;
 }
