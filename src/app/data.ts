@@ -1,4 +1,4 @@
-import logo from '../../public/images/Logo.svg';
+import logo from '../../public/images/CuzethFlat.svg';
 import myWork from '../../public/images/mywork.svg';
 import pwgenImg from '../../public/images/password.svg';
 import daboiz from '../../public/images/DaBoiz.svg';

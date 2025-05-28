@@ -75,8 +75,8 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   themeColor: [
-    { color: "#0A0F16", media: "(prefers-color-scheme: dark)" },
-    { color: "#f8f9fc", media: "(prefers-color-scheme: light)" },
+    { color: "#1A1A1A", media: "(prefers-color-scheme: dark)" },
+    { color: "#FAF9F7", media: "(prefers-color-scheme: light)" },
   ],
 };
 
@@ -93,7 +93,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </div>
-        {/* <ScrollToTop /> */}
+        <ScrollToTop />
       </body>
     </html>
   );

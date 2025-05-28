@@ -2,7 +2,7 @@ import Link from 'next/link';
 // import Image from 'next/image';
 import { FaInstagram, FaYoutube, FaTwitter, FaGithub, FaGitlab, FaTwitch, FaMailBulk, FaEnvelope, FaChartLine } from 'react-icons/fa';
 import styles from './Footer.module.css';
-// import logo from '../../../public/images/Logo.svg';
+// import logo from '../../../public/images/CuzethFlat.svg';
 
 export default function Footer() {
     const socialLinks = [

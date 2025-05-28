@@ -1,6 +1,12 @@
 .dropdown-container {
-    margin: 20px;
+    margin: 1rem;
     text-align: center;
+}
+
+@media (min-width: 640px) {
+    .dropdown-container {
+        margin: 20px;
+    }
 }
 
 .button-wrapper {
@@ -12,15 +18,30 @@
 .dropdown-button {
     background-color: var(--maincolor);
     color: var(--text);
-    padding: 10px 20px;
+    padding: 0.75rem 1.25rem;
     border: 1px solid var(--color-border-light);
     cursor: pointer;
-    font-size: 18px;
-    border-radius: 5px;
+    font-size: 1rem;
+    border-radius: 8px;
     transition: background-color 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    max-width: 300px;
+    min-height: 44px;
+    touch-action: manipulation;
+}
+
+@media (min-width: 640px) {
+    .dropdown-button {
+        padding: 10px 20px;
+        font-size: 18px;
+        border-radius: 5px;
+        width: auto;
+        max-width: none;
+        min-height: auto;
+    }
 }
 
 .dropdown-button:hover {
@@ -44,8 +65,14 @@
 }
 
 .dropdown-content.show {
-    max-height: 600px; /* Set a max height for scrollable content */
-    overflow-y: auto; /* Enable vertical scrolling */
-    max-width: 1200px; /* Increase the max width */
-    margin: 0 auto; /* Center the content */
+    max-height: 5000px;
+    overflow: visible;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+    .dropdown-content.show {
+        max-width: 1200px;
+    }
 }

@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/Button/Button';
 import styles from './ModernHomepage.module.css';
-import logo from '../../../public/images/Logo.svg';
+import logo from '../../../public/images/CuzethFlat.svg';
 
 export default function ModernHomepage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -51,7 +51,7 @@ export default function ModernHomepage() {
               </div>
 
               <h1 className={`${styles.heroTitle} ${isVisible ? 'animate-slide-up' : ''}`}>
-                Hey, I'm <span className={styles.accent}>Cuzeth</span>
+                Hey, I&apos;m <span className={styles.accent}>Cuzeth</span>
               </h1>
 
               <p className={`${styles.heroSubtitle} ${isVisible ? 'animate-slide-up' : ''}`} style={{ animationDelay: '0.2s' }}>
@@ -76,7 +76,6 @@ export default function ModernHomepage() {
             <div className={`${styles.heroVisual} ${isVisible ? 'animate-float' : ''}`} style={{ animationDelay: '0.6s' }}>
               <div className={styles.logoContainer}>
                 <Image src={logo} alt="Cuzeth Logo" className={styles.logo} />
-                <div className={styles.logoGlow}></div>
               </div>
             </div>
           </div>

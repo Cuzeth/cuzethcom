@@ -33,7 +33,8 @@ export default function ScrollToTop() {
             {isVisible && (
                 <button
                     onClick={scrollToTop}
-                    className={`${styles['fixed-button']} animate-scale-in animate-on-hover`}
+                    className={styles['fixed-button']}
+                    style={{ animation: 'fadeInButton 0.3s ease-out' }}
                     aria-label="Scroll to top"
                     onMouseEnter={() => setIsHovering(true)}
                     onMouseLeave={() => setIsHovering(false)}
