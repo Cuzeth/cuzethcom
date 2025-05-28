@@ -133,6 +133,11 @@
     border: none;
 }
 
+.red:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
 .primary {
     background-color: var(--supportingcolor);
     color: var(--color-white);

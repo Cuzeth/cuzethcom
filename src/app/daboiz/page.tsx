@@ -14,9 +14,15 @@ export const metadata: Metadata = {
 export default function DaBoiz() {
     return (
         <>
-            <HeroSection {...daBoizObj} />
-            <AnimatedDropdown title="Read Terms of Use" markdownText={daBoizTOS} />
-            <AnimatedDropdown title="Read Privacy Policy" markdownText={daBoizPrivacyPolicy} />
+            <div className="animate-fade-in">
+                <HeroSection {...daBoizObj} />
+            </div>
+            <div className="animate-slide-up" style={{ animationDelay: '0.2s' }}>
+                <AnimatedDropdown title="Read Terms of Use" markdownText={daBoizTOS} />
+            </div>
+            <div className="animate-slide-up" style={{ animationDelay: '0.4s' }}>
+                <AnimatedDropdown title="Read Privacy Policy" markdownText={daBoizPrivacyPolicy} />
+            </div>
         </>
     );
 }

@@ -28,7 +28,7 @@ body.menu-open::before {
 .cuzeth {
   font-family: 'Cuzeth', sans-serif;
   font-size: 40px;
-  color: var(--text);
+  color: var(--maincolor);
 }
 
 :root {
@@ -48,6 +48,7 @@ body.menu-open::before {
   /* Unified color system - Dark theme - Gray and cream flat colors */
   --color-white: #ffffff;
   --color-black: #000000;
+  --color-cream: #E8E6DA;
   --color-gray-light: #d1d5db;
   --color-gray-medium: #9ca3af;
   --color-gray-dark: #6b7280;
@@ -84,6 +85,7 @@ body.menu-open::before {
     /* Unified color system - Light theme - Gray and cream flat colors */
     --color-white: #ffffff;
     --color-black: #000000;
+    --color-cream: #E8E6DA;
     --color-gray-light: #6b7280;
     --color-gray-medium: #9ca3af;
     --color-gray-dark: #d1d5db;
@@ -143,6 +145,44 @@ html {
 
 .animate-on-hover:hover {
   transform: translateY(-2px);
+}
+
+/* Animation utility classes */
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation-fill-mode: both;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation-fill-mode: both;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation-fill-mode: both;
+}
+
+.animate-slide-left {
+  animation: slideLeft 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation-fill-mode: both;
+}
+
+.animate-slide-right {
+  animation: slideRight 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation-fill-mode: both;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-subtle-pulse {
+  animation: subtlePulse 2s ease-in-out infinite;
 }
 
 /* Smooth focus styles */
@@ -397,8 +437,9 @@ img {
   }
 
   .container {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 16px;
+    padding-right: 16px;
+    max-width: 100%;
   }
 
   .col {
@@ -406,16 +447,52 @@ img {
     max-width: 100%;
   }
   
-  /* Improved mobile styling */
+  /* Enhanced mobile styling */
   .card {
-    padding: 1.25rem;
-    margin-bottom: 1.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 12px;
   }
   
   .btn {
-    padding: 0.5rem 1.25rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    border-radius: 8px;
+  }
+  
+  .btn-primary {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.875rem;
     width: 100%;
     margin-bottom: 0.75rem;
+  }
+  
+  /* Mobile text sizing */
+  .section-title {
+    font-size: 1.875rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Mobile spacing improvements */
+  .section {
+    padding: 50px 0;
+  }
+  
+  /* Better touch targets */
+  .nav-links {
+    min-height: 44px;
+    padding: 1rem 1.5rem;
+  }
+  
+  /* Improved mobile animations */
+  .animate-on-hover:hover {
+    transform: none;
+  }
+  
+  /* Mobile-specific focus states */
+  *:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
   }
 }
 
@@ -457,13 +534,45 @@ img {
   }
 }
 
-@media screen and (max-width: 768px) {
+/* Add extra small mobile breakpoint */
+@media screen and (max-width: 480px) {
+  .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  
   .section {
-    padding: 60px 0;
+    padding: 40px 0;
   }
   
   .section-title {
-    font-size: 2rem;
+    font-size: 1.75rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .card {
+    padding: 0.875rem;
+    margin-bottom: 0.875rem;
+  }
+  
+  .btn {
+    padding: 0.625rem 0.875rem;
+    font-size: 0.8125rem;
+  }
+  
+  .btn-primary {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.8125rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section {
+    padding: 50px 0;
+  }
+  
+  .section-title {
+    font-size: 1.875rem;
   }
 }
 
@@ -538,5 +647,43 @@ img {
   
   .github-icon {
     color: var(--color-white);
+  }
+}
+
+/* Mobile optimizations for project cards */
+@media screen and (max-width: 768px) {
+  .glass-card {
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .tech-tag {
+    font-size: 0.75rem;
+    padding: 0.375rem 0.75rem;
+  }
+  
+  .code-button {
+    padding: 0.625rem 1rem;
+    font-size: 0.875rem;
+    border-radius: 6px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .glass-card {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .tech-tag {
+    font-size: 0.6875rem;
+    padding: 0.25rem 0.625rem;
+  }
+  
+  .code-button {
+    padding: 0.5rem 0.875rem;
+    font-size: 0.8125rem;
+    width: 100%;
+    margin-bottom: 0.5rem;
   }
 }

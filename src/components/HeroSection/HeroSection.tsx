@@ -27,33 +27,41 @@ export default function HeroSection(data: HeroData) {
                     >
                         <div className={styles.col}>
                             <div className={styles['home__hero-text-wrapper']}>
-                                {data.topLine && <div className={styles['top-line']}>{data.topLine}</div>}
+                                {data.topLine && (
+                                    <div className={`${styles['top-line']} animate-slide-down`}>
+                                        {data.topLine}
+                                    </div>
+                                )}
                                 {data.headline && (
-                                    <h1 className={data.lightText ? styles.heading : `${styles.heading} ${styles.dark}`}>
+                                    <h1 className={`${data.lightText ? styles.heading : `${styles.heading} ${styles.dark}`} animate-slide-up`} style={{ animationDelay: '0.2s' }}>
                                         {renderHeadline(data.headline)}
                                     </h1>
                                 )}
                                 {data.description && (
-                                    <p className={data.lightTextDesc ? styles['home__hero-subtitle'] : `${styles['home__hero-subtitle']} ${styles.dark}`}>
+                                    <p className={`${data.lightTextDesc ? styles['home__hero-subtitle'] : `${styles['home__hero-subtitle']} ${styles.dark}`} animate-slide-up`} style={{ animationDelay: '0.4s' }}>
                                         {data.description}
                                     </p>
                                 )}
                                 {data.sendTo ? (
-                                    <a href={data.sendTo}>
-                                        <Button buttonSize="btn--wide" buttonColor="blue">
-                                            {data.buttonLabel}
-                                        </Button>
-                                    </a>
+                                    <div className="animate-slide-up" style={{ animationDelay: '0.6s' }}>
+                                        <a href={data.sendTo}>
+                                            <Button buttonSize="btn--wide" buttonColor="red" className="animate-on-hover">
+                                                {data.buttonLabel}
+                                            </Button>
+                                        </a>
+                                    </div>
                                 ) : data.buttonLabel ? (
-                                    <Link href={data.linkTo}>
-                                        <Button buttonSize="btn--wide" buttonColor="blue">
-                                            {data.buttonLabel}
-                                        </Button>
-                                    </Link>
+                                    <div className="animate-slide-up" style={{ animationDelay: '0.6s' }}>
+                                        <Link href={data.linkTo}>
+                                            <Button buttonSize="btn--wide" buttonColor="red" className="animate-on-hover">
+                                                {data.buttonLabel}
+                                            </Button>
+                                        </Link>
+                                    </div>
                                 ) : null}
                             </div>
                         </div>
-                        <div className={styles.col}>
+                        <div className={`${styles.col} animate-slide-left`} style={{ animationDelay: '0.3s' }}>
                             <div className={styles['home__hero-img-wrapper']}>
                                 {data.videoURL ? (
                                     <iframe
@@ -64,9 +72,10 @@ export default function HeroSection(data: HeroData) {
                                         frameBorder="0"
                                         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                         allowFullScreen
+                                        className="animate-on-hover"
                                     ></iframe>
                                 ) : (
-                                    data.img && <Image src={data.img} alt={data.alt} className={styles['home__hero-img']} />
+                                    data.img && <Image src={data.img} alt={data.alt} className={`${styles['home__hero-img']} animate-float animate-on-hover`} />
                                 )}
                             </div>
                         </div>

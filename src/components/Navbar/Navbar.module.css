@@ -7,17 +7,14 @@
     justify-content: center;
     align-items: center;
     font-size: 1.1rem;
-    position: sticky;
-    top: 0;
+    position: static;
     z-index: 999;
-    border-bottom: 1px solid var(--color-border-light);
     transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 @media (prefers-color-scheme: light) {
     .navbar {
         background: var(--navbar-glass);
-        border-bottom: 1px solid var(--color-border-light);
     }
 }
 
@@ -36,6 +33,20 @@
     margin-left: auto;
     padding-right: 50px;
     padding-left: 50px;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding-right: 12px;
+        padding-left: 12px;
+    }
 }
 
 .navbar-logo {
@@ -126,7 +137,7 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        height: 100%; /* Use a better height approach */
+        height: auto;
         max-height: calc(100vh - 80px);
         position: absolute;
         top: 80px;
@@ -134,7 +145,10 @@
         opacity: 0;
         transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
         pointer-events: none;
-        padding-bottom: env(safe-area-inset-bottom, 20px); /* iOS safe area support */
+        padding: 1rem 0;
+        padding-bottom: calc(env(safe-area-inset-bottom, 20px) + 1rem);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
     .nav-menu.active {
@@ -165,13 +179,17 @@
 
     .nav-links {
         text-align: center;
-        padding: 1.5rem;
+        padding: 1rem 1.5rem;
         width: 100%;
         display: flex;
         justify-content: center;
+        align-items: center;
         font-weight: 600;
         letter-spacing: 0.05em;
         transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+        min-height: 48px;
+        border-radius: 12px;
+        margin: 0.25rem 1rem;
     }
 
     .nav-links:hover {
@@ -196,9 +214,9 @@
     }
 
     .nav-item {
-        width: 100%;
+        width: calc(100% - 2rem);
         height: auto;
-        margin: 8px 0;
+        margin: 0.25rem 0;
         transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
@@ -212,21 +230,27 @@
 
     .navbar-logo {
         position: relative;
-        margin-left: 10px;
+        margin-left: 0;
         transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+        font-size: 1.75rem;
     }
 
     .menu-icon {
         display: block;
         position: relative;
-        margin-right: 10px;
+        margin-right: 0;
         font-size: 1.5rem;
         cursor: pointer;
-        padding: 8px;
-        border-radius: 50%;
+        padding: 0.75rem;
+        border-radius: 12px;
         transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
         background: var(--color-overlay-light);
         border: 1px solid var(--color-border-light);
+        min-width: 48px;
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .menu-icon:hover {

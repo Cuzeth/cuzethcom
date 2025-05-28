@@ -18,8 +18,10 @@ export const metadata: Metadata = {
 export default function About() {
     return (
         <>
-            <HeroSection {...aboutObj} />
-            <div className="glass-card mx-auto max-w-3xl my-12 p-8">
+            <div className="animate-fade-in">
+                <HeroSection {...aboutObj} />
+            </div>
+            <div className="glass-card mx-auto max-w-3xl my-12 p-8 animate-slide-up animate-on-hover" style={{ animationDelay: '0.3s' }}>
                 <CenteredTextSection markdownText={skillsAndInterests} />
             </div>
         </>

@@ -14,8 +14,12 @@ export const metadata: Metadata = {
 export default function MyWork() {
     return (
         <>
-            <HeroSection {...myworkObjOne} />
-            <Projects projects={projectsData} />
+            <div className="animate-fade-in">
+                <HeroSection {...myworkObjOne} />
+            </div>
+            <div className="animate-slide-up" style={{ animationDelay: '0.2s' }}>
+                <Projects projects={projectsData} />
+            </div>
         </>
     );
 };

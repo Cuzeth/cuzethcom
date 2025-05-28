@@ -41,14 +41,14 @@ export default function Navbar() {
 
     return (
         <IconContext.Provider value={{ color: 'var(--text)' }}>
-            <div className={styles.navbar}>
+            <div className={`${styles.navbar} animate-slide-down`}>
                 <div className={`${styles['navbar-container']} ${styles.container}`}>
-                    <Link href="/" className={styles['navbar-logo']} onClick={closeMobileMenu}>
-                        <Image src={logo} alt="Cuzeth" height={50} />
+                    <Link href="/" className={`${styles['navbar-logo']} animate-on-hover`} onClick={closeMobileMenu}>
+                        <Image src={logo} alt="Cuzeth" height={50} className="animate-subtle-pulse" />
                         {/* <h1 className="cuzeth">C</h1> */}
                     </Link>
                     <div
-                        className={styles['menu-icon']}
+                        className={`${styles['menu-icon']} animate-on-hover`}
                         onClick={handleClick}
                         aria-expanded={click}
                         aria-controls="nav-menu"
@@ -56,23 +56,23 @@ export default function Navbar() {
                         {click ? <FaTimes /> : <FaBars />}
                     </div>
                     <ul className={click ? `${styles['nav-menu']} ${styles.active}` : styles['nav-menu']}>
-                        <li className={styles['nav-item']}>
-                            <Link href="/" className={styles['nav-links']} onClick={closeMobileMenu}>
+                        <li className={`${styles['nav-item']} animate-fade-in`} style={{ animationDelay: '0.1s' }}>
+                            <Link href="/" className={`${styles['nav-links']} animate-on-hover`} onClick={closeMobileMenu}>
                                 Home
                             </Link>
                         </li>
-                        <li className={styles['nav-item']}>
-                            <Link href="/mywork" className={styles['nav-links']} onClick={closeMobileMenu}>
+                        <li className={`${styles['nav-item']} animate-fade-in`} style={{ animationDelay: '0.2s' }}>
+                            <Link href="/mywork" className={`${styles['nav-links']} animate-on-hover`} onClick={closeMobileMenu}>
                                 My Work
                             </Link>
                         </li>
-                        <li className={styles['nav-item']}>
-                            <Link href="/daboiz" className={styles['nav-links']} onClick={closeMobileMenu}>
+                        <li className={`${styles['nav-item']} animate-fade-in`} style={{ animationDelay: '0.3s' }}>
+                            <Link href="/daboiz" className={`${styles['nav-links']} animate-on-hover`} onClick={closeMobileMenu}>
                                 Da Boiz
                             </Link>
                         </li>
-                        <li className={styles['nav-item']}>
-                            <Link href="/about" className={styles['nav-links']} onClick={closeMobileMenu}>
+                        <li className={`${styles['nav-item']} animate-fade-in`} style={{ animationDelay: '0.4s' }}>
+                            <Link href="/about" className={`${styles['nav-links']} animate-on-hover`} onClick={closeMobileMenu}>
                                 About Me
                             </Link>
                         </li>

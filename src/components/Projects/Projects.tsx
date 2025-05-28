@@ -28,19 +28,27 @@ export default function Projects({ projects }: ProjectsProps) {
   return (
     <section className="py-16">
       <div className="container">
-        <div className={`transition-all duration-700 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+        <h2 className="text-4xl font-bold text-center mb-12 animate-slide-up" style={{ color: 'var(--heading)' }}>
+          My Projects
+        </h2>
+        <div className="space-y-8">
           {projects.map((project, index) => (
-            <ProjectCard
+            <div
               key={project.id}
-              title={project.title}
-              description={project.description}
-              image={project.image}
-              technologies={project.technologies}
-              liveLink={project.liveLink}
-              repoLink={project.repoLink}
-              reverse={index % 2 === 1}
-              index={index + 1}
-            />
+              className={`animate-scale-in animate-on-hover`}
+              style={{ animationDelay: `${0.2 + index * 0.2}s` }}
+            >
+              <ProjectCard
+                title={project.title}
+                description={project.description}
+                image={project.image}
+                technologies={project.technologies}
+                liveLink={project.liveLink}
+                repoLink={project.repoLink}
+                reverse={index % 2 === 1}
+                index={index + 1}
+              />
+            </div>
           ))}
         </div>
       </div>

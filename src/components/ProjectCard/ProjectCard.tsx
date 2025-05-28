@@ -29,7 +29,7 @@ export default function ProjectCard({
             <div className={`flex flex-col ${reverse ? 'md:flex-row-reverse' : 'md:flex-row'} gap-8 md:gap-12`}>
                 {/* Image section */}
                 <div className="w-full md:w-1/2" style={{ animationDelay: '100ms' }}>
-                    <div className="relative group overflow-hidden rounded-xl shadow-xl">
+                    <div className="relative group overflow-hidden rounded-xl">
                         <div className="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                         {image && (
@@ -49,7 +49,7 @@ export default function ProjectCard({
                                     href={liveLink}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="bg-accent hover:bg-accent-hover text-white p-3 rounded-full shadow-lg transform transition-transform duration-300 hover:scale-110"
+                                    className="bg-accent hover:bg-accent-hover text-white p-3 rounded-full transform transition-transform duration-300 hover:scale-110"
                                     aria-label={`Visit ${title}`}
                                 >
                                     <FaExternalLinkAlt size={18} />
@@ -61,7 +61,7 @@ export default function ProjectCard({
                                     href={repoLink}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="github-icon bg-supportingcolor hover:bg-maincolor p-3 rounded-full shadow-lg transform transition-transform duration-300 hover:scale-110"
+                                    className="github-icon bg-supportingcolor hover:bg-maincolor p-3 rounded-full transform transition-transform duration-300 hover:scale-110"
                                     aria-label={`${title} repository`}
                                 >
                                     <FaGithub size={18} />

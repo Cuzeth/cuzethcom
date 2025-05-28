@@ -23,6 +23,7 @@ const config: Config = {
         // Unified color system
         white: 'var(--color-white)',
         black: 'var(--color-black)',
+        cream: 'var(--color-cream)',
         gray: {
           light: 'var(--color-gray-light)',
           medium: 'var(--color-gray-medium)',

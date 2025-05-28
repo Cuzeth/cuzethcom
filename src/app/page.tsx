@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
-import HeroSection from '@/components/HeroSection/HeroSection';
-import { homeObjOne } from './data';
+import ModernHomepage from '@/components/ModernHomepage/ModernHomepage';
 
 export const metadata: Metadata = {
   title: 'Cuzeth',
@@ -9,7 +8,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <HeroSection {...homeObjOne} />
+      <ModernHomepage />
     </>
   );
 }
