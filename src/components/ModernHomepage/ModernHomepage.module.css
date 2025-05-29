@@ -45,7 +45,7 @@
 
 @media (min-width: 1024px) {
   .hero {
-    padding: 120px 0 80px;
+    padding: 7.5rem 0 5rem;
   }
 }
 
@@ -312,7 +312,7 @@
 
 @media (min-width: 1024px) {
   .features {
-    padding: 80px 0;
+    padding: 5rem 0;
   }
 }
 
@@ -479,7 +479,7 @@
 
 @media (min-width: 1024px) {
   .quickLinks {
-    padding: 80px 0;
+    padding: 5rem 0;
   }
 }
 
@@ -605,7 +605,7 @@
 
 @media (min-width: 1024px) {
   .cta {
-    padding: 80px 0;
+    padding: 5rem 0;
   }
 }
 

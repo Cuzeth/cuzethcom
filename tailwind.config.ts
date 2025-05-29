@@ -47,10 +47,7 @@ const config: Config = {
         scroll: {
           button: 'var(--color-scroll-button)',
           'button-hover': 'var(--color-scroll-button-hover)',
-        },
-        blur: {
-          backdrop: 'var(--color-blur-backdrop)',
-        },
+        }
       },
       fontFamily: {
         sans: ['Junicode', 'Georgia', 'Times New Roman', 'serif'],
@@ -171,10 +168,7 @@ const config: Config = {
             transform: 'translateY(-6px)',
           },
         },
-      },
-      backdropBlur: {
-        xs: '2px',
-      },
+      }
     },
   },
   plugins: [],

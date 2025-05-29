@@ -21,7 +21,7 @@
   /* Default dark theme - Modern flat colors with gray and cream */
   color-scheme: dark;
   /* Dark theme colors */
-  --maincolor: #1f1f1f;
+  --maincolor: #1a1a1a;
   --supportingcolor: #2a2a2a;
   --text: #e4e3d7;
   --heading: #F2F0E3;
@@ -37,7 +37,6 @@
   --color-gray-light: #d1d5db;
   --color-gray-medium: #9ca3af;
   --color-gray-dark: #6b7280;
-  --color-blur-backdrop: rgba(26, 26, 26, 0.85);
   --color-border-light: rgba(245, 241, 232, 0.1);
   --color-border-medium: rgba(245, 241, 232, 0.15);
   --color-overlay-light: rgba(245, 241, 232, 0.05);
@@ -73,7 +72,6 @@
     --color-gray-light: #6b7280;
     --color-gray-medium: #9ca3af;
     --color-gray-dark: #d1d5db;
-    --color-blur-backdrop: rgba(250, 249, 247, 0.85);
     --color-border-light: rgba(55, 65, 81, 0.1);
     --color-border-medium: rgba(55, 65, 81, 0.15);
     --color-overlay-light: rgba(55, 65, 81, 0.05);
@@ -347,6 +345,20 @@ small {
 .btn-primary {
   background: var(--accent);
   color: white;
+  padding: 0.875rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.025em;
+  min-height: 44px;
+  width: 100%;
+  touch-action: manipulation;
 }
 
 .btn-primary:hover {

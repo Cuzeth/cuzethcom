@@ -62,7 +62,6 @@
 @media (prefers-color-scheme: light) {
     .btn--outline {
         color: var(--heading);
-        border: 1px solid var(--color-border-dark);
     }
 }
 
@@ -92,16 +91,10 @@
 
 .btn--mobile {
     text-align: center;
-    border-radius: 8px;
-    width: 100%;
     text-decoration: none;
-    font-size: 1rem;
     background-color: transparent;
     color: var(--color-white);
-    padding: 0.875rem 1.25rem;
     border: 1px solid var(--color-border-dark);
-    min-height: 44px;
-    touch-action: manipulation;
 }
 
 @media (min-width: 640px) {
@@ -117,7 +110,6 @@
 @media (prefers-color-scheme: light) {
     .btn--mobile {
         color: var(--heading);
-        border: 1px solid var(--color-border-dark);
     }
 }
 
@@ -151,20 +143,6 @@
 }
 
 /* Touch device interactions */
-@media (pointer: coarse) {
-    .btn--large:hover,
-    .btn--medium:hover,
-    .btn--mobile:hover {
-        transform: none;
-    }
-    
-    .btn--large:active,
-    .btn--medium:active,
-    .btn--mobile:active {
-        transform: scale(0.98);
-        background: var(--color-overlay-medium);
-    }
-}
 
 @media (prefers-color-scheme: light) {
     .btn--large:hover,
@@ -186,15 +164,6 @@
     }
 }
 
-@media (pointer: coarse) {
-    .btn--wide:hover {
-        transform: none;
-    }
-    
-    .btn--wide:active {
-        transform: scale(0.98);
-    }
-}
 
 .btn-link {
     display: flex;
@@ -228,15 +197,6 @@
     }
 }
 
-@media (pointer: coarse) {
-    .red:hover {
-        transform: none;
-    }
-    
-    .red:active {
-        transform: scale(0.98);
-    }
-}
 
 .primary {
     background-color: var(--supportingcolor);
@@ -255,21 +215,10 @@
     }
 }
 
-@media (pointer: coarse) {
-    .primary:hover {
-        transform: none;
-    }
-    
-    .primary:active {
-        transform: scale(0.98);
-    }
-}
 
 @media (prefers-color-scheme: light) {
     .primary {
-        background-color: var(--supportingcolor);
         color: var(--heading);
-        border: 1px solid var(--color-border-medium);
     }
     
     .primary:hover {
@@ -294,9 +243,31 @@
     }
 }
 
+/* Touch device interactions */
 @media (pointer: coarse) {
+    .btn--large:hover,
+    .btn--medium:hover,
+    .btn--mobile:hover,
+    .btn--wide:hover,
+    .red:hover,
+    .primary:hover {
+        transform: none;
+    }
+    
+    .btn--large:active,
+    .btn--medium:active,
+    .btn--mobile:active,
+    .btn--wide:active,
+    .red:active,
+    .primary:active,
     .green:active {
         transform: scale(0.98);
+    }
+    
+    .btn--large:active,
+    .btn--medium:active,
+    .btn--mobile:active {
+        background: var(--color-overlay-medium);
     }
 }
 
