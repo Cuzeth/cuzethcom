@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { Button } from '@/components/Button/Button';
 import styles from './ModernHomepage.module.css';
 import logo from '../../../public/images/CuzethFlat.svg';
+import { HiOutlineCommandLine, HiOutlineSparkles, HiOutlineBookOpen } from "react-icons/hi2";
 
 export default function ModernHomepage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -17,17 +18,17 @@ export default function ModernHomepage() {
     {
       title: "Developer",
       description: "Building modern web applications with cutting-edge technologies",
-      icon: "💻"
+      icon: <HiOutlineCommandLine />
     },
     {
       title: "Creator",
       description: "Crafting digital experiences that make a difference",
-      icon: "✨"
+      icon: <HiOutlineSparkles />
     },
     {
       title: "Student",
       description: "Always learning and exploring new possibilities in tech",
-      icon: "📚"
+      icon: <HiOutlineBookOpen />
     }
   ];
 
@@ -45,10 +46,10 @@ export default function ModernHomepage() {
         <div className={styles.container}>
           <div className={styles.heroContent}>
             <div className={styles.heroText}>
-              <div className={`${styles.badge} animate-fade-in`}>
-                <span>👋</span>
+              {/* <div className={`${styles.badge} animate-fade-in`}>
+                <span><FaHandPeace /></span>
                 <span>Welcome to my portfolio</span>
-              </div>
+              </div> */}
 
               <h1 className={`${styles.heroTitle} ${isVisible ? 'animate-slide-up' : ''}`}>
                 Hey, I&apos;m <span className={styles.accent}>Cuzeth</span>
