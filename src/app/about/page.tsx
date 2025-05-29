@@ -1,7 +1,6 @@
 import { aboutObj, skillsAndInterests } from '../data';
 import { Metadata } from 'next';
-import HeroSection from '@/components/HeroSection/HeroSection';
-import CenteredTextSection from '@/components/CenteredTextSection/CenteredTextSection';
+import AboutContent from './AboutContent';
 
 export const metadata: Metadata = {
     title: 'About Me',
@@ -16,14 +15,5 @@ export const metadata: Metadata = {
 };
 
 export default function About() {
-    return (
-        <>
-            <div className="animate-fade-in">
-                <HeroSection {...aboutObj} />
-            </div>
-            <div className="card mx-auto max-w-3xl my-12 p-8 animate-slide-up animate-on-hover" style={{ animationDelay: '0.3s' }}>
-                <CenteredTextSection markdownText={skillsAndInterests} />
-            </div>
-        </>
-    );
+    return <AboutContent aboutObj={aboutObj} skillsAndInterests={skillsAndInterests} />;
 }

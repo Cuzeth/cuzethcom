@@ -1,18 +1,17 @@
 'use client';
-import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/Button/Button';
+import { useInView, useInViewMultiple } from '@/hooks/useInView';
 import styles from './ModernHomepage.module.css';
 import logo from '../../../public/images/CuzethFlat.svg';
 import { HiOutlineCommandLine, HiOutlineSparkles, HiOutlineBookOpen } from "react-icons/hi2";
 
 export default function ModernHomepage() {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
+  // Individual section observers
+  const heroSection = useInView({ threshold: 0.2 });
+  const featuresSection = useInView({ threshold: 0.1 });
+  const projectsSection = useInView({ threshold: 0.1 });
 
   const features = [
     {
@@ -42,25 +41,20 @@ export default function ModernHomepage() {
   return (
     <div className={styles.homepage}>
       {/* Hero Section */}
-      <section className={styles.hero}>
+      <section className={styles.hero} ref={heroSection.ref}>
         <div className={styles.container}>
           <div className={styles.heroContent}>
             <div className={styles.heroText}>
-              {/* <div className={`${styles.badge} animate-fade-in`}>
-                <span><FaHandPeace /></span>
-                <span>Welcome to my portfolio</span>
-              </div> */}
-
-              <h1 className={`${styles.heroTitle} ${isVisible ? 'animate-slide-up' : ''}`}>
+              <h1 className={`${styles.heroTitle} ${heroSection.isInView ? 'animate-slide-up' : ''}`}>
                 Hey, I&apos;m <span className={styles.accent}>Cuzeth</span>
               </h1>
 
-              <p className={`${styles.heroSubtitle} ${isVisible ? 'animate-slide-up' : ''}`} style={{ animationDelay: '0.2s' }}>
+              <p className={`${styles.heroSubtitle} ${heroSection.isInView ? 'animate-slide-up' : ''}`} style={{ animationDelay: '0.2s' }}>
                 A passionate developer creating modern digital experiences with clean,
                 efficient code and thoughtful design.
               </p>
 
-              <div className={`${styles.heroActions} ${isVisible ? 'animate-slide-up' : ''}`} style={{ animationDelay: '0.4s' }}>
+              <div className={`${styles.heroActions} ${heroSection.isInView ? 'animate-slide-up' : ''}`} style={{ animationDelay: '0.4s' }}>
                 <Link href="/mywork">
                   <Button buttonSize="btn--large" buttonColor="red" className="animate-on-hover">
                     View My Work
@@ -74,7 +68,7 @@ export default function ModernHomepage() {
               </div>
             </div>
 
-            <div className={`${styles.heroVisual} ${isVisible ? 'animate-float' : ''}`} style={{ animationDelay: '0.6s' }}>
+            <div className={`${styles.heroVisual} ${heroSection.isInView ? 'animate-float' : ''}`} style={{ animationDelay: '0.6s' }}>
               <div className={styles.logoContainer}>
                 <Image src={logo} alt="Cuzeth Logo" className={styles.logo} />
               </div>
@@ -84,46 +78,40 @@ export default function ModernHomepage() {
       </section>
 
       {/* Features Section */}
-      <section className={styles.features}>
+      <section className={styles.features} ref={featuresSection.ref}>
         <div className={styles.container}>
-          <h2 className={`${styles.sectionTitle} ${isVisible ? 'animate-slide-up' : ''}`}>
+          <h2 className={`${styles.sectionTitle} ${featuresSection.isInView ? 'animate-slide-up' : ''}`}>
             What I Do
           </h2>
 
           <div className={styles.featuresGrid}>
             {features.map((feature, index) => (
-              <div
+              <FeatureCard
                 key={feature.title}
-                className={`${styles.featureCard} ${isVisible ? 'animate-scale-in' : ''} animate-on-hover`}
-                style={{ animationDelay: `${0.8 + index * 0.2}s` }}
-              >
-                <div className={styles.featureIcon}>{feature.icon}</div>
-                <h3 className={styles.featureTitle}>{feature.title}</h3>
-                <p className={styles.featureDescription}>{feature.description}</p>
-              </div>
+                feature={feature}
+                index={index}
+                featuresInView={featuresSection.isInView}
+              />
             ))}
           </div>
         </div>
       </section>
 
       {/* Quick Links Section */}
-      <section className={styles.quickLinks}>
+      <section className={styles.quickLinks} ref={projectsSection.ref}>
         <div className={styles.container}>
-          <h2 className={`${styles.sectionTitle} ${isVisible ? 'animate-slide-up' : ''}`}>
+          <h2 className={`${styles.sectionTitle} ${projectsSection.isInView ? 'animate-slide-up' : ''}`}>
             Explore My Projects
           </h2>
 
           <div className={styles.projectsGrid}>
             {projects.map((project, index) => (
-              <Link
+              <ProjectLink
                 key={project.name}
-                href={project.link}
-                className={`${styles.projectLink} ${isVisible ? 'animate-slide-left' : ''} animate-on-hover`}
-                style={{ animationDelay: project.delay }}
-              >
-                <span className={styles.projectName}>{project.name}</span>
-                <span className={styles.projectArrow}>→</span>
-              </Link>
+                project={project}
+                index={index}
+                projectsInView={projectsSection.isInView}
+              />
             ))}
           </div>
         </div>
@@ -148,5 +136,45 @@ export default function ModernHomepage() {
         </div>
       </section> */}
     </div>
+  );
+}
+
+function FeatureCard({ feature, index, featuresInView }: { 
+  feature: { title: string; description: string; icon: React.ReactNode }; 
+  index: number; 
+  featuresInView: boolean;
+}) {
+  const cardRef = useInView({ threshold: 0.1 });
+  
+  return (
+    <div
+      ref={cardRef.ref}
+      className={`${styles.featureCard} ${cardRef.isInView ? 'animate-scale-in' : ''} animate-on-hover`}
+      style={{ animationDelay: cardRef.isInView ? `${index * 0.2}s` : '0s' }}
+    >
+      <div className={styles.featureIcon}>{feature.icon}</div>
+      <h3 className={styles.featureTitle}>{feature.title}</h3>
+      <p className={styles.featureDescription}>{feature.description}</p>
+    </div>
+  );
+}
+
+function ProjectLink({ project, index, projectsInView }: { 
+  project: { name: string; link: string; delay: string }; 
+  index: number; 
+  projectsInView: boolean;
+}) {
+  const linkRef = useInView<HTMLAnchorElement>({ threshold: 0.1 });
+  
+  return (
+    <Link
+      ref={linkRef.ref}
+      href={project.link}
+      className={`${styles.projectLink} ${linkRef.isInView ? 'animate-slide-left' : ''} animate-on-hover`}
+      style={{ animationDelay: linkRef.isInView ? `${index * 0.1}s` : '0s' }}
+    >
+      <span className={styles.projectName}>{project.name}</span>
+      <span className={styles.projectArrow}>→</span>
+    </Link>
   );
 }

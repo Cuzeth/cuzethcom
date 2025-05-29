@@ -1,10 +1,14 @@
+'use client';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/Button/Button';
+import { useInView } from '@/hooks/useInView';
 import styles from './HeroSection.module.css';
 import { HeroData } from '@/app/data';
 
 export default function HeroSection(data: HeroData) {
+    const heroSection = useInView({ threshold: 0.3 });
+    
     const renderHeadline = (headline: string | any[]) => {
         if (typeof headline === 'string') {
             return headline;
@@ -16,7 +20,10 @@ export default function HeroSection(data: HeroData) {
 
     return (
         <>
-            <div className={data.lightBg ? styles['home__hero-section'] : `${styles['home__hero-section']} ${styles.darkBg}`}>
+            <div 
+                ref={heroSection.ref}
+                className={data.lightBg ? styles['home__hero-section'] : `${styles['home__hero-section']} ${styles.darkBg}`}
+            >
                 <div className="container">
                     <div
                         className={`${styles.row} ${styles['home__hero-row']}`}
@@ -28,22 +35,22 @@ export default function HeroSection(data: HeroData) {
                         <div className={styles.col}>
                             <div className={styles['home__hero-text-wrapper']}>
                                 {data.topLine && (
-                                    <div className={`${styles['top-line']} animate-slide-down`}>
+                                    <div className={`${styles['top-line']} ${heroSection.isInView ? 'animate-slide-down' : ''}`}>
                                         {data.topLine}
                                     </div>
                                 )}
                                 {data.headline && (
-                                    <h1 className={`${data.lightText ? styles.heading : `${styles.heading} ${styles.dark}`} animate-slide-up`} style={{ animationDelay: '0.2s' }}>
+                                    <h1 className={`${data.lightText ? styles.heading : `${styles.heading} ${styles.dark}`} ${heroSection.isInView ? 'animate-slide-up' : ''}`} style={{ animationDelay: '0.2s' }}>
                                         {renderHeadline(data.headline)}
                                     </h1>
                                 )}
                                 {data.description && (
-                                    <p className={`${data.lightTextDesc ? styles['home__hero-subtitle'] : `${styles['home__hero-subtitle']} ${styles.dark}`} animate-slide-up`} style={{ animationDelay: '0.4s' }}>
+                                    <p className={`${data.lightTextDesc ? styles['home__hero-subtitle'] : `${styles['home__hero-subtitle']} ${styles.dark}`} ${heroSection.isInView ? 'animate-slide-up' : ''}`} style={{ animationDelay: '0.4s' }}>
                                         {data.description}
                                     </p>
                                 )}
                                 {data.sendTo ? (
-                                    <div className="animate-slide-up" style={{ animationDelay: '0.6s' }}>
+                                    <div className={heroSection.isInView ? 'animate-slide-up' : ''} style={{ animationDelay: '0.6s' }}>
                                         <a href={data.sendTo}>
                                             <Button buttonSize="btn--wide" buttonColor="red" className="animate-on-hover">
                                                 {data.buttonLabel}
@@ -51,7 +58,7 @@ export default function HeroSection(data: HeroData) {
                                         </a>
                                     </div>
                                 ) : data.buttonLabel ? (
-                                    <div className="animate-slide-up" style={{ animationDelay: '0.6s' }}>
+                                    <div className={heroSection.isInView ? 'animate-slide-up' : ''} style={{ animationDelay: '0.6s' }}>
                                         <Link href={data.linkTo}>
                                             <Button buttonSize="btn--wide" buttonColor="red" className="animate-on-hover">
                                                 {data.buttonLabel}
@@ -61,7 +68,7 @@ export default function HeroSection(data: HeroData) {
                                 ) : null}
                             </div>
                         </div>
-                        <div className={`${styles.col} animate-slide-left`} style={{ animationDelay: '0.3s' }}>
+                        <div className={`${styles.col} ${heroSection.isInView ? 'animate-slide-left' : ''}`} style={{ animationDelay: '0.3s' }}>
                             <div className={styles['home__hero-img-wrapper']}>
                                 {data.videoURL ? (
                                     <iframe
@@ -75,7 +82,7 @@ export default function HeroSection(data: HeroData) {
                                         className="animate-on-hover"
                                     ></iframe>
                                 ) : (
-                                    data.img && <Image src={data.img} alt={data.alt} className={`${styles['home__hero-img']} animate-float animate-on-hover`} />
+                                    data.img && <Image src={data.img} alt={data.alt} className={`${styles['home__hero-img']} ${heroSection.isInView ? 'animate-float' : ''} animate-on-hover`} />
                                 )}
                             </div>
                         </div>

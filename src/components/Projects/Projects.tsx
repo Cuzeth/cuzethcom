@@ -1,7 +1,7 @@
 "use client"
 
 import ProjectCard from '../ProjectCard/ProjectCard';
-import { useState, useEffect } from 'react';
+import { useInView, useInViewMultiple } from '@/hooks/useInView';
 
 // Define the Project interface
 export interface Project {
@@ -19,39 +19,52 @@ interface ProjectsProps {
 }
 
 export default function Projects({ projects }: ProjectsProps) {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
+  const titleSection = useInView({ threshold: 0.2 });
 
   return (
     <section className="py-16">
       <div className="container">
-        <h2 className="text-4xl font-bold text-center mb-12 animate-slide-up" style={{ color: 'var(--heading)' }}>
+        <h2 
+          ref={titleSection.ref}
+          className={`text-4xl font-bold text-center mb-12 ${titleSection.isInView ? 'animate-slide-up' : ''}`} 
+          style={{ color: 'var(--heading)' }}
+        >
           My Projects
         </h2>
         <div className="space-y-8">
           {projects.map((project, index) => (
-            <div
+            <ProjectWrapper
               key={project.id}
-              className={`animate-scale-in animate-on-hover`}
-              style={{ animationDelay: `${0.2 + index * 0.2}s` }}
-            >
-              <ProjectCard
-                title={project.title}
-                description={project.description}
-                image={project.image}
-                technologies={project.technologies}
-                liveLink={project.liveLink}
-                repoLink={project.repoLink}
-                reverse={index % 2 === 1}
-                index={index + 1}
-              />
-            </div>
+              project={project}
+              index={index}
+              reverse={index % 2 === 1}
+            />
           ))}
         </div>
       </div>
     </section>
+  );
+}
+
+function ProjectWrapper({ project, index, reverse }: { project: Project; index: number; reverse: boolean }) {
+  const projectRef = useInView({ threshold: 0.1 });
+  
+  return (
+    <div
+      ref={projectRef.ref}
+      className={`${projectRef.isInView ? 'animate-scale-in' : ''} animate-on-hover`}
+      style={{ animationDelay: projectRef.isInView ? `${index * 0.1}s` : '0s' }}
+    >
+      <ProjectCard
+        title={project.title}
+        description={project.description}
+        image={project.image}
+        technologies={project.technologies}
+        liveLink={project.liveLink}
+        repoLink={project.repoLink}
+        reverse={reverse}
+        index={index + 1}
+      />
+    </div>
   );
 }
