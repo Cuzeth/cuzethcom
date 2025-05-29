@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
+import { Button } from '@/components/Button/Button';
 
 interface ProjectCardProps {
     title: string;
@@ -101,9 +102,10 @@ export default function ProjectCard({
                                 href={liveLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="btn-primary"
                             >
-                                Live Demo
+                                <Button buttonSize="btn--medium" buttonColor="red">
+                                    Live Demo
+                                </Button>
                             </a>
                         )}
 
@@ -112,9 +114,10 @@ export default function ProjectCard({
                                 href={repoLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="code-button bg-transparent hover:bg-supportingcolor border px-4 py-2 rounded-md transition-colors duration-300"
                             >
-                                View Code
+                                <Button buttonColor="primary" buttonSize="btn--medium">
+                                    View Code
+                                </Button>
                             </a>
                         )}
                     </div>
