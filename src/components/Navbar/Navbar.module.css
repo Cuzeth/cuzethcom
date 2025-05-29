@@ -1,5 +1,5 @@
 .navbar {
-    background: var(--navbar-glass);
+    background: var(--maincolor);
     height: 70px;
     display: flex;
     justify-content: center;
@@ -23,7 +23,7 @@
 
 @media (prefers-color-scheme: light) {
     .navbar {
-        background: var(--navbar-glass);
+        background: var(--maincolor);
     }
 }
 
@@ -111,7 +111,7 @@
     top: 70px;
     left: 0;
     right: 0;
-    background: var(--navbar-glass);
+    background: var(--maincolor);
     border-bottom: 1px solid var(--color-border-light);
     padding: 1rem 0;
     padding-bottom: calc(env(safe-area-inset-bottom, 20px) + 1rem);

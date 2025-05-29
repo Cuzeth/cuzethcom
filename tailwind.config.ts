@@ -18,8 +18,7 @@ const config: Config = {
         'accent-hover': 'var(--accent-hover)',
         'accent-glow': 'var(--accent-glow)',
         'card-bg': 'var(--card-bg)',
-        'navbar-glass': 'var(--navbar-glass)',
-        
+
         // Unified color system
         white: 'var(--color-white)',
         black: 'var(--color-black)',

@@ -21,7 +21,7 @@
   /* Default dark theme - Modern flat colors with gray and cream */
   color-scheme: dark;
   /* Dark theme colors */
-  --maincolor: #1a1a1a;
+  --maincolor: #1f1f1f;
   --supportingcolor: #2a2a2a;
   --text: #e4e3d7;
   --heading: #F2F0E3;
@@ -29,7 +29,6 @@
   --accent: #dc2626;
   --accent-hover: #b91c1c;
   --card-bg: #262626;
-  --navbar-glass: #1a1a1a;
   
   /* Unified color system - Dark theme - Gray and cream flat colors */
   --color-white: #ffffff;
@@ -66,7 +65,6 @@
     --accent: #dc2626;
     --accent-hover: #b91c1c;
     --card-bg: #ffffff;
-    --navbar-glass: #faf9f7;
     
     /* Unified color system - Light theme - Gray and cream flat colors */
     --color-white: #ffffff;
@@ -300,9 +298,7 @@ small {
 }
 
 /* Modern flat design - Mobile first */
-.card,
-.glass,
-.glass-card {
+.card {
   background: var(--card-bg);
   border: 1px solid var(--color-border-light);
   transform: translateZ(0);
@@ -320,11 +316,11 @@ small {
   border-color: var(--color-border-medium);
 }
 
-.glass {
+.card {
   border-radius: 8px;
 }
 
-.glass-card {
+.card {
   border-radius: 16px;
   border: 1px solid var(--color-border-light);
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -332,7 +328,7 @@ small {
   margin-bottom: 1rem;
 }
 
-.glass-card:hover {
+.card:hover {
   border-color: var(--color-border-medium);
 }
 
@@ -343,7 +339,7 @@ small {
     border-radius: 8px;
   }
   
-  .glass-card {
+  .card {
     padding: 1.5rem;
     border-radius: 12px;
   }
@@ -352,7 +348,7 @@ small {
     transform: translateY(-2px);
   }
   
-  .glass-card:hover {
+  .card:hover {
     transform: translateY(-1px);
   }
 }
@@ -505,7 +501,7 @@ img {
 @media (pointer: coarse) {
   .btn,
   .card,
-  .glass-card {
+  .card {
     min-height: 44px;
     touch-action: manipulation;
   }
@@ -517,7 +513,7 @@ img {
   
   /* Remove hover effects on touch devices */
   .card:hover,
-  .glass-card:hover,
+  .card:hover,
   .btn:hover {
     transform: none;
   }
@@ -625,7 +621,7 @@ img {
     padding: 2rem;
   }
   
-  .glass-card {
+  .card {
     border-radius: 20px;
     padding: 2rem;
   }
@@ -719,7 +715,7 @@ img {
 
 /* Mobile-optimized project cards */
 @media (max-width: 768px) {
-  .glass-card {
+  .card {
     padding: 1.25rem;
     margin-bottom: 1rem;
     border-radius: 16px;
@@ -751,7 +747,7 @@ img {
 }
 
 @media (max-width: 480px) {
-  .glass-card {
+  .card {
     padding: 1rem;
     margin-bottom: 0.75rem;
   }

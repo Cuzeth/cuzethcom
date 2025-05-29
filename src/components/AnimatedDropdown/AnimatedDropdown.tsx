@@ -19,8 +19,8 @@ export default function AnimatedDropdown({ title, markdownText }: AnimatedDropdo
     return (
         <div className={`${styles['dropdown-container']} animate-fade-in`}>
             <div className={styles['button-wrapper']}>
-                <button 
-                    onClick={toggleDropdown} 
+                <button
+                    onClick={toggleDropdown}
                     className={`${styles['dropdown-button']} animate-on-hover animate-scale-in`}
                 >
                     {title}
@@ -28,7 +28,7 @@ export default function AnimatedDropdown({ title, markdownText }: AnimatedDropdo
                 </button>
             </div>
             <div className={`${styles['dropdown-content']} ${isOpen ? styles['show'] : ''}`}>
-                <div className={`glass-card mx-auto max-w-3xl my-12 p-8 animate-slide-up animate-on-hover ${isOpen ? 'animate-scale-in' : ''}`}>
+                <div className={`card mx-auto max-w-3xl my-12 p-8 animate-slide-up animate-on-hover ${isOpen ? 'animate-scale-in' : ''}`}>
                     <CenteredTextSection markdownText={markdownText} />
                 </div>
             </div>

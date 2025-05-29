@@ -80,7 +80,7 @@ export default function ProjectCard({
 
                     <h3 className="text-2xl md:text-3xl font-bold mb-4">{title}</h3>
 
-                    <div className="glass-card p-6 mb-6">
+                    <div className="card p-6 mb-6">
                         <p className="project-description">{description}</p>
                     </div>
 

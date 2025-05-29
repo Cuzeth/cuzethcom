@@ -21,7 +21,7 @@ export default function About() {
             <div className="animate-fade-in">
                 <HeroSection {...aboutObj} />
             </div>
-            <div className="glass-card mx-auto max-w-3xl my-12 p-8 animate-slide-up animate-on-hover" style={{ animationDelay: '0.3s' }}>
+            <div className="card mx-auto max-w-3xl my-12 p-8 animate-slide-up animate-on-hover" style={{ animationDelay: '0.3s' }}>
                 <CenteredTextSection markdownText={skillsAndInterests} />
             </div>
         </>
