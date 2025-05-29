@@ -33,9 +33,10 @@ export default function ModernHomepage() {
 
   const projects = [
     { name: "Password Generator", link: "/mywork", delay: "0.1s" },
-    { name: "URL Shortener", link: "/mywork", delay: "0.2s" },
-    { name: "Tetris Solver", link: "/mywork", delay: "0.3s" },
-    { name: "Da Boiz Bot", link: "/daboiz", delay: "0.4s" }
+    { name: "QR Code Generator", link: "/mywork", delay: "0.2s" },
+    { name: "URL Shortener", link: "/mywork", delay: "0.3s" },
+    { name: "Tetris Solver", link: "/mywork", delay: "0.4s" },
+    { name: "Da Boiz Bot", link: "/daboiz", delay: "0.5s" }
   ];
 
   return (
@@ -139,13 +140,13 @@ export default function ModernHomepage() {
   );
 }
 
-function FeatureCard({ feature, index, featuresInView }: { 
-  feature: { title: string; description: string; icon: React.ReactNode }; 
-  index: number; 
+function FeatureCard({ feature, index, featuresInView }: {
+  feature: { title: string; description: string; icon: React.ReactNode };
+  index: number;
   featuresInView: boolean;
 }) {
   const cardRef = useInView({ threshold: 0.1 });
-  
+
   return (
     <div
       ref={cardRef.ref}
@@ -159,13 +160,13 @@ function FeatureCard({ feature, index, featuresInView }: {
   );
 }
 
-function ProjectLink({ project, index, projectsInView }: { 
-  project: { name: string; link: string; delay: string }; 
-  index: number; 
+function ProjectLink({ project, index, projectsInView }: {
+  project: { name: string; link: string; delay: string };
+  index: number;
   projectsInView: boolean;
 }) {
   const linkRef = useInView<HTMLAnchorElement>({ threshold: 0.1 });
-  
+
   return (
     <Link
       ref={linkRef.ref}

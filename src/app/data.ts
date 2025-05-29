@@ -262,6 +262,15 @@ export const projectsData = [
     },
     {
         id: 2,
+        title: "QR Code Generator",
+        description: "A modern QR code generator with customization options and download functionality.",
+        image: shorturlImg,
+        technologies: ["Astro", "TypeScript", "PWA"],
+        liveLink: "https://qr.cuzeth.com",
+        repoLink: 'https://github.com/Cuzeth/qr-generator-pwa'
+    },
+    {
+        id: 3,
         title: "URL Shortener",
         description: "A personal URL shortener service built with Next.js and PostgreSQL.",
         image: shorturlImg,
@@ -269,7 +278,7 @@ export const projectsData = [
         repoLink: "https://github.com/Cuzeth/cuzurl"
     },
     {
-        id: 3,
+        id: 4,
         title: "Tetris Solver",
         description: "An AI-powered decision-making system that evaluates the best placement for each piece based on a scoring system.",
         image: tetris,
@@ -277,7 +286,7 @@ export const projectsData = [
         repoLink: "https://github.com/Cuzeth/tetris-solver"
     },
     {
-        id: 4,
+        id: 5,
         title: "Tailosive Gaming (DISCONTINUED)",
         description: "Previous highlights I made for Tailosive Gaming.",
         image: thumbnail,
