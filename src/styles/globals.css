@@ -301,31 +301,12 @@ small {
 .card {
   background: var(--card-bg);
   border: 1px solid var(--color-border-light);
-  transform: translateZ(0);
-  will-change: transform;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.card {
   border-radius: 12px;
   padding: 1.25rem;
   margin-bottom: 1rem;
-}
-
-.card:hover {
-  border-color: var(--color-border-medium);
-}
-
-.card {
-  border-radius: 8px;
-}
-
-.card {
-  border-radius: 16px;
-  border: 1px solid var(--color-border-light);
+  transform: translateZ(0);
+  will-change: transform;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 1.25rem;
-  margin-bottom: 1rem;
 }
 
 .card:hover {
@@ -336,20 +317,11 @@ small {
 @media (min-width: 640px) {
   .card {
     padding: 1.5rem;
-    border-radius: 8px;
-  }
-  
-  .card {
-    padding: 1.5rem;
     border-radius: 12px;
   }
   
   .card:hover {
     transform: translateY(-2px);
-  }
-  
-  .card:hover {
-    transform: translateY(-1px);
   }
 }
 
@@ -375,20 +347,6 @@ small {
 .btn-primary {
   background: var(--accent);
   color: white;
-  padding: 0.875rem 1.25rem;
-  border-radius: 8px;
-  font-weight: 500;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  border: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  font-size: 0.9rem;
-  letter-spacing: 0.025em;
-  min-height: 44px;
-  width: 100%;
-  touch-action: manipulation;
 }
 
 .btn-primary:hover {
@@ -411,9 +369,6 @@ small {
   
   .btn-primary {
     width: auto;
-    padding: 12px 24px;
-    font-size: 0.875rem;
-    border-radius: 6px;
   }
   
   .btn-primary:hover {
@@ -500,7 +455,6 @@ img {
 /* Improved touch interactions */
 @media (pointer: coarse) {
   .btn,
-  .card,
   .card {
     min-height: 44px;
     touch-action: manipulation;
@@ -512,7 +466,6 @@ img {
   }
   
   /* Remove hover effects on touch devices */
-  .card:hover,
   .card:hover,
   .btn:hover {
     transform: none;
@@ -618,11 +571,6 @@ img {
   
   .card {
     border-radius: 16px;
-    padding: 2rem;
-  }
-  
-  .card {
-    border-radius: 20px;
     padding: 2rem;
   }
 }
