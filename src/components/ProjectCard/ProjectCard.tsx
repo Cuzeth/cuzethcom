@@ -39,19 +39,40 @@ export default function ProjectCard({
     reverse = false,
     index
 }: ProjectCardProps) {
+    const generateGradient = (seed: string) => {
+        const colors = [
+            ['#dc2626', '#b91c1c'], // red theme
+            ['#F2F0E3', '#E8E6DA'], // cream theme
+            ['#2a2a2a', '#1a1a1a'], // dark gray
+            ['#374151', '#1f2937'], // medium gray
+        ];
+
+        const hash = seed.split('').reduce((a, b) => {
+            a = ((a << 5) - a) + b.charCodeAt(0);
+            return a & a;
+        }, 0);
+
+        const colorPair = colors[Math.abs(hash) % colors.length];
+        const angle = (Math.abs(hash) % 180) + 45; // 45-225 degrees
+
+        return `linear-gradient(${angle}deg, ${colorPair[0]}22, ${colorPair[1]}11)`;
+    };
     return (
         <div className="my-20 first:mt-8">
             <div className={`flex flex-col ${reverse ? 'md:flex-row-reverse' : 'md:flex-row'} gap-8 md:gap-12`}>
                 {/* Icon section */}
                 <div className="w-full md:w-1/2" style={{ animationDelay: '100ms' }}>
-                    <div className="relative group overflow-hidden rounded-xl bg-gradient-to-br from-accent/10 to-accent/5">
+                    <div
+                        className="relative group overflow-hidden rounded-xl border"
+                        style={{ background: generateGradient(title) }}
+                    >
                         <div className="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                         {image && (
                             <div className="flex items-center justify-center h-80 transition-all duration-700 group-hover:scale-105">
                                 {typeof image === 'string' && iconMap[image] ? (
                                     React.createElement(iconMap[image], {
-                                        size: 120,
+                                        size: 160,
                                         className: "text-accent group-hover:text-accent-hover transition-colors duration-300"
                                     })
                                 ) : typeof image === 'string' ? (
@@ -64,7 +85,7 @@ export default function ProjectCard({
                                     />
                                 ) : (
                                     React.createElement(image, {
-                                        size: 120,
+                                        size: 160,
                                         className: "text-accent group-hover:text-accent-hover transition-colors duration-300"
                                     })
                                 )}
