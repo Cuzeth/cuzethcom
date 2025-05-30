@@ -153,7 +153,7 @@ export default function ProjectCard({
                                 rel="noopener noreferrer"
                             >
                                 <Button buttonSize="btn--medium" buttonColor="red">
-                                    Live Demo
+                                    View Site
                                 </Button>
                             </a>
                         )}
