@@ -1,7 +1,13 @@
 "use client"
 
+import React from 'react';
 import Image from 'next/image';
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
+import { IoExtensionPuzzle } from 'react-icons/io5';
+import { SiAdobeaftereffects } from 'react-icons/si';
+import { PiPasswordFill } from 'react-icons/pi';
+import { HiQrcode } from 'react-icons/hi';
+import { FaLink } from 'react-icons/fa6';
 import { Button } from '@/components/Button/Button';
 
 interface ProjectCardProps {
@@ -14,6 +20,14 @@ interface ProjectCardProps {
     reverse?: boolean;
     index: number;
 }
+
+const iconMap: { [key: string]: React.ComponentType<{ size?: number; className?: string }> } = {
+    key: PiPasswordFill,
+    qrcode: HiQrcode,
+    link: FaLink,
+    puzzle: IoExtensionPuzzle,
+    video: SiAdobeaftereffects
+};
 
 export default function ProjectCard({
     title,
@@ -28,19 +42,33 @@ export default function ProjectCard({
     return (
         <div className="my-20 first:mt-8">
             <div className={`flex flex-col ${reverse ? 'md:flex-row-reverse' : 'md:flex-row'} gap-8 md:gap-12`}>
-                {/* Image section */}
+                {/* Icon section */}
                 <div className="w-full md:w-1/2" style={{ animationDelay: '100ms' }}>
-                    <div className="relative group overflow-hidden rounded-xl">
+                    <div className="relative group overflow-hidden rounded-xl bg-gradient-to-br from-accent/10 to-accent/5">
                         <div className="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                         {image && (
-                            <Image
-                                src={image}
-                                alt={title}
-                                width={800}
-                                height={450}
-                                className="w-full h-auto object-cover transition-all duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"
-                            />
+                            <div className="flex items-center justify-center h-80 transition-all duration-700 group-hover:scale-105">
+                                {typeof image === 'string' && iconMap[image] ? (
+                                    React.createElement(iconMap[image], {
+                                        size: 120,
+                                        className: "text-accent group-hover:text-accent-hover transition-colors duration-300"
+                                    })
+                                ) : typeof image === 'string' ? (
+                                    <Image
+                                        src={image}
+                                        alt={title}
+                                        width={800}
+                                        height={450}
+                                        className="w-full h-auto object-cover grayscale group-hover:grayscale-0"
+                                    />
+                                ) : (
+                                    React.createElement(image, {
+                                        size: 120,
+                                        className: "text-accent group-hover:text-accent-hover transition-colors duration-300"
+                                    })
+                                )}
+                            </div>
                         )}
 
                         {/* Overlay links */}

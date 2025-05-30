@@ -1,11 +1,7 @@
 import logo from '../../public/images/CuzethFlat.svg';
 import myWork from '../../public/images/mywork.svg';
-import pwgenImg from '../../public/images/password.svg';
 import daboiz from '../../public/images/DaBoiz.svg';
 import about from '../../public/images/about.png';
-import shorturlImg from '../../public/images/shorturl.svg';
-import tetris from '../../public/images/tetris-solver.svg';
-import thumbnail from '../../public/images/youtube-thumbnail.png';
 
 // Template
 export interface HeroData {
@@ -61,7 +57,7 @@ export const passwordGen: HeroData = {
     buttonLabel: 'TRY OUT',
     sendTo: 'https://pwgen.cuzeth.com',
     imgStart: true,
-    img: pwgenImg,
+    img: 'key',
     alt: 'Memorable Password Generator'
 };
 
@@ -74,7 +70,7 @@ export const shortURL: HeroData = {
     buttonLabel: 'CODE',
     sendTo: 'https://github.com/Cuzeth/cuzurl',
     // imgStart: true,
-    img: shorturlImg,
+    img: 'link',
     alt: 'URL Shortener GitHub'
 };
 
@@ -255,7 +251,7 @@ export const projectsData = [
         id: 1,
         title: "Memorable Password Generator",
         description: "A web app that generates memorable and secure passwords. Built with Flask and styled-components for a modern UI.",
-        image: pwgenImg,
+        image: "key",
         technologies: ["Flask", "Python", "CSS", "Vercel"],
         liveLink: "https://pwgen.cuzeth.com",
         repoLink: "https://github.com/Cuzeth/memorable-password-generator"
@@ -264,7 +260,7 @@ export const projectsData = [
         id: 2,
         title: "QR Code Generator",
         description: "A modern QR code generator with customization options and download functionality.",
-        image: shorturlImg,
+        image: "qrcode",
         technologies: ["Astro", "TypeScript", "PWA"],
         liveLink: "https://qr.cuzeth.com",
         repoLink: 'https://github.com/Cuzeth/qr-generator-pwa'
@@ -273,7 +269,7 @@ export const projectsData = [
         id: 3,
         title: "URL Shortener",
         description: "A personal URL shortener service built with Next.js and PostgreSQL.",
-        image: shorturlImg,
+        image: "link",
         technologies: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind CSS"],
         repoLink: "https://github.com/Cuzeth/cuzurl"
     },
@@ -281,7 +277,7 @@ export const projectsData = [
         id: 4,
         title: "Tetris Solver",
         description: "An AI-powered decision-making system that evaluates the best placement for each piece based on a scoring system.",
-        image: tetris,
+        image: "puzzle",
         technologies: ["Python", "Numpy", "AI"],
         repoLink: "https://github.com/Cuzeth/tetris-solver"
     },
@@ -289,7 +285,7 @@ export const projectsData = [
         id: 5,
         title: "Tailosive Gaming (DISCONTINUED)",
         description: "Previous highlights I made for Tailosive Gaming.",
-        image: thumbnail,
+        image: "video",
         technologies: ["Adobe After Effects", "Motion Graphics", "Video Editing"],
         liveLink: "https://youtube.com/playlist?list=PLLeQ5Dw04o_L3qjqHRhkZIaUuZwXCT-6d"
     },
