@@ -249,21 +249,21 @@ Specifically:
 export const projectsData = [
     {
         id: 1,
-        title: "Memorable Password Generator",
-        description: "A web app that generates memorable and secure passwords. Built with Flask and styled-components for a modern UI.",
-        image: "key",
-        technologies: ["Flask", "Python", "CSS", "Vercel"],
-        liveLink: "https://pwgen.cuzeth.com",
-        repoLink: "https://github.com/Cuzeth/memorable-password-generator"
-    },
-    {
-        id: 2,
         title: "QR Code Generator",
         description: "A modern QR code generator with customization options and download functionality.",
         image: "qrcode",
         technologies: ["Astro", "TypeScript", "PWA"],
         liveLink: "https://qr.cuzeth.com",
         repoLink: 'https://github.com/Cuzeth/qr-generator-pwa'
+    },
+    {
+        id: 2,
+        title: "Memorable Password Generator",
+        description: "A web app that generates memorable and secure passwords. Built with Flask and styled-components for a modern UI.",
+        image: "key",
+        technologies: ["Flask", "Python", "CSS", "Vercel"],
+        liveLink: "https://pwgen.cuzeth.com",
+        repoLink: "https://github.com/Cuzeth/memorable-password-generator"
     },
     {
         id: 3,
@@ -288,14 +288,5 @@ export const projectsData = [
         image: "video",
         technologies: ["Adobe After Effects", "Motion Graphics", "Video Editing"],
         liveLink: "https://youtube.com/playlist?list=PLLeQ5Dw04o_L3qjqHRhkZIaUuZwXCT-6d"
-    },
-    // {
-    //     id: 3,
-    //     title: "Da Boiz Discord Bot",
-    //     description: "A multipurpose Discord bot created using TypeScript. Features moderation tools, utility commands, and fun interactions.",
-    //     image: dabotImg,
-    //     technologies: ["TypeScript", "Discord.js", "Node.js", "MongoDB"],
-    //     liveLink: "https://discordapp.com/api/oauth2/authorize?client_id=636595833801801748&permissions=8&scope=bot%20applications.commands",
-    //     repoLink: "https://github.com/Cuzeth/daboiz"
-    // }
+    }
 ];
