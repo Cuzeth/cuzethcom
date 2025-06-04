@@ -34,56 +34,16 @@ export const homeObjOne: HeroData = {
 };
 
 // My Work
-const startWhite = false;
-
 export const myworkObjOne: HeroData = {
-    lightBg: startWhite,
-    lightText: !startWhite,
-    lightTextDesc: !startWhite,
+    lightBg: false,
+    lightText: true,
+    lightTextDesc: false,
     topLine: 'VIEW MY WORK',
     headline: 'My Work',
     description:
         "I'm still in the process of expanding my portfolio, but here's a look at what I've worked on so far.",
     img: myWork,
     alt: 'My Work'
-};
-
-export const passwordGen: HeroData = {
-    lightBg: !startWhite,
-    lightText: !startWhite,
-    lightTextDesc: !startWhite,
-    topLine: 'PASSWORD GENERATOR',
-    headline: 'Memorable Password Generator',
-    buttonLabel: 'TRY OUT',
-    sendTo: 'https://pwgen.cuzeth.com',
-    imgStart: true,
-    img: 'key',
-    alt: 'Memorable Password Generator'
-};
-
-export const shortURL: HeroData = {
-    lightBg: !startWhite,
-    lightText: !startWhite,
-    lightTextDesc: !startWhite,
-    topLine: 'URL SHORTENER',
-    headline: 'Personal URL shortener',
-    buttonLabel: 'CODE',
-    sendTo: 'https://github.com/Cuzeth/cuzurl',
-    // imgStart: true,
-    img: 'link',
-    alt: 'URL Shortener GitHub'
-};
-
-export const tailosiveGaming: HeroData = {
-    lightBg: startWhite,
-    lightText: !startWhite,
-    lightTextDesc: !startWhite,
-    topLine: 'TAILOSIVE GAMING (DISCONTINUED)',
-    headline: 'Previous highlights I made for Tailosive Gaming',
-    buttonLabel: 'PLAYLIST',
-    imgStart: true,
-    sendTo: 'https://youtube.com/playlist?list=PLLeQ5Dw04o_L3qjqHRhkZIaUuZwXCT-6d',
-    videoURL: 'https://www.youtube-nocookie.com/embed/Mf_RdWuf6e8'
 };
 
 // Da Boiz
