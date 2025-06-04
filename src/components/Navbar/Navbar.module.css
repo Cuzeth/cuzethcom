@@ -111,6 +111,7 @@
     top: 70px;
     left: 0;
     right: 0;
+    height: calc(100vh - 70px);
     background: var(--maincolor);
     border-bottom: 1px solid var(--color-border-light);
     padding: 1rem 0;
