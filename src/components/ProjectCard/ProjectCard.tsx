@@ -7,7 +7,8 @@ import { IoExtensionPuzzle } from 'react-icons/io5';
 import { SiAdobeaftereffects } from 'react-icons/si';
 import { PiPasswordFill } from 'react-icons/pi';
 import { HiQrcode } from 'react-icons/hi';
-import { FaLink } from 'react-icons/fa6';
+import { FaLink, FaDiscord } from 'react-icons/fa6';
+import { SiNextdotjs } from "react-icons/si";
 import { Button } from '@/components/Button/Button';
 
 interface ProjectCardProps {
@@ -26,6 +27,8 @@ const iconMap: { [key: string]: React.ComponentType<{ size?: number; className?:
     qrcode: HiQrcode,
     link: FaLink,
     puzzle: IoExtensionPuzzle,
+    site: SiNextdotjs,
+    discord: FaDiscord,
     video: SiAdobeaftereffects
 };
 
@@ -42,8 +45,8 @@ export default function ProjectCard({
     const generateGradient = (seed: string) => {
         const colors = [
             ['#dc2626', '#b91c1c'], // red theme
-            ['#F2F0E3', '#E8E6DA'], // cream theme
-            ['#2a2a2a', '#1a1a1a'], // dark gray
+            ['#A2A0B3', '#B8B69A'], // cream theme
+            ['#5a5a5a', '#1a1a1a'], // dark gray
             ['#374151', '#1f2937'], // medium gray
         ];
 

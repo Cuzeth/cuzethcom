@@ -283,6 +283,22 @@ export const projectsData = [
     },
     {
         id: 5,
+        title: "This Site",
+        description: "A personal portfolio site built with Next.JS, TypeScript, and TailwindCSS to showcase all projects and achievements by Cuzeth.",
+        image: "site",
+        technologies: ["Next.JS", "TypeScript", "TailwindCSS"],
+        repoLink: "https://github.com/Cuzeth/cuzethcom"
+    },
+    {
+        id: 6,
+        title: "Da Boiz Bot",
+        description: "A free and open-source Discord bot developed with Discord.js, TypeScript, and SQL, offering a wide range of features including moderation tools, helpful utilities, and engaging fun commands for community enhancement.",
+        image: "discord",
+        technologies: ["Discord.js", "TypeScript", "SQL"],
+        repoLink: "https://github.com/Cuzeth/da-boiz-bot"
+    },
+    {
+        id: 7,
         title: "Tailosive Gaming (DISCONTINUED)",
         description: "Previous highlights I made for Tailosive Gaming.",
         image: "video",
