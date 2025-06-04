@@ -23,7 +23,7 @@ export default function AnimateOnScroll({
   return (
     <div
       ref={ref}
-      className={`${className} ${isInView ? animation : ''}`}
+      className={`animate-scroll-wrapper ${className} ${isInView ? `animate-in ${animation}` : ''}`}
       style={{ animationDelay: isInView ? delay : '0s' }}
     >
       {children}

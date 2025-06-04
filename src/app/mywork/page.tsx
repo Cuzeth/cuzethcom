@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import HeroSection from '@/components/HeroSection/HeroSection';
 import Projects from '@/components/Projects/Projects';
+import AnimateOnScroll from '@/components/AnimateOnScroll/AnimateOnScroll';
 import { myworkObjOne, projectsData } from '../data';
 
 export const metadata: Metadata = {
@@ -14,12 +15,12 @@ export const metadata: Metadata = {
 export default function MyWork() {
     return (
         <>
-            <div className="animate-fade-in">
+            <AnimateOnScroll animation="animate-fade-in">
                 <HeroSection {...myworkObjOne} />
-            </div>
-            <div className="animate-slide-up" style={{ animationDelay: '0.2s' }}>
+            </AnimateOnScroll>
+            <AnimateOnScroll animation="animate-slide-up" delay="0.2s">
                 <Projects projects={projectsData} />
-            </div>
+            </AnimateOnScroll>
         </>
     );
 };

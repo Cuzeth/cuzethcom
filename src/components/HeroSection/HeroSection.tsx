@@ -2,13 +2,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/Button/Button';
-import { useInView } from '@/hooks/useInView';
+import AnimateOnScroll from '@/components/AnimateOnScroll/AnimateOnScroll';
 import styles from './HeroSection.module.css';
 import { HeroData } from '@/app/data';
 
 export default function HeroSection(data: HeroData) {
-    const heroSection = useInView({ threshold: 0.3 });
-    
     const renderHeadline = (headline: string | any[]) => {
         if (typeof headline === 'string') {
             return headline;
@@ -19,56 +17,59 @@ export default function HeroSection(data: HeroData) {
     };
 
     return (
-        <>
-            <div 
-                ref={heroSection.ref}
-                className={data.lightBg ? styles['home__hero-section'] : `${styles['home__hero-section']} ${styles.darkBg}`}
-            >
-                <div className="container">
-                    <div
-                        className={`${styles.row} ${styles['home__hero-row']}`}
-                        style={{
-                            display: 'flex',
-                            flexDirection: data.imgStart ? 'row-reverse' : 'row'
-                        }}
-                    >
-                        <div className={styles.col}>
-                            <div className={styles['home__hero-text-wrapper']}>
-                                {data.topLine && (
-                                    <div className={`${styles['top-line']} ${heroSection.isInView ? 'animate-slide-down' : ''}`}>
+        <div className={data.lightBg ? styles['home__hero-section'] : `${styles['home__hero-section']} ${styles.darkBg}`}>
+            <div className="container">
+                <div
+                    className={`${styles.row} ${styles['home__hero-row']}`}
+                    style={{
+                        display: 'flex',
+                        flexDirection: data.imgStart ? 'row-reverse' : 'row'
+                    }}
+                >
+                    <div className={styles.col}>
+                        <div className={styles['home__hero-text-wrapper']}>
+                            {data.topLine && (
+                                <AnimateOnScroll animation="animate-slide-down" threshold={0.3}>
+                                    <div className={styles['top-line']}>
                                         {data.topLine}
                                     </div>
-                                )}
-                                {data.headline && (
-                                    <h1 className={`${data.lightText ? styles.heading : `${styles.heading} ${styles.dark}`} ${heroSection.isInView ? 'animate-slide-up' : ''}`} style={{ animationDelay: '0.2s' }}>
+                                </AnimateOnScroll>
+                            )}
+                            {data.headline && (
+                                <AnimateOnScroll animation="animate-slide-up" delay="0.2s" threshold={0.3}>
+                                    <h1 className={data.lightText ? styles.heading : `${styles.heading} ${styles.dark}`}>
                                         {renderHeadline(data.headline)}
                                     </h1>
-                                )}
-                                {data.description && (
-                                    <p className={`${data.lightTextDesc ? styles['home__hero-subtitle'] : `${styles['home__hero-subtitle']} ${styles.dark}`} ${heroSection.isInView ? 'animate-slide-up' : ''}`} style={{ animationDelay: '0.4s' }}>
+                                </AnimateOnScroll>
+                            )}
+                            {data.description && (
+                                <AnimateOnScroll animation="animate-slide-up" delay="0.4s" threshold={0.3}>
+                                    <p className={data.lightTextDesc ? styles['home__hero-subtitle'] : `${styles['home__hero-subtitle']} ${styles.dark}`}>
                                         {data.description}
                                     </p>
-                                )}
-                                {data.sendTo ? (
-                                    <div className={heroSection.isInView ? 'animate-slide-up' : ''} style={{ animationDelay: '0.6s' }}>
-                                        <a href={data.sendTo}>
-                                            <Button buttonSize="btn--wide" buttonColor="red" className="animate-on-hover">
-                                                {data.buttonLabel}
-                                            </Button>
-                                        </a>
-                                    </div>
-                                ) : data.buttonLabel ? (
-                                    <div className={heroSection.isInView ? 'animate-slide-up' : ''} style={{ animationDelay: '0.6s' }}>
-                                        <Link href={data.linkTo}>
-                                            <Button buttonSize="btn--wide" buttonColor="red" className="animate-on-hover">
-                                                {data.buttonLabel}
-                                            </Button>
-                                        </Link>
-                                    </div>
-                                ) : null}
-                            </div>
+                                </AnimateOnScroll>
+                            )}
+                            {data.sendTo ? (
+                                <AnimateOnScroll animation="animate-slide-up" delay="0.6s" threshold={0.3}>
+                                    <a href={data.sendTo}>
+                                        <Button buttonSize="btn--wide" buttonColor="red" className="animate-on-hover">
+                                            {data.buttonLabel}
+                                        </Button>
+                                    </a>
+                                </AnimateOnScroll>
+                            ) : data.buttonLabel ? (
+                                <AnimateOnScroll animation="animate-slide-up" delay="0.6s" threshold={0.3}>
+                                    <Link href={data.linkTo}>
+                                        <Button buttonSize="btn--wide" buttonColor="red" className="animate-on-hover">
+                                            {data.buttonLabel}
+                                        </Button>
+                                    </Link>
+                                </AnimateOnScroll>
+                            ) : null}
                         </div>
-                        <div className={`${styles.col} ${heroSection.isInView ? 'animate-slide-left' : ''}`} style={{ animationDelay: '0.3s' }}>
+                    </div>
+                    <div className={styles.col}>
+                        <AnimateOnScroll animation="animate-slide-left" delay="0.3s" threshold={0.3}>
                             <div className={styles['home__hero-img-wrapper']}>
                                 {data.videoURL ? (
                                     <iframe
@@ -80,15 +81,15 @@ export default function HeroSection(data: HeroData) {
                                         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                         allowFullScreen
                                         className="animate-on-hover"
-                                    ></iframe>
+                                    />
                                 ) : (
-                                    data.img && <Image src={data.img} alt={data.alt} className={`${styles['home__hero-img']} ${heroSection.isInView ? 'animate-float' : ''} animate-on-hover`} />
+                                    data.img && <Image src={data.img} alt={data.alt} className={`${styles['home__hero-img']} animate-on-hover`} />
                                 )}
                             </div>
-                        </div>
+                        </AnimateOnScroll>
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
