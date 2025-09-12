@@ -83,8 +83,8 @@ export const aboutObj: HeroData = {
 
 function calculateAge(birthday: Date) { // birthday is a date
     // @ts-ignore
-    var ageDifMs = Date.now() - birthday;
-    var ageDate = new Date(ageDifMs); // miliseconds from epoch
+    const ageDifMs = Date.now() - birthday;
+    const ageDate = new Date(ageDifMs); // miliseconds from epoch
     return Math.abs(ageDate.getUTCFullYear() - 1970);
 }
 
