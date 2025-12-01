@@ -5,7 +5,7 @@ import { HiHome, HiFolder, HiInformationCircle, HiSparkles } from 'react-icons/h
 import styles from './not-found.module.css';
 
 export const metadata: Metadata = {
-    title: '404 - Page Not Found | Cuzeth',
+    title: '404 - Page Not Found',
     description: 'Oops! The page you\'re looking for doesn\'t exist. Let\'s get you back on track.',
 };
 

@@ -24,12 +24,12 @@ export const daBoizObj: HeroData = {
     lightBg: false,
     lightText: true,
     lightTextDesc: true,
-    topLine: 'RETIRED',
+    topLine: 'ARCHIVED',
     headline: [
         { text: 'Multipurpose Discord Bot, ', emphasize: false },
         { text: 'completely free.', emphasize: true }
     ],
-    description: 'Da Boiz Bot was a free and open source Discord bot created using TypeScript. It is no longer maintained.',
+    description: 'Da Boiz Bot was a comprehensive, open-source Discord bot built with TypeScript. While no longer active, its legacy lives on in the codebase.',
     // buttonLabel: 'Invite',
     // sendTo: 'https://discordapp.com/api/oauth2/authorize?client_id=636595833801801748&permissions=8&scope=bot%20applications.commands',
     // imgStart: true,
@@ -48,7 +48,7 @@ export const aboutObj: HeroData = {
         { text: 'Creator, ', emphasize: true },
         { text: 'Student', emphasize: false }
     ],
-    description: `I build modern digital experiences and efficient solutions. I'm a ${calculateAge(new Date('2004-10-27T00:00:00'))} year old developer currently majoring in Computer Science. I have a passion for tech and software development. When I'm not coding, I enjoy exploring new technologies and working on creative projects.`,
+    description: `I architect modern digital solutions with a focus on performance and privacy. As a ${calculateAge(new Date('2004-10-27T00:00:00'))}-year-old Computer Science major, I blend academic rigor with practical application. Whether building full-stack applications or exploring new frameworks, I am driven by a passion for efficient code and exceptional user experiences.`,
     img: about,
     alt: 'Website',
     imgStart: true,
@@ -62,128 +62,109 @@ function calculateAge(birthday: Date) { // birthday is a date
 }
 
 export const skillsAndInterests: string = `
-## Skills & Technologies
+## Technical Expertise
 
-- **Frontend Development:** React, Next.js, TypeScript, Tailwind CSS
-- **Backend Development:** Node.js, Express, MongoDB
-- **Tools & Platforms:** Git, GitHub, Vercel, Firebase
-- **Other:** UI/UX Design, Motion Graphics, Video Editing
+- **Frontend Engineering:** React, Next.js, TypeScript, Tailwind CSS
+- **Backend Architecture:** Node.js, Express, MongoDB, PostgreSQL
+- **DevOps & Tools:** Git, GitHub Actions, Vercel, Firebase
+- **Creative & Design:** UI/UX Design, Motion Graphics, Adobe Suite
 
-## Interests & Hobbies
+## Passion & Pursuit
 
-Beyond coding, I'm passionate about technology, design, and creating meaningful digital experiences. I enjoy exploring new frameworks and tools to expand my skill set and stay current with industry trends.
+Beyond the terminal, I am dedicated to the intersection of technology and design. I actively follow industry developments, constantly refining my toolkit to build software that is not just functional, but delightful to use.
 
-## Education
+## Academic Focus
 
-Currently pursuing a Bachelor's degree in Computer Science, with a focus on software development and system architecture. Continuously expanding my knowledge through online courses and hands-on projects.
+Currently pursuing a Bachelor of Science in Computer Science. My studies emphasize software engineering principles, system architecture, and algorithmic efficiency, complemented by continuous self-directed learning.
 `;
 
 // Da Boiz TOS
 export const daBoizTOS = `
 # Da Boiz Terms of Use
 
-**1. Acceptance of Terms**
-* By using Da Boiz Bot, you agree to be bound by these Terms of Use. If you disagree with any part of the terms, you may not use our bot.
+**1. Acceptance**
+* By accessing or using Da Boiz Bot, you agree to be bound by these Terms of Use.
 
-**2. Description of Service**
-* Da Boiz Bot is a Discord bot designed to provide moderation and utility functions for Discord servers.
+**2. Service Description**
+* Da Boiz Bot is a utility for Discord server moderation and management.
 
-**3. User Responsibilities**
-* As a user of Da Boiz Bot, you agree to:
-* - Use the bot in compliance with Discord's Terms of Service and Community Guidelines.
-* - Not use the bot for any illegal or unauthorized purpose.
-* - Not attempt to interfere with or disrupt the bot's functionality.
-* - Be responsible for all activities that occur under your Discord account in relation to the bot.
+**3. User Obligations**
+* You agree to:
+* - Adhere to Discord's Terms of Service and Community Guidelines.
+* - Use the bot solely for lawful purposes.
+* - Refrain from disrupting the bot's operations.
+* - Assume responsibility for all activity under your account.
 
 **4. Intellectual Property**
-* The bot, including its code, design, and functionality, is the property of the bot owner. You may not copy, modify, distribute, sell, or lease any part of our bot without explicit permission.
+* The bot's code, design, and assets are the exclusive property of the owner. Unauthorized reproduction or distribution is prohibited.
 
-**5. Limitation of Liability**
-* Da Boiz Bot is provided "as is" without any warranties, expressed or implied.
-* We are not responsible for any damages or losses resulting from your use of the bot.
-* We are not liable for any content moderated or managed through the use of our bot.
+**5. Disclaimer & Liability**
+* Da Boiz Bot is provided "as is". We disclaim all warranties and liability for any damages or losses arising from its use.
 
-**6. Modifications to the Bot**
-* We reserve the right to modify or discontinue, temporarily or permanently, the bot or any features within the bot without notice.
+**6. Service Modifications**
+* We reserve the right to modify or discontinue the service at any time without notice.
 
 **7. Termination**
-* We may terminate or suspend your access to the bot immediately, without prior notice or liability, for any reason, including without limitation if you breach the Terms.
+* Access may be suspended or terminated immediately for violations of these terms.
 
-**8. Changes to Terms**
-* We reserve the right to modify these terms at any time. We will notify users of any changes by posting the new Terms of Use on this page.
+**8. Updates**
+* Terms may be updated periodically. Continued use constitutes acceptance of changes.
 
-**9. Indemnification**
-* You agree to indemnify and hold harmless the bot owner and operators from any claims, damages, or expenses arising from your use of the bot.
+**9. Indemnity**
+* You agree to indemnify the operators against any claims arising from your use of the bot.
 
-**10. Contact Information**
-* If you have any questions about these Terms, please contact us at [cuz@cuzeth.com](mailto://cuz@cuzeth.com).
+**10. Contact**
+* Inquiries: [cuz@cuzeth.com](mailto://cuz@cuzeth.com).
 
-##### By using Da Boiz Bot, you acknowledge that you have read and understood these Terms of Use and agree to be bound by them.
+##### Use of Da Boiz Bot constitutes agreement to these terms.
 `;
 
 // Da Boiz Privacy Policy
 export const daBoizPrivacyPolicy = `
 # Da Boiz Privacy Policy
 
-**1. Introduction**
-* Welcome to Da Boiz Bot! This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our Discord bot. By using Da Boiz Bot, you agree to the collection and use of information in accordance with this policy.
+**1. Overview**
+* This policy outlines our data handling practices. By using Da Boiz Bot, you consent to this policy.
 
-**2. Information Collection**
-* Da Boiz Bot collects the following types of information:
+**2. Data Collection**
+* We collect minimal data required for operation:
+* - **IDs:** User, Server, Channel, and Role IDs for configuration and management.
+* - **Moderation Logs:** Reasons and metadata for moderation actions.
 
-* - **User Data:** This includes your Discord user ID.
-* - **Server Data:** This includes server IDs.
-* - **Channel Data:** This includes channel IDs when using moderation/logging features.
-* - **Role Data:** This includes role IDs when using moderation/logging features.
-* - **Mod Action Data:** This includes reasons provided for moderation actions taken via the bot.
+**3. Usage**
+* Data is used to:
+* - Deliver and maintain bot features.
+* - Facilitate server administration.
+* - Ensure system security and stability.
 
-**3. Use of Information**
-* We use the collected information to:
+**4. Third-Party Sharing**
+* Data is not shared with third parties, except as compelled by law.
 
-* - Provide and maintain the bot's functionality.
-* - Improve and personalize the bot experience.
-* - Facilitate moderation actions and record-keeping.
-* - Monitor usage and detect, prevent, and address technical issues.
+**5. Security**
+* We employ standard security measures but cannot guarantee absolute security of data transmitted over the internet.
 
-Specifically:
+**6. Retention**
+* Data is retained only as long as necessary for operational or legal purposes.
 
-* User and Server IDs are used to identify and manage bot interactions within Discord servers.
-* Moderation action reasons are stored for record-keeping and accountability purposes.
+**7. User Rights**
+* You retain rights to access, correct, or request deletion of your data, subject to applicable laws.
 
-**4. Data Sharing and Disclosure**
-* We do not share or disclose your personal information with third parties except in the following circumstance:
+**8. Limitation**
+* We are not liable for security breaches beyond our reasonable control.
 
-* - **Legal Requirements:** If required by law or in response to valid requests by public authorities (e.g., a court or government agency).
+**9. Policy Updates**
+* Changes will be posted here.
 
-**5. Data Security**
-* We prioritize the security of your data. However, please be aware that no method of transmission over the internet or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your information, we cannot guarantee its absolute security.
-
-**6. Data Retention**
-* We retain your information only for as long as necessary to fulfill the purposes outlined in this Privacy Policy and to comply with legal obligations. After that, we will delete or anonymize your information.
-
-**7. Your Data Protection Rights**
-* Depending on your location, you may have the following rights regarding your personal data:
-
-* - **Right to Access:** You have the right to request copies of your personal data.
-* - **Right to Rectification:** You have the right to request that we correct any information you believe is inaccurate or complete information you believe is incomplete.
-* - **Right to Erasure:** You have the right to request that we erase your personal data, under certain conditions.
-
-**8. Liability Limitation**
-* While we do our best to protect your information and ensure the security of our systems, we cannot be held responsible for any security breaches or damages resulting from such incidents. Users acknowledge and accept this limitation of liability when using Da Boiz Bot.
-
-**9. Changes to This Privacy Policy**
-* We may update our Privacy Policy from time to time. We will notify users of any changes by posting the new Privacy Policy on this page.
-
-**10. Contact Us**
-* If you have any questions about this Privacy Policy, please contact us at [cuz@cuzeth.com](mailto://cuz@cuzeth.com).
+**10. Contact**
+* Inquiries: [cuz@cuzeth.com](mailto://cuz@cuzeth.com).
 `
 
 // Project Data
 export const projectsData = [
     {
         id: 1,
-        title: "Get Workouts",
-        description: "Offline privacy-first workout tracker app built with SwiftUI.",
+        title: "Workouts",
+        description: "A privacy-centric, offline-first workout tracking application for iOS.",
         image: "/images/getworkoutsappicon.png",
         technologies: ["SwiftUI", "iOS"],
         liveLink: "https://getworkouts.app"
@@ -191,7 +172,7 @@ export const projectsData = [
     {
         id: 2,
         title: "Out There Social Club",
-        description: "Website and iOS app for a 501(c)(3) nonprofit.",
+        description: "Comprehensive digital platform for a 501(c)(3) nonprofit, featuring a web portal and iOS application.",
         image: "/images/OTSC_Logo_Stamp_FullColor.png",
         technologies: ["Next.js", "Firebase", "SwiftUI"],
         liveLink: "https://outtheresocialclub.org"
@@ -199,8 +180,8 @@ export const projectsData = [
     {
         id: 3,
         title: "QR Code Generator",
-        description: "A modern QR code generator with customization options and download functionality.",
-        image: "qrcode",
+        description: "A progressive web app (PWA) for generating customizable, high-resolution QR codes.",
+        image: "/images/qrlogo.png",
         technologies: ["Astro", "TypeScript", "PWA"],
         liveLink: "https://qr.cuzeth.com",
         repoLink: 'https://github.com/Cuzeth/qr-generator-pwa'
@@ -208,8 +189,8 @@ export const projectsData = [
     {
         id: 4,
         title: "Memorable Password Generator",
-        description: "A web app that generates memorable and secure passwords. Built with Flask and styled-components for a modern UI.",
-        image: "key",
+        description: "Secure password generator focused on high entropy and memorability.",
+        image: "/images/password.svg",
         technologies: ["Flask", "Python", "CSS", "Vercel"],
         liveLink: "https://pwgen.cuzeth.com",
         repoLink: "https://github.com/Cuzeth/memorable-password-generator"
@@ -217,15 +198,15 @@ export const projectsData = [
     {
         id: 5,
         title: "URL Shortener",
-        description: "A personal URL shortener service built with Next.js and PostgreSQL.",
-        image: "link",
+        description: "High-performance URL shortening service with integrated analytics.",
+        image: "/images/shorturl.svg",
         technologies: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind CSS"],
         repoLink: "https://github.com/Cuzeth/cuzurl"
     },
     {
         id: 6,
         title: "Tetris Solver",
-        description: "An AI-powered decision-making system that evaluates the best placement for each piece based on a scoring system.",
+        description: "Algorithmic solver for Tetris utilizing heuristic scoring for optimal piece placement.",
         image: "puzzle",
         technologies: ["Python", "Numpy", "AI"],
         repoLink: "https://github.com/Cuzeth/tetris-solver"
@@ -233,16 +214,16 @@ export const projectsData = [
     {
         id: 7,
         title: "This Site",
-        description: "A personal portfolio site built with Next.JS, TypeScript, and TailwindCSS to showcase all projects and achievements by Cuzeth.",
-        image: "site",
+        description: "Personal portfolio and digital showcase engineered with Next.js.",
+        image: "/images/Logo.png",
         technologies: ["Next.JS", "TypeScript", "TailwindCSS"],
         repoLink: "https://github.com/Cuzeth/cuzethcom"
     },
     {
         id: 8,
         title: "Da Boiz Bot",
-        description: "A free and open-source Discord bot developed with Discord.js, TypeScript, and SQL. It is no longer maintained.",
-        image: "discord",
+        description: "Legacy open-source Discord bot, previously serving thousands of users.",
+        image: "/images/DaBoiz.svg",
         technologies: ["Discord.js", "TypeScript", "SQL"],
         repoLink: "https://github.com/Cuzeth/da-boiz-bot"
     },

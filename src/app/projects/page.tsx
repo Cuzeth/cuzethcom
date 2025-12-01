@@ -4,10 +4,10 @@ import FadeInWrapper from '@/components/FadeInWrapper/FadeInWrapper';
 import { projectsData } from '../data';
 
 export const metadata: Metadata = {
-    title: 'Projects | Cuzeth',
-    description: 'Explore my latest projects and software solutions.',
+    title: 'Projects',
+    description: 'A showcase of engineering projects and digital experiments by Cuzeth.',
     twitter: {
-        description: 'Explore my latest projects and software solutions.',
+        description: 'A showcase of engineering projects and digital experiments by Cuzeth.',
     }
 };
 
@@ -17,10 +17,10 @@ export default function ProjectsPage() {
             <FadeInWrapper direction="up">
                 <div className="container mx-auto mb-20">
                     <h1 className="text-6xl md:text-8xl font-black mb-6 tracking-tighter text-white">
-                        <span className="text-red-600">.</span>
+                        WORK<span className="text-red-600">.</span>
                     </h1>
                     <p className="text-xl md:text-2xl text-gray-400 max-w-2xl font-light">
-                        A curated selection of applications, tools, and digital experiences engineering for performance and privacy.
+                        A curated collection of engineering projects, tools, and creative experiments.
                     </p>
                 </div>
             </FadeInWrapper>

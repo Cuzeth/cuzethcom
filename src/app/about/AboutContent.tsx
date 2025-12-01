@@ -15,7 +15,7 @@ export default function AboutContent({ aboutObj, skillsAndInterests }: AboutCont
     return (
         <div className="bg-neutral-950 min-h-screen">
             <HeroSection {...aboutObj} />
-            
+
             <div className="container mx-auto px-6 md:px-12 py-20">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
                     {/* Sidebar / Title */}
@@ -31,7 +31,7 @@ export default function AboutContent({ aboutObj, skillsAndInterests }: AboutCont
                                 Beyond the <span className="text-red-600">Code.</span>
                             </h2>
                             <p className="text-gray-400 mb-8 leading-relaxed">
-                                A deeper look into my technical toolkit and what drives my passion for software engineering.
+                                Exploring the technical expertise and creative drive behind the work.
                             </p>
                             <Link href="/projects">
                                 <Button buttonSize="btn--large" buttonColor="red">
@@ -43,7 +43,7 @@ export default function AboutContent({ aboutObj, skillsAndInterests }: AboutCont
 
                     {/* Content Area */}
                     <div className="lg:col-span-8">
-                        <motion.div 
+                        <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}

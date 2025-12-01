@@ -4,13 +4,13 @@ import AboutContent from './AboutContent';
 
 export const metadata: Metadata = {
     title: 'About Me',
-    description: 'Learn more about Cuzeth - a Computer Science student and developer with a passion for creating modern digital experiences and efficient software solutions.',
+    description: 'Discover the background and expertise of Cuzeth - a software engineer and creative technologist dedicated to building privacy-focused, high-performance digital solutions.',
     twitter: {
-        description: 'Learn more about Cuzeth - a Computer Science student and developer with a passion for creating modern digital experiences and efficient software solutions.',
+        description: 'Discover the background and expertise of Cuzeth - a software engineer and creative technologist dedicated to building privacy-focused, high-performance digital solutions.',
     },
     openGraph: {
         title: 'About Cuzeth - Developer & CS Student',
-        description: 'Learn more about Cuzeth - a Computer Science student and developer with a passion for creating modern digital experiences and efficient software solutions.',
+        description: 'Discover the background and expertise of Cuzeth - a software engineer and creative technologist dedicated to building privacy-focused, high-performance digital solutions.',
     }
 };
 

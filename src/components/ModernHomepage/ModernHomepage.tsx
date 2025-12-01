@@ -55,21 +55,20 @@ export default function ModernHomepage() {
                         className="max-w-xl"
                     >
                         <p className="text-xl md:text-2xl text-gray-400 font-light mb-10 leading-relaxed">
-                            We engineer digital experiences that prioritize privacy, performance, and precision.
-                            Building the tools of tomorrow, today.
+                            Crafting privacy-focused, high-performance digital experiences. Engineering the future, line by line.
                         </p>
 
                         <div className="flex flex-wrap gap-4">
                             <Link href="/projects">
                                 <button className="group relative px-8 py-4 bg-red-600 text-white font-bold overflow-hidden rounded-full transition-all hover:bg-red-700 hover:scale-105 active:scale-95">
                                     <span className="relative z-10 flex items-center gap-2">
-                                        Explore Projects <HiArrowRight />
+                                        View Work <HiArrowRight />
                                     </span>
                                 </button>
                             </Link>
                             <Link href="/about">
                                 <button className="px-8 py-4 bg-transparent border border-neutral-700 text-white font-bold rounded-full transition-all hover:bg-neutral-800 hover:border-neutral-600">
-                                    About Us
+                                    About Me
                                 </button>
                             </Link>
                         </div>
@@ -95,17 +94,17 @@ export default function ModernHomepage() {
                         <FeatureItem
                             number="01"
                             title="Privacy First"
-                            description="We believe in software that respects the user. Offline-first architectures and zero-tracking policies are our standard."
+                            description="User respect is paramount. We prioritize offline-first architectures and data sovereignty."
                         />
                         <FeatureItem
                             number="02"
                             title="Precision Engineering"
-                            description="Every line of code is crafted with intent. We optimize for speed, maintainability, and scalability."
+                            description="Code with purpose. Optimizing for latency, maintainability, and robust scale."
                         />
                         <FeatureItem
                             number="03"
                             title="Modern Design"
-                            description="Aesthetics meet functionality. We create interfaces that are intuitive, accessible, and visually striking."
+                            description="Where form meets function. Interfaces designed for clarity, accessibility, and impact."
                         />
                     </div>
                 </div>
@@ -116,7 +115,7 @@ export default function ModernHomepage() {
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-end mb-16">
                     <div>
                         <h2 className="text-4xl md:text-6xl font-bold mb-4">Selected Work</h2>
-                        <p className="text-gray-400">Highlights from our recent deployments.</p>
+                        <p className="text-gray-400">Featured applications and contributions.</p>
                     </div>
                     <Link href="/projects" className="hidden md:block text-red-500 hover:text-white transition-colors">
                         View All Projects →
