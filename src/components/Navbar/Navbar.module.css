@@ -147,6 +147,7 @@
         transform: none;
         opacity: 1;
         max-height: none;
+        height: auto;
         overflow: visible;
     }
     
