@@ -1,4 +1,3 @@
-import logo from '../../public/images/CuzethFlat.svg';
 import daboiz from '../../public/images/DaBoiz.svg';
 import about from '../../public/images/about.png';
 

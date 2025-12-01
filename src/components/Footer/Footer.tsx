@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 // import Image from 'next/image';
-import { FaInstagram, FaYoutube, FaTwitter, FaGithub, FaGitlab, FaTwitch, FaMailBulk, FaEnvelope, FaChartLine } from 'react-icons/fa';
+import { FaYoutube, FaGithub, FaGitlab, FaTwitch, FaEnvelope, FaChartLine } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import styles from './Footer.module.css';
 // import logo from '../../../public/images/CuzethFlat.svg';
@@ -58,7 +58,7 @@ export default function Footer() {
                             </small>
                         </motion.div>
                         <div className={styles['social-icons']}>
-                            {socialLinks.map((link, index) => {
+                            {socialLinks.map((link) => {
                                 const IconComponent = link.icon;
                                 return (
                                     <motion.a
