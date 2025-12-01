@@ -1,7 +1,5 @@
 'use client';
 import Link from 'next/link';
-import { Button } from '@/components/Button/Button';
-import styles from './ModernHomepage.module.css';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { HiArrowRight } from 'react-icons/hi2';
@@ -13,12 +11,32 @@ export default function ModernHomepage() {
         offset: ["start start", "end start"]
     });
 
+    // Page-wide scroll for background logo
+    const { scrollYProgress: pageScroll } = useScroll();
+    const logoOpacity = useTransform(pageScroll, [0, 0.2, 0.8, 1], [0.15, 0.25, 0.25, 0.15]);
+    const logoScale = useTransform(pageScroll, [0, 1], [1.1, 1]);
+    const logoY = useTransform(pageScroll, [0, 1], ["50%", "-100%"]);
+
     const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+    const scrollIndicatorOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
     const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.9]);
     const y = useTransform(scrollYProgress, [0, 0.5], [0, 100]);
 
     return (
-        <div className="relative overflow-hidden bg-neutral-950 text-white selection:bg-red-500/30">
+        <div className="relative bg-neutral-950 text-white selection:bg-red-500/30">
+
+            {/* Rotating Background Logo */}
+            <motion.div
+                style={{
+                    opacity: logoOpacity,
+                    scale: logoScale,
+                    y: logoY,
+                    x: '-50%',
+                }}
+                className="fixed bottom-0 left-1/2 w-[800px] h-[800px] md:w-[1200px] md:h-[1200px] z-0 pointer-events-none"
+            >
+                <img src="/images/Logo.svg" alt="" className="w-full h-full object-contain" />
+            </motion.div>
 
             {/* Background Grid Pattern */}
             <div className="fixed inset-0 z-0 opacity-20 pointer-events-none"
@@ -77,9 +95,9 @@ export default function ModernHomepage() {
 
                 {/* Scroll Indicator */}
                 <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 1, duration: 1 }}
+                    style={{ opacity: scrollIndicatorOpacity }}
+                    animate={{ y: [0, 10, 0] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                     className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-neutral-500"
                 >
                     <span className="text-xs uppercase tracking-widest">Scroll</span>
