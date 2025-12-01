@@ -30,11 +30,7 @@ export default function HeroSection(data: HeroData) {
         <div className={data.lightBg ? styles['home__hero-section'] : `${styles['home__hero-section']} ${styles.darkBg}`}>
             <div className="container">
                 <div
-                    className={`${styles.row} ${styles['home__hero-row']}`}
-                    style={{
-                        display: 'flex',
-                        flexDirection: data.imgStart ? 'row-reverse' : 'row'
-                    }}
+                    className={`${styles.row} ${styles['home__hero-row']} ${data.imgStart ? styles.rowReverse : ''}`}
                 >
                     <div className={styles.col}>
                         <div className={styles['home__hero-text-wrapper']}>

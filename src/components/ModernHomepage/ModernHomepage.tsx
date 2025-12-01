@@ -57,8 +57,8 @@ export default function ModernHomepage() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                     >
-                        <h2 className="text-red-500 font-mono mb-4 tracking-widest text-sm md:text-base">SINCE 2019</h2>
-                        <h1 className="text-7xl md:text-9xl font-black tracking-tighter mb-8 leading-[0.9]">
+                        <h2 className="text-red-500 font-mono mb-4 tracking-widest text-xs md:text-sm">SINCE 2019</h2>
+                        <h1 className="text-5xl md:text-7xl lg:text-9xl font-black tracking-tighter mb-8 leading-[0.9]">
                             CUZETH<br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-neutral-500 to-neutral-800">
                                 SOFTWARE
@@ -72,7 +72,7 @@ export default function ModernHomepage() {
                         transition={{ delay: 0.4, duration: 0.8 }}
                         className="max-w-xl"
                     >
-                        <p className="text-xl md:text-2xl text-gray-400 font-light mb-10 leading-relaxed">
+                        <p className="text-lg md:text-2xl text-gray-400 font-light mb-10 leading-relaxed">
                             Crafting privacy-focused, high-performance digital experiences. Engineering the future, line by line.
                         </p>
 
@@ -129,10 +129,10 @@ export default function ModernHomepage() {
             </section>
 
             {/* Recent Work Teaser */}
-            <section className="relative z-10 py-32 px-6 md:px-12 bg-neutral-900">
-                <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-end mb-16">
+            <section className="relative z-10 py-16 md:py-32 px-6 md:px-12 bg-neutral-900">
+                <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-end mb-8 md:mb-16">
                     <div>
-                        <h2 className="text-4xl md:text-6xl font-bold mb-4">Selected Work</h2>
+                        <h2 className="text-3xl md:text-6xl font-bold mb-4">Selected Work</h2>
                         <p className="text-gray-400">Featured applications and contributions.</p>
                     </div>
                     <Link href="/projects" className="hidden md:block text-red-500 hover:text-white transition-colors">
@@ -187,11 +187,11 @@ function FeatureItem({ number, title, description }: { number: string, title: st
 function ProjectTeaser({ name, category, year, link }: { name: string, category: string, year: string, link: string }) {
     const isExternal = link.startsWith('http');
     const Content = (
-        <div className="flex flex-col md:flex-row md:items-center justify-between py-8 border-b border-neutral-800 hover:border-red-500 transition-colors group cursor-pointer">
-            <h3 className="text-2xl md:text-4xl font-bold text-gray-200 group-hover:text-white group-hover:translate-x-4 transition-all duration-300">
+        <div className="flex flex-col md:flex-row md:items-center justify-between py-6 md:py-8 border-b border-neutral-800 hover:border-red-500 transition-colors group cursor-pointer">
+            <h3 className="text-xl md:text-4xl font-bold text-gray-200 group-hover:text-white group-hover:translate-x-4 transition-all duration-300">
                 {name}
             </h3>
-            <div className="flex items-center gap-8 mt-4 md:mt-0 text-gray-500 font-mono text-sm md:text-base">
+            <div className="flex items-center gap-8 mt-2 md:mt-0 text-gray-500 font-mono text-sm md:text-base">
                 <span>{category}</span>
                 <span>{year}</span>
             </div>
