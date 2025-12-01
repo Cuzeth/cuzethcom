@@ -1,5 +1,6 @@
 import daboiz from '../../public/images/DaBoiz.svg';
 import about from '../../public/images/about.png';
+import otscLogo from '../../public/images/OTSC_Logo_Stamp_FullColor.png';
 
 // Template
 export interface HeroData {
@@ -34,6 +35,24 @@ export const daBoizObj: HeroData = {
     // imgStart: true,
     img: daboiz,
     alt: 'Da Boiz Bot',
+};
+
+// Out There Social Club
+export const otscObj: HeroData = {
+    lightBg: false,
+    lightText: true,
+    lightTextDesc: true,
+    topLine: 'NONPROFIT PLATFORM',
+    headline: [
+        { text: 'Out There Social Club ', emphasize: false },
+        { text: 'Portal & App', emphasize: true }
+    ],
+    description: 'A comprehensive digital ecosystem for a 501(c)(3) nonprofit, integrating a dynamic web portal with a feature-rich iOS application. Powered by Next.js, Firebase, and SwiftUI to connect the community.',
+    buttonLabel: 'Visit Website',
+    sendTo: 'https://outtheresocialclub.org',
+    img: otscLogo,
+    alt: 'Out There Social Club Logo',
+    imgStart: false,
 };
 
 // About Me
