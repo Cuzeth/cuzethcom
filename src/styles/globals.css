@@ -17,35 +17,36 @@
 }
 
 :root {
-  /* Default dark theme - Modern flat colors with gray and cream */
+  /* Default dark theme - Red and Gray */
   color-scheme: dark;
   /* Dark theme colors */
-  --maincolor: #1a1a1a;
-  --supportingcolor: #2a2a2a;
-  --text: #e4e3d7;
-  --heading: #F2F0E3;
-  --primary: #F2F0E3;
-  --accent: #dc2626;
-  --accent-hover: #b91c1c;
-  --card-bg: #262626;
+  --maincolor: #121212;
+  --supportingcolor: #1E1E1E;
+  --text: #D1D5DB;
+  --heading: #FFFFFF;
+  --primary: #DC2626;
+  --accent: #DC2626;
+  --accent-hover: #B91C1C;
+  --accent-glow: rgba(220, 38, 38, 0.5);
+  --card-bg: #1E1E1E;
   
-  /* Unified color system - Dark theme - Gray and cream flat colors */
+  /* Unified color system - Dark theme */
   --color-white: #ffffff;
   --color-black: #000000;
-  --color-cream: #E8E6DA;
+  --color-cream: #E5E5E5; /* Mapped to light gray */
   --color-gray-light: #d1d5db;
   --color-gray-medium: #9ca3af;
   --color-gray-dark: #6b7280;
-  --color-border-light: rgba(245, 241, 232, 0.1);
-  --color-border-medium: rgba(245, 241, 232, 0.15);
-  --color-overlay-light: rgba(245, 241, 232, 0.05);
-  --color-overlay-medium: rgba(245, 241, 232, 0.1);
+  --color-border-light: rgba(255, 255, 255, 0.1);
+  --color-border-medium: rgba(255, 255, 255, 0.15);
+  --color-overlay-light: rgba(255, 255, 255, 0.05);
+  --color-overlay-medium: rgba(255, 255, 255, 0.1);
   --color-success: #16a34a;
   --color-success-hover: #15803d;
-  --color-code-bg: #1f1f1f;
-  --color-code-text: #f5f1e8;
-  --color-code-border: rgba(245, 241, 232, 0.1);
-  --color-emphasis: #fbbf24;
+  --color-code-bg: #2d2d2d;
+  --color-code-text: #e5e5e5;
+  --color-code-border: rgba(255, 255, 255, 0.1);
+  --color-emphasis: #DC2626;
   --color-scroll-button: #dc2626;
   --color-scroll-button-hover: #b91c1c;
 }
@@ -54,33 +55,33 @@
 @media (prefers-color-scheme: light) {
   :root {
     color-scheme: light;
-    /* Light theme colors - Gray and cream flat design */
-    --maincolor: #faf9f7;
-    --supportingcolor: #f5f1e8;
+    /* Light theme colors - Red and Gray */
+    --maincolor: #FFFFFF;
+    --supportingcolor: #F3F4F6;
     --text: #374151;
-    --heading: #1f2937;
-    --primary: #1f2937;
-    --accent: #dc2626;
-    --accent-hover: #b91c1c;
-    --card-bg: #ffffff;
+    --heading: #111827;
+    --primary: #DC2626;
+    --accent: #DC2626;
+    --accent-hover: #B91C1C;
+    --card-bg: #FFFFFF;
     
-    /* Unified color system - Light theme - Gray and cream flat colors */
+    /* Unified color system - Light theme */
     --color-white: #ffffff;
     --color-black: #000000;
-    --color-cream: #E8E6DA;
+    --color-cream: #F3F4F6; /* Mapped to light gray */
     --color-gray-light: #6b7280;
     --color-gray-medium: #9ca3af;
     --color-gray-dark: #d1d5db;
-    --color-border-light: rgba(55, 65, 81, 0.1);
-    --color-border-medium: rgba(55, 65, 81, 0.15);
-    --color-overlay-light: rgba(55, 65, 81, 0.05);
-    --color-overlay-medium: rgba(55, 65, 81, 0.1);
+    --color-border-light: rgba(0, 0, 0, 0.1);
+    --color-border-medium: rgba(0, 0, 0, 0.15);
+    --color-overlay-light: rgba(0, 0, 0, 0.05);
+    --color-overlay-medium: rgba(0, 0, 0, 0.1);
     --color-success: #16a34a;
     --color-success-hover: #15803d;
-    --color-code-bg: #f5f1e8;
+    --color-code-bg: #f3f4f6;
     --color-code-text: #374151;
-    --color-code-border: rgba(55, 65, 81, 0.15);
-    --color-emphasis: #fbbf24;
+    --color-code-border: rgba(0, 0, 0, 0.1);
+    --color-emphasis: #DC2626;
     --color-scroll-button: #dc2626;
     --color-scroll-button-hover: #b91c1c;
   }
@@ -114,9 +115,9 @@ html {
 /* Modern smooth animations */
 .fade-in,
 * {
-  animation: fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: transform, opacity;
-  transform: translate3d(0, 0, 0);
+  /* animation: fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1); */ /* Disabled global animation to let framer-motion handle it */
+  will-change: auto;
+  /* transform: translate3d(0, 0, 0); */
 }
 
 /* Enhanced interaction animations */

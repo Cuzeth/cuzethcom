@@ -1,8 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { Button } from '@/components/Button/Button';
-import AnimateOnScroll from '@/components/AnimateOnScroll/AnimateOnScroll';
-import { HiHome, HiFolder, HiInformationCircle, HiSparkles, HiExclamationTriangle } from 'react-icons/hi2';
+import FadeInWrapper from '@/components/FadeInWrapper/FadeInWrapper';
+import { HiHome, HiFolder, HiInformationCircle, HiSparkles } from 'react-icons/hi2';
 import styles from './not-found.module.css';
 
 export const metadata: Metadata = {
@@ -13,7 +12,7 @@ export const metadata: Metadata = {
 export default function NotFoundPage() {
     const quickLinks = [
         { href: '/', icon: HiHome, label: 'Home', description: 'Back to the main page' },
-        { href: '/mywork', icon: HiFolder, label: 'My Work', description: 'Check out my projects' },
+        { href: '/projects', icon: HiFolder, label: 'Projects', description: 'Check out my projects' },
         { href: '/daboiz', icon: HiSparkles, label: 'Da Boiz', description: 'Discord bot project' },
         { href: '/about', icon: HiInformationCircle, label: 'About', description: 'Learn more about me' }
     ];
@@ -23,19 +22,19 @@ export default function NotFoundPage() {
             <div className={styles.content}>
                 {/* Main Error Section */}
                 <div className={styles.errorSection}>
-                    <AnimateOnScroll animation="animate-slide-up">
+                    <FadeInWrapper direction="up">
                         <p className={styles.errorCode}>404</p>
-                    </AnimateOnScroll>
+                    </FadeInWrapper>
 
-                    <AnimateOnScroll animation="animate-slide-up" delay="0.2s">
+                    <FadeInWrapper direction="up" delay={0.2}>
                         <h1 className={styles.errorTitle}>
                             Page Not Found
                         </h1>
-                    </AnimateOnScroll>
+                    </FadeInWrapper>
                 </div>
 
                 {/* Quick Links Section */}
-                <AnimateOnScroll animation="animate-slide-up" delay="0.8s">
+                <FadeInWrapper direction="up" delay={0.8}>
                     <div className={styles.quickLinksSection}>
                         <h2 className={styles.quickLinksTitle}>Where would you like to go?</h2>
 
@@ -43,10 +42,10 @@ export default function NotFoundPage() {
                             {quickLinks.map((link, index) => {
                                 const IconComponent = link.icon;
                                 return (
-                                    <AnimateOnScroll
+                                    <FadeInWrapper
                                         key={link.href}
-                                        animation="animate-scale-in"
-                                        delay={`${1.0 + index * 0.1}s`}
+                                        direction="up"
+                                        delay={1.0 + index * 0.1}
                                     >
                                         <Link
                                             href={link.href}
@@ -60,12 +59,12 @@ export default function NotFoundPage() {
                                                 <p className={styles.quickLinkDescription}>{link.description}</p>
                                             </div>
                                         </Link>
-                                    </AnimateOnScroll>
+                                    </FadeInWrapper>
                                 );
                             })}
                         </div>
                     </div>
-                </AnimateOnScroll>
+                </FadeInWrapper>
 
             </div>
         </div>

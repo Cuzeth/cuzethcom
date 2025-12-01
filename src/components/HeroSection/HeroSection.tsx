@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/Button/Button';
-import AnimateOnScroll from '@/components/AnimateOnScroll/AnimateOnScroll';
+import { motion } from 'framer-motion';
 import styles from './HeroSection.module.css';
 import { HeroData } from '@/app/data';
 
@@ -14,6 +14,16 @@ export default function HeroSection(data: HeroData) {
         return headline.map((segment, index) =>
             segment.emphasize ? <em key={index}>{segment.text}</em> : <span key={index}>{segment.text}</span>
         );
+    };
+
+    const fadeInUp = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0 }
+    };
+
+    const slideIn = {
+        hidden: { opacity: 0, x: -20 },
+        visible: { opacity: 1, x: 0 }
     };
 
     return (
@@ -29,47 +39,78 @@ export default function HeroSection(data: HeroData) {
                     <div className={styles.col}>
                         <div className={styles['home__hero-text-wrapper']}>
                             {data.topLine && (
-                                <AnimateOnScroll animation="animate-slide-down" threshold={0.3}>
-                                    <div className={styles['top-line']}>
-                                        {data.topLine}
-                                    </div>
-                                </AnimateOnScroll>
+                                <motion.div 
+                                    initial={{ opacity: 0, y: -20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    className={styles['top-line']}
+                                >
+                                    {data.topLine}
+                                </motion.div>
                             )}
                             {data.headline && (
-                                <AnimateOnScroll animation="animate-slide-up" delay="0.2s" threshold={0.3}>
-                                    <h1 className={data.lightText ? styles.heading : `${styles.heading} ${styles.dark}`}>
-                                        {renderHeadline(data.headline)}
-                                    </h1>
-                                </AnimateOnScroll>
+                                <motion.h1 
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    viewport={{ once: true }}
+                                    variants={fadeInUp}
+                                    transition={{ delay: 0.2 }}
+                                    className={data.lightText ? styles.heading : `${styles.heading} ${styles.dark}`}
+                                >
+                                    {renderHeadline(data.headline)}
+                                </motion.h1>
                             )}
                             {data.description && (
-                                <AnimateOnScroll animation="animate-slide-up" delay="0.4s" threshold={0.3}>
-                                    <p className={data.lightTextDesc ? styles['home__hero-subtitle'] : `${styles['home__hero-subtitle']} ${styles.dark}`}>
-                                        {data.description}
-                                    </p>
-                                </AnimateOnScroll>
+                                <motion.p 
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    viewport={{ once: true }}
+                                    variants={fadeInUp}
+                                    transition={{ delay: 0.4 }}
+                                    className={data.lightTextDesc ? styles['home__hero-subtitle'] : `${styles['home__hero-subtitle']} ${styles.dark}`}
+                                >
+                                    {data.description}
+                                </motion.p>
                             )}
                             {data.sendTo ? (
-                                <AnimateOnScroll animation="animate-slide-up" delay="0.6s" threshold={0.3}>
+                                <motion.div 
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    viewport={{ once: true }}
+                                    variants={fadeInUp}
+                                    transition={{ delay: 0.6 }}
+                                >
                                     <a href={data.sendTo}>
                                         <Button buttonSize="btn--wide" buttonColor="red" className="animate-on-hover">
                                             {data.buttonLabel}
                                         </Button>
                                     </a>
-                                </AnimateOnScroll>
+                                </motion.div>
                             ) : data.buttonLabel ? (
-                                <AnimateOnScroll animation="animate-slide-up" delay="0.6s" threshold={0.3}>
+                                <motion.div 
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    viewport={{ once: true }}
+                                    variants={fadeInUp}
+                                    transition={{ delay: 0.6 }}
+                                >
                                     <Link href={data.linkTo}>
                                         <Button buttonSize="btn--wide" buttonColor="red" className="animate-on-hover">
                                             {data.buttonLabel}
                                         </Button>
                                     </Link>
-                                </AnimateOnScroll>
+                                </motion.div>
                             ) : null}
                         </div>
                     </div>
                     <div className={styles.col}>
-                        <AnimateOnScroll animation="animate-slide-left" delay="0.3s" threshold={0.3}>
+                        <motion.div 
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            variants={slideIn}
+                            transition={{ delay: 0.3 }}
+                        >
                             <div className={styles['home__hero-img-wrapper']}>
                                 {data.videoURL ? (
                                     <iframe
@@ -86,7 +127,7 @@ export default function HeroSection(data: HeroData) {
                                     data.img && <Image src={data.img} alt={data.alt} className={`${styles['home__hero-img']} animate-on-hover`} />
                                 )}
                             </div>
-                        </AnimateOnScroll>
+                        </motion.div>
                     </div>
                 </div>
             </div>

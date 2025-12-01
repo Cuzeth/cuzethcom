@@ -1,5 +1,4 @@
 import logo from '../../public/images/CuzethFlat.svg';
-import myWork from '../../public/images/mywork.svg';
 import daboiz from '../../public/images/DaBoiz.svg';
 import about from '../../public/images/about.png';
 
@@ -20,45 +19,19 @@ export interface HeroData {
     videoURL?: string;
 }
 
-// Home
-export const homeObjOne: HeroData = {
-    lightBg: false,
-    lightText: true,
-    lightTextDesc: true,
-    topLine: 'CUZETH',
-    headline: 'Welcome',
-    // description: 'noooo my airpods',
-    // buttonLabel: 'nooo',
-    img: logo,
-    alt: 'Cuzeth Logo'
-};
-
-// My Work
-export const myworkObjOne: HeroData = {
-    lightBg: false,
-    lightText: true,
-    lightTextDesc: false,
-    topLine: 'VIEW MY WORK',
-    headline: 'My Work',
-    description:
-        "I'm still in the process of expanding my portfolio, but here's a look at what I've worked on so far.",
-    img: myWork,
-    alt: 'My Work'
-};
-
 // Da Boiz
 export const daBoizObj: HeroData = {
     lightBg: false,
     lightText: true,
     lightTextDesc: true,
-    topLine: 'New Update',
+    topLine: 'RETIRED',
     headline: [
         { text: 'Multipurpose Discord Bot, ', emphasize: false },
         { text: 'completely free.', emphasize: true }
     ],
-    description: 'Da Boiz Bot is a free and open source Discord bot created using TypeScript.',
-    buttonLabel: 'Invite',
-    sendTo: 'https://discordapp.com/api/oauth2/authorize?client_id=636595833801801748&permissions=8&scope=bot%20applications.commands',
+    description: 'Da Boiz Bot was a free and open source Discord bot created using TypeScript. It is no longer maintained.',
+    // buttonLabel: 'Invite',
+    // sendTo: 'https://discordapp.com/api/oauth2/authorize?client_id=636595833801801748&permissions=8&scope=bot%20applications.commands',
     // imgStart: true,
     img: daboiz,
     alt: 'Da Boiz Bot',
@@ -75,7 +48,7 @@ export const aboutObj: HeroData = {
         { text: 'Creator, ', emphasize: true },
         { text: 'Student', emphasize: false }
     ],
-    description: `I'm Cuzeth, a ${calculateAge(new Date('2004-10-27T00:00:00'))} year old developer currently majoring in Computer Science. I have a passion for tech and software development, focusing on creating modern digital experiences and efficient solutions. When I'm not coding, I enjoy exploring new technologies and working on creative projects.`,
+    description: `I build modern digital experiences and efficient solutions. I'm a ${calculateAge(new Date('2004-10-27T00:00:00'))} year old developer currently majoring in Computer Science. I have a passion for tech and software development. When I'm not coding, I enjoy exploring new technologies and working on creative projects.`,
     img: about,
     alt: 'Website',
     imgStart: true,
@@ -209,6 +182,22 @@ Specifically:
 export const projectsData = [
     {
         id: 1,
+        title: "Get Workouts",
+        description: "Offline privacy-first workout tracker app built with SwiftUI.",
+        image: "/images/getworkoutsappicon.png",
+        technologies: ["SwiftUI", "iOS"],
+        liveLink: "https://getworkouts.app"
+    },
+    {
+        id: 2,
+        title: "Out There Social Club",
+        description: "Website and iOS app for a 501(c)(3) nonprofit.",
+        image: "/images/OTSC_Logo_Stamp_FullColor.png",
+        technologies: ["Next.js", "Firebase", "SwiftUI"],
+        liveLink: "https://outtheresocialclub.org"
+    },
+    {
+        id: 3,
         title: "QR Code Generator",
         description: "A modern QR code generator with customization options and download functionality.",
         image: "qrcode",
@@ -217,7 +206,7 @@ export const projectsData = [
         repoLink: 'https://github.com/Cuzeth/qr-generator-pwa'
     },
     {
-        id: 2,
+        id: 4,
         title: "Memorable Password Generator",
         description: "A web app that generates memorable and secure passwords. Built with Flask and styled-components for a modern UI.",
         image: "key",
@@ -226,7 +215,7 @@ export const projectsData = [
         repoLink: "https://github.com/Cuzeth/memorable-password-generator"
     },
     {
-        id: 3,
+        id: 5,
         title: "URL Shortener",
         description: "A personal URL shortener service built with Next.js and PostgreSQL.",
         image: "link",
@@ -234,7 +223,7 @@ export const projectsData = [
         repoLink: "https://github.com/Cuzeth/cuzurl"
     },
     {
-        id: 4,
+        id: 6,
         title: "Tetris Solver",
         description: "An AI-powered decision-making system that evaluates the best placement for each piece based on a scoring system.",
         image: "puzzle",
@@ -242,7 +231,7 @@ export const projectsData = [
         repoLink: "https://github.com/Cuzeth/tetris-solver"
     },
     {
-        id: 5,
+        id: 7,
         title: "This Site",
         description: "A personal portfolio site built with Next.JS, TypeScript, and TailwindCSS to showcase all projects and achievements by Cuzeth.",
         image: "site",
@@ -250,16 +239,16 @@ export const projectsData = [
         repoLink: "https://github.com/Cuzeth/cuzethcom"
     },
     {
-        id: 6,
+        id: 8,
         title: "Da Boiz Bot",
-        description: "A free and open-source Discord bot developed with Discord.js, TypeScript, and SQL, offering a wide range of features including moderation tools, helpful utilities, and engaging fun commands for community enhancement.",
+        description: "A free and open-source Discord bot developed with Discord.js, TypeScript, and SQL. It is no longer maintained.",
         image: "discord",
         technologies: ["Discord.js", "TypeScript", "SQL"],
         repoLink: "https://github.com/Cuzeth/da-boiz-bot"
     },
     {
-        id: 7,
-        title: "Tailosive Gaming (DISCONTINUED)",
+        id: 9,
+        title: "Tailosive Gaming",
         description: "Previous highlights I made for Tailosive Gaming.",
         image: "video",
         technologies: ["Adobe After Effects", "Motion Graphics", "Video Editing"],

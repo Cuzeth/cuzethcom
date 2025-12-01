@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import HeroSection from '@/components/HeroSection/HeroSection';
 import AnimatedDropdown from '@/components/AnimatedDropdown/AnimatedDropdown';
-import AnimateOnScroll from '@/components/AnimateOnScroll/AnimateOnScroll';
+import FadeInWrapper from '@/components/FadeInWrapper/FadeInWrapper';
 import { daBoizObj, daBoizPrivacyPolicy, daBoizTOS } from '../data';
 
 export const metadata: Metadata = {
@@ -15,15 +15,15 @@ export const metadata: Metadata = {
 export default function DaBoiz() {
     return (
         <>
-            <AnimateOnScroll animation="animate-fade-in">
+            <FadeInWrapper direction="none">
                 <HeroSection {...daBoizObj} />
-            </AnimateOnScroll>
-            <AnimateOnScroll animation="animate-slide-up" delay="0.2s">
+            </FadeInWrapper>
+            <FadeInWrapper delay={0.2} direction="up">
                 <AnimatedDropdown title="Read Terms of Use" markdownText={daBoizTOS} />
-            </AnimateOnScroll>
-            <AnimateOnScroll animation="animate-slide-up" delay="0.4s">
+            </FadeInWrapper>
+            <FadeInWrapper delay={0.4} direction="up">
                 <AnimatedDropdown title="Read Privacy Policy" markdownText={daBoizPrivacyPolicy} />
-            </AnimateOnScroll>
+            </FadeInWrapper>
         </>
     );
 }

@@ -1,7 +1,8 @@
+'use client';
 import Link from 'next/link';
 // import Image from 'next/image';
 import { FaInstagram, FaYoutube, FaTwitter, FaGithub, FaGitlab, FaTwitch, FaMailBulk, FaEnvelope, FaChartLine } from 'react-icons/fa';
-import AnimateOnScroll from '@/components/AnimateOnScroll/AnimateOnScroll';
+import { motion } from 'framer-motion';
 import styles from './Footer.module.css';
 // import logo from '../../../public/images/CuzethFlat.svg';
 
@@ -15,48 +16,70 @@ export default function Footer() {
         { href: "https://status.cuzeth.com/", icon: FaChartLine, label: "Status Page" }
     ];
 
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0 }
+    };
+
     return (
-        <AnimateOnScroll animation="animate-slide-up">
+        <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={containerVariants}
+        >
             <div className={styles['footer-container']}>
                 <section className={styles['social-media']}>
                     <div className={styles['social-media-wrap']}>
-                        <AnimateOnScroll animation="animate-scale-in" delay="0.2s">
-                            <div className={styles['footer-logo']}>
-                                <Link href="/" className={`${styles['social-logo']} animate-on-hover`}>
-                                    <h1 className={`${styles['footer-img']} cuzeth animate-subtle-pulse`}>C</h1>
-                                </Link>
-                            </div>
-                        </AnimateOnScroll>
-                        <AnimateOnScroll animation="animate-fade-in" delay="0.4s">
+                        <motion.div variants={itemVariants} className={styles['footer-logo']}>
+                            <Link href="/" className={`${styles['social-logo']} animate-on-hover`}>
+                                <motion.h1 
+                                    className={`${styles['footer-img']} cuzeth`}
+                                    animate={{ opacity: [1, 0.8, 1] }}
+                                    transition={{ duration: 2, repeat: Infinity }}
+                                >
+                                    C
+                                </motion.h1>
+                            </Link>
+                        </motion.div>
+                        <motion.div variants={itemVariants}>
                             <small className={styles['website-rights']}>
                                 CUZETH &copy; {new Date().getFullYear()}
                             </small>
-                        </AnimateOnScroll>
+                        </motion.div>
                         <div className={styles['social-icons']}>
                             {socialLinks.map((link, index) => {
                                 const IconComponent = link.icon;
                                 return (
-                                    <AnimateOnScroll 
+                                    <motion.a
                                         key={link.label}
-                                        animation="animate-scale-in" 
-                                        delay={`${(index + 1) * 0.1}s`}
+                                        variants={itemVariants}
+                                        className={`${styles['social-icon-link']} animate-on-hover`}
+                                        href={link.href}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        aria-label={link.label}
+                                        whileHover={{ scale: 1.1 }}
+                                        whileTap={{ scale: 0.95 }}
                                     >
-                                        <a
-                                            className={`${styles['social-icon-link']} animate-on-hover`}
-                                            href={link.href}
-                                            target="_blank"
-                                            rel="noreferrer"
-                                            aria-label={link.label}
-                                        >
-                                            <IconComponent />
-                                        </a>
-                                    </AnimateOnScroll>
+                                        <IconComponent />
+                                    </motion.a>
                                 );
                             })}
                         </div>
                     </div>
                 </section>
             </div>
-        </AnimateOnScroll>
+        </motion.div>
     );
 }
