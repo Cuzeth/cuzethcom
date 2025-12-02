@@ -13,7 +13,7 @@ interface AboutContentProps {
 
 export default function AboutContent({ aboutObj, skillsAndInterests }: AboutContentProps) {
     return (
-        <div className="bg-neutral-950 min-h-screen">
+        <div className="bg-supportingcolor dark:bg-neutral-950 min-h-screen">
             <HeroSection {...aboutObj} />
 
             <div className="container mx-auto px-6 md:px-12 py-20">
@@ -27,10 +27,10 @@ export default function AboutContent({ aboutObj, skillsAndInterests }: AboutCont
                             transition={{ duration: 0.5 }}
                             className="sticky top-24"
                         >
-                            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
-                                Beyond the <span className="text-red-600">Code.</span>
+                            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-heading">
+                                Beyond the <span className="text-accent">Code.</span>
                             </h2>
-                            <p className="text-gray-400 mb-8 leading-relaxed">
+                            <p className="text-text mb-8 leading-relaxed">
                                 Exploring the technical expertise and creative drive behind the work.
                             </p>
                             <Link href="/projects">
@@ -48,7 +48,7 @@ export default function AboutContent({ aboutObj, skillsAndInterests }: AboutCont
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: 0.2 }}
-                            className="prose prose-invert prose-lg max-w-none bg-neutral-900/30 p-8 md:p-12 rounded-2xl border border-neutral-800"
+                            className="max-w-none bg-card-bg p-8 md:p-12 rounded-2xl border border-border-medium"
                         >
                             {/* We use the existing component but wrapped nicely */}
                             <CenteredTextSection markdownText={skillsAndInterests} />

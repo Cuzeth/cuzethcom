@@ -42,18 +42,18 @@ function GridCard({ project, index }: { project: any, index: number }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
-            className="group relative bg-neutral-900/50 border border-neutral-800 rounded-xl overflow-hidden hover:border-red-600/50 transition-colors duration-300 flex flex-col h-full"
+            className="group relative bg-card-bg border border-border-medium rounded-xl overflow-hidden hover:border-accent/50 transition-colors duration-300 flex flex-col h-full"
         >
             {/* Image/Icon Container */}
-            <div className="relative h-48 w-full bg-neutral-900 flex items-center justify-center overflow-hidden border-b border-neutral-800">
-                <div className="absolute inset-0 bg-gradient-to-tr from-red-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="relative h-48 w-full bg-supportingcolor flex items-center justify-center overflow-hidden border-b border-border-medium">
+                <div className="absolute inset-0 bg-gradient-to-tr from-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
                 {project.image && (
                     <div className="transform transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-2">
                          {typeof project.image === 'string' && iconMap[project.image] ? (
                             React.createElement(iconMap[project.image], {
                                 size: 64,
-                                className: "text-neutral-500 group-hover:text-red-500 transition-colors duration-300"
+                                className: "text-gray-medium group-hover:text-accent transition-colors duration-300"
                             })
                         ) : typeof project.image === 'string' ? (
                             <div className="relative w-32 h-32">
@@ -68,7 +68,7 @@ function GridCard({ project, index }: { project: any, index: number }) {
                         ) : (
                              React.createElement(project.image, {
                                 size: 64,
-                                className: "text-neutral-500 group-hover:text-red-500 transition-colors duration-300"
+                                className: "text-gray-medium group-hover:text-accent transition-colors duration-300"
                             })
                         )}
                     </div>
@@ -78,7 +78,7 @@ function GridCard({ project, index }: { project: any, index: number }) {
             {/* Content */}
             <div className="p-6 flex flex-col flex-grow">
                 <div className="flex justify-between items-start mb-4">
-                    <h3 className="text-xl font-bold text-gray-100 group-hover:text-red-500 transition-colors">
+                    <h3 className="text-xl font-bold text-heading group-hover:text-accent transition-colors">
                         {project.title}
                     </h3>
                     <div className="flex gap-2">
@@ -87,7 +87,7 @@ function GridCard({ project, index }: { project: any, index: number }) {
                                 href={project.liveLink} 
                                 target="_blank" 
                                 rel="noopener noreferrer"
-                                className="text-gray-500 hover:text-white transition-colors p-1"
+                                className="text-gray-medium hover:text-heading transition-colors p-1"
                                 title="Live Demo"
                             >
                                 <FaExternalLinkAlt size={14} />
@@ -98,7 +98,7 @@ function GridCard({ project, index }: { project: any, index: number }) {
                                 href={project.repoLink} 
                                 target="_blank" 
                                 rel="noopener noreferrer"
-                                className="text-gray-500 hover:text-white transition-colors p-1"
+                                className="text-gray-medium hover:text-heading transition-colors p-1"
                                 title="View Code"
                             >
                                 <FaGithub size={16} />
@@ -107,7 +107,7 @@ function GridCard({ project, index }: { project: any, index: number }) {
                     </div>
                 </div>
 
-                <p className="text-gray-400 text-sm mb-6 line-clamp-3 flex-grow">
+                <p className="text-text text-sm mb-6 line-clamp-3 flex-grow">
                     {project.description}
                 </p>
 
@@ -115,13 +115,13 @@ function GridCard({ project, index }: { project: any, index: number }) {
                     {project.technologies.slice(0, 4).map((tech: string) => (
                         <span 
                             key={tech} 
-                            className="text-xs font-mono px-2 py-1 rounded bg-neutral-800 text-neutral-400 border border-neutral-700/50"
+                            className="text-xs font-mono px-2 py-1 rounded bg-supportingcolor text-text border border-border-light"
                         >
                             {tech}
                         </span>
                     ))}
                     {project.technologies.length > 4 && (
-                        <span className="text-xs font-mono px-2 py-1 rounded bg-neutral-900 text-neutral-500 border border-neutral-800">
+                        <span className="text-xs font-mono px-2 py-1 rounded bg-supportingcolor text-gray-medium border border-border-light">
                             +{project.technologies.length - 4}
                         </span>
                     )}

@@ -16,10 +16,10 @@ export default function ProjectsPage() {
         <div className="min-h-screen pt-32 pb-20 px-4 md:px-8">
             <FadeInWrapper direction="up">
                 <div className="container mx-auto mb-20">
-                    <h1 className="text-6xl md:text-8xl font-black mb-6 tracking-tighter text-white">
-                        WORK<span className="text-red-600">.</span>
+                    <h1 className="text-6xl md:text-8xl font-black mb-6 tracking-tighter text-heading">
+                        WORK<span className="text-accent">.</span>
                     </h1>
-                    <p className="text-xl md:text-2xl text-gray-400 max-w-2xl font-light">
+                    <p className="text-xl md:text-2xl text-text max-w-2xl font-light">
                         A curated collection of engineering projects, tools, and creative experiments.
                     </p>
                 </div>
