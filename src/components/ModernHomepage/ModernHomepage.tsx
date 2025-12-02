@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { HiArrowRight } from 'react-icons/hi2';
@@ -35,7 +36,13 @@ export default function ModernHomepage() {
                 }}
                 className="fixed bottom-0 left-1/2 w-[800px] h-[800px] md:w-[1200px] md:h-[1200px] z-0 pointer-events-none"
             >
-                <img src="/images/Logo.svg" alt="" className="w-full h-full object-contain" />
+                <Image 
+                    src="/images/Logo.svg" 
+                    alt="" 
+                    fill 
+                    className="object-contain"
+                    priority
+                />
             </motion.div>
 
             {/* Background Grid Pattern */}

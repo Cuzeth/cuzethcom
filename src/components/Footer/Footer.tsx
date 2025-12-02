@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { FaYoutube, FaGithub, FaGitlab, FaTwitch, FaEnvelope, FaChartLine } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import styles from './Footer.module.css';
-// import logo from '../../../public/images/CuzethFlat.svg';
 
 export default function Footer() {
     const socialLinks = [
