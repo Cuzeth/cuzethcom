@@ -181,19 +181,19 @@ export const daBoizPrivacyPolicy = `
 export const projectsData = [
     {
         id: 1,
-        title: "Workouts",
-        description: "A privacy-centric, offline-first workout tracking application for iOS.",
-        image: "/images/getworkoutsappicon.png",
-        technologies: ["SwiftUI", "iOS"],
-        liveLink: "https://getworkouts.app"
-    },
-    {
-        id: 2,
         title: "Out There Social Club",
         description: "Comprehensive digital platform for a 501(c)(3) nonprofit, featuring a web portal and iOS application.",
         image: "/images/OTSC_Logo_Stamp_FullColor.png",
         technologies: ["Next.js", "Firebase", "SwiftUI"],
         liveLink: "https://outtheresocialclub.org"
+    },
+    {
+        id: 2,
+        title: "Workouts",
+        description: "A privacy-centric, offline-first workout tracking application for iOS.",
+        image: "/images/getworkoutsappicon.png",
+        technologies: ["SwiftUI", "iOS"],
+        liveLink: "https://getworkouts.app"
     },
     {
         id: 3,

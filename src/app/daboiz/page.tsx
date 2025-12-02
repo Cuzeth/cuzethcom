@@ -19,10 +19,10 @@ export default function DaBoiz() {
                 <HeroSection {...daBoizObj} />
             </FadeInWrapper>
             <FadeInWrapper delay={0.2} direction="up">
-                <AnimatedDropdown title="Read Terms of Use" markdownText={daBoizTOS} />
+                <AnimatedDropdown title="Read Terms of Use (Archived)" markdownText={daBoizTOS} />
             </FadeInWrapper>
             <FadeInWrapper delay={0.4} direction="up">
-                <AnimatedDropdown title="Read Privacy Policy" markdownText={daBoizPrivacyPolicy} />
+                <AnimatedDropdown title="Read Privacy Policy (Archived)" markdownText={daBoizPrivacyPolicy} />
             </FadeInWrapper>
         </>
     );

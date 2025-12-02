@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 // import Image from 'next/image';
-import { FaYoutube, FaGithub, FaGitlab, FaTwitch, FaEnvelope, FaChartLine } from 'react-icons/fa';
+import { FaYoutube, FaGithub, FaGitlab, FaTwitch, FaEnvelope } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import styles from './Footer.module.css';
 
@@ -12,7 +12,6 @@ export default function Footer() {
         { href: "mailto:cuz@cuzeth.com", icon: FaEnvelope, label: "E-Mail" },
         { href: "https://github.com/Cuzeth", icon: FaGithub, label: "GitHub" },
         { href: "https://gitlab.com/Cuzeth", icon: FaGitlab, label: "GitLab" },
-        { href: "https://status.cuzeth.com/", icon: FaChartLine, label: "Status Page" }
     ];
 
     const containerVariants = {
@@ -31,7 +30,7 @@ export default function Footer() {
     };
 
     return (
-        <motion.div 
+        <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -42,7 +41,7 @@ export default function Footer() {
                     <div className={styles['social-media-wrap']}>
                         <motion.div variants={itemVariants} className={styles['footer-logo']}>
                             <Link href="/" className={`${styles['social-logo']} animate-on-hover`}>
-                                <motion.h1 
+                                <motion.h1
                                     className={`${styles['footer-img']} cuzeth`}
                                     animate={{ opacity: [1, 0.8, 1] }}
                                     transition={{ duration: 2, repeat: Infinity }}

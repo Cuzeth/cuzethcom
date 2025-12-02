@@ -36,10 +36,10 @@ export default function ModernHomepage() {
                 }}
                 className="fixed bottom-0 left-1/2 w-[800px] h-[800px] md:w-[1200px] md:h-[1200px] z-0 pointer-events-none"
             >
-                <Image 
-                    src="/images/Logo.svg" 
-                    alt="" 
-                    fill 
+                <Image
+                    src="/images/Logo.svg"
+                    alt=""
+                    fill
                     className="object-contain"
                     priority
                 />
@@ -150,16 +150,16 @@ export default function ModernHomepage() {
                 {/* Simple Project List for Home */}
                 <div className="max-w-7xl mx-auto grid grid-cols-1 gap-8">
                     <ProjectTeaser
-                        name="Workouts"
-                        category="iOS Application"
-                        year="2025"
-                        link="https://getworkouts.app"
-                    />
-                    <ProjectTeaser
                         name="Out There Social Club"
                         category="Non-profit Platform"
                         year="2025"
                         link="https://outtheresocialclub.org"
+                    />
+                    <ProjectTeaser
+                        name="Workouts"
+                        category="iOS Application"
+                        year="2025"
+                        link="https://getworkouts.app"
                     />
                     <ProjectTeaser
                         name="Da Boiz Bot"
