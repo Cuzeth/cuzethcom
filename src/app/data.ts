@@ -82,9 +82,11 @@ function calculateAge(birthday: Date) { // birthday is a date
 export const skillsAndInterests: string = `
 ## Technical Expertise
 
-- **Frontend Engineering:** React, Next.js, TypeScript, Tailwind CSS
+- **Programming Languages:** Python, TypeScript, Java, C, C++, C#
+- **Frontend Engineering:** React, Next.js, Svelte, TypeScript, Tailwind CSS
 - **Backend Architecture:** Node.js, Express, MongoDB, PostgreSQL
-- **DevOps & Tools:** Git, GitHub Actions, Vercel, Firebase
+- **DevOps & Tools:** Git, GitHub Actions, Cloudflare, Vercel, Firebase, Anaconda, NVM
+- **Data Science & Machine Learning:** PyTorch, TensorFlow
 - **Creative & Design:** UI/UX Design, Motion Graphics, Adobe Suite
 
 ## Passion & Pursuit

@@ -1,17 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import { Poppins } from "next/font/google";
 import "@/styles/globals.css";
 import Navbar from '@/components/Navbar/Navbar';
 import Footer from '@/components/Footer/Footer';
-
-const poppins = Poppins({
-  weight: ['500', '600', '800'],
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-poppins',
-});
 
 export const metadata: Metadata = {
   title: {
@@ -87,7 +79,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${poppins.variable} font-sans`}>
+    <html lang="en" className="font-sans">
       <Analytics />
       <SpeedInsights />
       <body>
