@@ -52,35 +52,7 @@
   --color-scroll-button: #dc2626;
   --color-scroll-button-hover: #b91c1c;
 
-  /* Shadcn/Tailwind System Mappings */
-  --background: #121212;
-  --foreground: #D1D5DB;
-  
-  --card: #1E1E1E;
-  --card-foreground: #D1D5DB;
-  
-  --popover: #1E1E1E;
-  --popover-foreground: #D1D5DB;
-  
-  --secondary: #1E1E1E;
-  --secondary-foreground: #D1D5DB;
-  
-  --muted: #1E1E1E;
-  --muted-foreground: #9ca3af;
-  
-  --destructive: #7f1d1d;
-  --destructive-foreground: #FFFFFF;
-  
-  --input: rgba(255, 255, 255, 0.1);
-  --ring: #DC2626;
-  
-  --radius: 0.5rem;
-  
-  --chart-1: #e76e50;
-  --chart-2: #2a9d8f;
-  --chart-3: #264653;
-  --chart-4: #f4a261;
-  --chart-5: #e9c46a;
+
 }
 
 /* Light Theme Overrides */
@@ -113,19 +85,6 @@
     --color-code-bg: #f3f4f6;
     --color-code-text: #374151;
     --color-code-border: rgba(0, 0, 0, 0.1);
-
-    --background: #FFFFFF;
-    --foreground: #374151;
-    --card: #FFFFFF;
-    --card-foreground: #374151;
-    --popover: #FFFFFF;
-    --popover-foreground: #374151;
-    --secondary: #F3F4F6;
-    --secondary-foreground: #111827;
-    --muted: #F3F4F6;
-    --muted-foreground: #6b7280;
-    
-    --input: rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -172,33 +131,6 @@
   
   --color-scroll-button: var(--color-scroll-button);
   --color-scroll-button-hover: var(--color-scroll-button-hover);
-  
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-  
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
 
   --font-sans: 'Junicode', Georgia, 'Times New Roman', serif;
   --font-serif: 'Junicode', Georgia, 'Times New Roman', serif;
