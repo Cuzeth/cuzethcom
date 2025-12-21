@@ -41,9 +41,9 @@ function GridCard({ project, index }: { project: any, index: number }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
-            className="group relative bg-card-bg border border-border-medium rounded-xl overflow-hidden hover:border-accent/50 transition-colors duration-300 flex flex-col h-full"
+            className="group relative bg-card-bg border border-medium rounded-xl overflow-hidden hover:border-accent/50 transition-colors duration-300 flex flex-col h-full"
         >
-            <div className="relative h-48 w-full bg-supportingcolor flex items-center justify-center overflow-hidden border-b border-border-medium">
+            <div className="relative h-48 w-full bg-supportingcolor flex items-center justify-center overflow-hidden border-b border-medium">
                 <div className="absolute inset-0 bg-gradient-to-tr from-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 {project.image && (
@@ -112,13 +112,13 @@ function GridCard({ project, index }: { project: any, index: number }) {
                     {project.technologies.slice(0, 4).map((tech: string) => (
                         <span
                             key={tech}
-                            className="text-xs font-mono px-2 py-1 rounded bg-supportingcolor text-text border border-border-light"
+                            className="text-xs font-mono px-2 py-1 rounded bg-supportingcolor text-text border border-light"
                         >
                             {tech}
                         </span>
                     ))}
                     {project.technologies.length > 4 && (
-                        <span className="text-xs font-mono px-2 py-1 rounded bg-supportingcolor text-gray-medium border border-border-light">
+                        <span className="text-xs font-mono px-2 py-1 rounded bg-supportingcolor text-gray-medium border border-light">
                             +{project.technologies.length - 4}
                         </span>
                     )}

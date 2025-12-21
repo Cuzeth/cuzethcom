@@ -87,7 +87,7 @@ export default function ModernHomepage() {
                                 </button>
                             </Link>
                             <Link href="/about">
-                                <button className="px-8 py-4 bg-transparent border border-border-medium text-heading font-bold rounded-full transition-all hover:bg-card-bg hover:border-border-light">
+                                <button className="px-8 py-4 bg-transparent border border-medium text-heading font-bold rounded-full transition-all hover:bg-card-bg hover:border-light">
                                     About Me
                                 </button>
                             </Link>
@@ -106,7 +106,7 @@ export default function ModernHomepage() {
                 </motion.div>
             </section>
 
-            <section className="relative z-10 py-32 px-6 md:px-12 bg-maincolor border-t border-border-light">
+            <section className="relative z-10 py-32 px-6 md:px-12 bg-maincolor border-t border-light">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                         <FeatureItem
@@ -185,7 +185,7 @@ function FeatureItem({ number, title, description }: { number: string, title: st
 function ProjectTeaser({ name, category, year, link }: { name: string, category: string, year: string, link: string }) {
     const isExternal = link.startsWith('http');
     const Content = (
-        <div className="flex flex-col md:flex-row md:items-center justify-between py-6 md:py-8 border-b border-border-light hover:border-accent transition-colors group cursor-pointer">
+        <div className="flex flex-col md:flex-row md:items-center justify-between py-6 md:py-8 border-b border-light hover:border-accent transition-colors group cursor-pointer">
             <h3 className="text-xl md:text-4xl font-bold text-heading group-hover:text-text group-hover:translate-x-4 transition-all duration-300">
                 {name}
             </h3>

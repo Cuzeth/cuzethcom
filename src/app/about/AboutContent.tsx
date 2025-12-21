@@ -48,7 +48,7 @@ export default function AboutContent({ aboutObj, skillsAndInterests }: AboutCont
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: 0.2 }}
-                            className="max-w-none bg-card-bg p-8 md:p-12 rounded-2xl border border-border-medium"
+                            className="max-w-none bg-card-bg p-8 md:p-12 rounded-2xl border border-medium"
                         >
                             {/* We use the existing component but wrapped nicely */}
                             <CenteredTextSection markdownText={skillsAndInterests} />
