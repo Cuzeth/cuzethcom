@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@plugin "tailwindcss-animate";
 @source "../**/*.{js,ts,jsx,tsx}";
 
 /* 1. Define CSS Variables in :root */
