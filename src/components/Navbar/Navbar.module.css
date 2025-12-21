@@ -16,7 +16,7 @@
     .navbar {
         height: 80px;
         font-size: 1.1rem;
-        position: sticky; /* Changed from static to sticky */
+        position: sticky;
         top: 0;
         border-bottom: none;
     }
@@ -72,8 +72,6 @@
     }
 }
 
-
-
 .navbar-logo {
     color: var(--text);
     justify-self: start;
@@ -94,7 +92,7 @@
     .navbar-logo {
         font-size: 2rem;
     }
-    
+
     .navbar-logo:hover {
         transform: scale(1.05);
         color: var(--text);
@@ -150,7 +148,7 @@
         height: auto;
         overflow: visible;
     }
-    
+
     .nav-menu.active {
         display: flex;
     }
@@ -169,11 +167,11 @@
         padding: 0;
         height: 80px;
     }
-    
+
     .nav-item:hover {
         transform: translateY(-2px);
     }
-    
+
     .nav-item::after {
         content: '';
         position: absolute;
@@ -187,7 +185,7 @@
         transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
         transform: translateX(-50%);
     }
-    
+
     .nav-item:hover::after {
         opacity: 1;
         width: 80%;
@@ -231,12 +229,12 @@
         min-height: auto;
         height: 100%;
     }
-    
+
     .nav-links:hover {
         background: none;
         color: var(--heading);
     }
-    
+
     .nav-links:active {
         transform: none;
         background: none;
@@ -278,5 +276,3 @@
         display: none;
     }
 }
-
-

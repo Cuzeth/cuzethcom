@@ -7,8 +7,8 @@ interface CenteredTextSectionProps {
 
 export default function CenteredTextSection({ markdownText }: CenteredTextSectionProps) {
     return (
-        <div className={styles['centered-text-section']}>
-            <ReactMarkdown className={styles['centered-text-markdown']}>
+        <div className={`${styles['centered-text-section']} ${styles['centered-text-markdown']}`}>
+            <ReactMarkdown>
                 {markdownText}
             </ReactMarkdown>
         </div>

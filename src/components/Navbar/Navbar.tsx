@@ -41,13 +41,13 @@ export default function Navbar() {
     };
 
     const menuVariants = {
-        closed: { 
+        closed: {
             opacity: 0,
             x: "100%",
             transition: { duration: 0.3 }
         },
-        open: { 
-            opacity: 1, 
+        open: {
+            opacity: 1,
             x: 0,
             transition: { duration: 0.3, staggerChildren: 0.1 }
         }
@@ -60,7 +60,7 @@ export default function Navbar() {
 
     return (
         <IconContext.Provider value={{ color: 'var(--text)' }}>
-            <motion.div 
+            <motion.div
                 className={styles.navbar}
                 initial="hidden"
                 animate="visible"
@@ -83,7 +83,7 @@ export default function Navbar() {
                         aria-label="Toggle navigation menu">
                         {click ? <FaTimes /> : <FaBars />}
                     </div>
-                    
+
                     {/* Desktop Menu */}
                     <ul className={`${styles['nav-menu']} hidden md:flex`}>
                         <li className={styles['nav-item']}>
@@ -100,8 +100,8 @@ export default function Navbar() {
                     {/* Mobile Menu Overlay */}
                     <AnimatePresence>
                         {click && (
-                            <motion.ul 
-                                className={`${styles['nav-menu']} ${styles.active}`} 
+                            <motion.ul
+                                className={`${styles['nav-menu']} ${styles.active}`}
                                 initial="closed"
                                 animate="open"
                                 exit="closed"

@@ -12,7 +12,6 @@ export default function ModernHomepage() {
         offset: ["start start", "end start"]
     });
 
-    // Page-wide scroll for background logo
     const { scrollYProgress: pageScroll } = useScroll();
     const logoOpacity = useTransform(pageScroll, [0, 0.2, 0.8, 1], [0.15, 0.25, 0.25, 0.15]);
     const logoScale = useTransform(pageScroll, [0, 1], [1.1, 1]);
@@ -25,8 +24,6 @@ export default function ModernHomepage() {
 
     return (
         <div className="relative bg-maincolor text-heading selection:bg-accent/30">
-
-            {/* Rotating Background Logo */}
             <motion.div
                 style={{
                     opacity: logoOpacity,
@@ -45,7 +42,6 @@ export default function ModernHomepage() {
                 />
             </motion.div>
 
-            {/* Background Grid Pattern */}
             <div className="fixed inset-0 z-0 opacity-20 pointer-events-none"
                 style={{
                     backgroundImage: 'radial-gradient(#333 1px, transparent 1px)',
@@ -53,7 +49,6 @@ export default function ModernHomepage() {
                 }}
             />
 
-            {/* Hero Section */}
             <section ref={targetRef} className="relative z-10 min-h-screen flex flex-col justify-center px-6 md:px-12 pt-20">
                 <motion.div
                     style={{ opacity, scale, y }}
@@ -100,7 +95,6 @@ export default function ModernHomepage() {
                     </motion.div>
                 </motion.div>
 
-                {/* Scroll Indicator */}
                 <motion.div
                     style={{ opacity: scrollIndicatorOpacity }}
                     animate={{ y: [0, 10, 0] }}
@@ -112,7 +106,6 @@ export default function ModernHomepage() {
                 </motion.div>
             </section>
 
-            {/* Philosophy / Features Grid */}
             <section className="relative z-10 py-32 px-6 md:px-12 bg-maincolor border-t border-border-light">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
@@ -135,7 +128,6 @@ export default function ModernHomepage() {
                 </div>
             </section>
 
-            {/* Recent Work Teaser */}
             <section className="relative z-10 py-16 md:py-32 px-6 md:px-12 bg-supportingcolor">
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-end mb-8 md:mb-16">
                     <div>
@@ -147,7 +139,6 @@ export default function ModernHomepage() {
                     </Link>
                 </div>
 
-                {/* Simple Project List for Home */}
                 <div className="max-w-7xl mx-auto grid grid-cols-1 gap-8">
                     <ProjectTeaser
                         name="Out There Social Club"

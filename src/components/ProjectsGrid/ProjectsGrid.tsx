@@ -10,7 +10,6 @@ import { IoExtensionPuzzle } from 'react-icons/io5';
 import { SiAdobeaftereffects, SiNextdotjs } from 'react-icons/si';
 import React from 'react';
 
-// Re-using the icon map logic
 const iconMap: { [key: string]: React.ComponentType<{ size?: number; className?: string }> } = {
     key: PiPasswordFill,
     qrcode: HiQrcode,
@@ -22,7 +21,7 @@ const iconMap: { [key: string]: React.ComponentType<{ size?: number; className?:
 };
 
 interface ProjectsGridProps {
-    projects: any[]; // Using any to avoid strict type import issues for now, will refine
+    projects: any[];
 }
 
 export default function ProjectsGrid({ projects }: ProjectsGridProps) {
@@ -44,10 +43,9 @@ function GridCard({ project, index }: { project: any, index: number }) {
             transition={{ delay: index * 0.1 }}
             className="group relative bg-card-bg border border-border-medium rounded-xl overflow-hidden hover:border-accent/50 transition-colors duration-300 flex flex-col h-full"
         >
-            {/* Image/Icon Container */}
             <div className="relative h-48 w-full bg-supportingcolor flex items-center justify-center overflow-hidden border-b border-border-medium">
                 <div className="absolute inset-0 bg-gradient-to-tr from-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
+
                 {project.image && (
                     <div className="transform transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-2">
                          {typeof project.image === 'string' && iconMap[project.image] ? (
@@ -75,7 +73,6 @@ function GridCard({ project, index }: { project: any, index: number }) {
                 )}
             </div>
 
-            {/* Content */}
             <div className="p-6 flex flex-col flex-grow">
                 <div className="flex justify-between items-start mb-4">
                     <h3 className="text-xl font-bold text-heading group-hover:text-accent transition-colors">
@@ -83,9 +80,9 @@ function GridCard({ project, index }: { project: any, index: number }) {
                     </h3>
                     <div className="flex gap-2">
                          {project.liveLink && (
-                            <a 
-                                href={project.liveLink} 
-                                target="_blank" 
+                            <a
+                                href={project.liveLink}
+                                target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-gray-medium hover:text-heading transition-colors p-1"
                                 title="Live Demo"
@@ -94,9 +91,9 @@ function GridCard({ project, index }: { project: any, index: number }) {
                             </a>
                         )}
                         {project.repoLink && (
-                            <a 
-                                href={project.repoLink} 
-                                target="_blank" 
+                            <a
+                                href={project.repoLink}
+                                target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-gray-medium hover:text-heading transition-colors p-1"
                                 title="View Code"
@@ -113,8 +110,8 @@ function GridCard({ project, index }: { project: any, index: number }) {
 
                 <div className="flex flex-wrap gap-2 mt-auto">
                     {project.technologies.slice(0, 4).map((tech: string) => (
-                        <span 
-                            key={tech} 
+                        <span
+                            key={tech}
                             className="text-xs font-mono px-2 py-1 rounded bg-supportingcolor text-text border border-border-light"
                         >
                             {tech}

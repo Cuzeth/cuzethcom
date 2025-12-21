@@ -35,7 +35,7 @@ export default function HeroSection(data: HeroData) {
                     <div className={styles.col}>
                         <div className={styles['home__hero-text-wrapper']}>
                             {data.topLine && (
-                                <motion.div 
+                                <motion.div
                                     initial={{ opacity: 0, y: -20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
@@ -45,7 +45,7 @@ export default function HeroSection(data: HeroData) {
                                 </motion.div>
                             )}
                             {data.headline && (
-                                <motion.h1 
+                                <motion.h1
                                     initial="hidden"
                                     whileInView="visible"
                                     viewport={{ once: true }}
@@ -57,7 +57,7 @@ export default function HeroSection(data: HeroData) {
                                 </motion.h1>
                             )}
                             {data.description && (
-                                <motion.p 
+                                <motion.p
                                     initial="hidden"
                                     whileInView="visible"
                                     viewport={{ once: true }}
@@ -69,7 +69,7 @@ export default function HeroSection(data: HeroData) {
                                 </motion.p>
                             )}
                             {data.sendTo ? (
-                                <motion.div 
+                                <motion.div
                                     initial="hidden"
                                     whileInView="visible"
                                     viewport={{ once: true }}
@@ -83,7 +83,7 @@ export default function HeroSection(data: HeroData) {
                                     </a>
                                 </motion.div>
                             ) : data.buttonLabel ? (
-                                <motion.div 
+                                <motion.div
                                     initial="hidden"
                                     whileInView="visible"
                                     viewport={{ once: true }}
@@ -100,7 +100,7 @@ export default function HeroSection(data: HeroData) {
                         </div>
                     </div>
                     <div className={styles.col}>
-                        <motion.div 
+                        <motion.div
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
@@ -120,7 +120,7 @@ export default function HeroSection(data: HeroData) {
                                         className="animate-on-hover"
                                     />
                                 ) : (
-                                    data.img && <Image src={data.img} alt={data.alt} className={`${styles['home__hero-img']} animate-on-hover`} />
+                                    data.img && <Image src={data.img} alt={data.alt} width={555} height={400} className={`${styles['home__hero-img']} animate-on-hover`} />
                                 )}
                             </div>
                         </motion.div>

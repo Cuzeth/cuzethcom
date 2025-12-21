@@ -1,7 +1,3 @@
-import daboiz from '../../public/images/DaBoiz.svg';
-import about from '../../public/images/about.png';
-import otscLogo from '../../public/images/OTSC_Logo_Stamp_FullColor.png';
-
 // Template
 export interface HeroData {
     lightBg: boolean;
@@ -30,10 +26,7 @@ export const daBoizObj: HeroData = {
         { text: 'completely free.', emphasize: true }
     ],
     description: 'Da Boiz Bot was a comprehensive, open-source Discord bot built with TypeScript. While no longer active, its legacy lives on in the codebase.',
-    // buttonLabel: 'Invite',
-    // sendTo: 'https://discordapp.com/api/oauth2/authorize?client_id=636595833801801748&permissions=8&scope=bot%20applications.commands',
-    // imgStart: true,
-    img: daboiz,
+    img: '/images/DaBoiz.svg',
     alt: 'Da Boiz Bot',
 };
 
@@ -50,7 +43,7 @@ export const otscObj: HeroData = {
     description: 'A comprehensive digital ecosystem for a 501(c)(3) nonprofit, integrating a dynamic web portal with a feature-rich iOS application. Powered by Next.js, Firebase, and SwiftUI to connect the community.',
     buttonLabel: 'Visit Website',
     sendTo: 'https://outtheresocialclub.org',
-    img: otscLogo,
+    img: '/images/OTSC_Logo_Stamp_FullColor.png',
     alt: 'Out There Social Club Logo',
     imgStart: false,
 };
@@ -67,15 +60,15 @@ export const aboutObj: HeroData = {
         { text: 'Student', emphasize: false }
     ],
     description: `I architect modern digital solutions with a focus on performance and privacy. As a ${calculateAge(new Date('2004-10-27T00:00:00'))}-year-old Computer Science major, I blend academic rigor with practical application. Whether building full-stack applications or exploring new frameworks, I am driven by a passion for efficient code and exceptional user experiences.`,
-    img: about,
+    img: '/images/about.png',
     alt: 'Website',
     imgStart: true,
 };
 
-function calculateAge(birthday: Date) { // birthday is a date
+function calculateAge(birthday: Date) {
     // @ts-ignore
     const ageDifMs = Date.now() - birthday;
-    const ageDate = new Date(ageDifMs); // miliseconds from epoch
+    const ageDate = new Date(ageDifMs);
     return Math.abs(ageDate.getUTCFullYear() - 1970);
 }
 

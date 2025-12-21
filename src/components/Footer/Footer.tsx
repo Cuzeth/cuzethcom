@@ -1,6 +1,5 @@
 'use client';
 import Link from 'next/link';
-// import Image from 'next/image';
 import { FaYoutube, FaGithub, FaGitlab, FaTwitch, FaEnvelope } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import styles from './Footer.module.css';
