@@ -10,7 +10,7 @@ const rateLimitCache = new LRUCache<string, { count: number, timestamp: number }
 const RATE_LIMIT = 5; // Number of requests
 const TIME_WINDOW = 60 * 1000; // Time window in milliseconds (60 seconds)
 
-export async function proxy(request: NextRequest) {
+export async function middleware(request: NextRequest) {
     const ip = request.headers.get('x-real-ip') || request.ip || 'default-ip';
 
     if (!ip) {
