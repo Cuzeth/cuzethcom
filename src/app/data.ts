@@ -182,6 +182,15 @@ export const daBoizPrivacyPolicy = `
 // Project Data
 export const projectsData = [
     {
+        id: 10,
+        title: "Strobe",
+        description: "A local-first Rapid Serial Visual Presentation reader for iOS. Read PDFs and EPUBs at 100–1000 WPM with a focus-first design and no cloud dependency.",
+        image: "/images/strobe.svg",
+        technologies: ["SwiftUI", "iOS"],
+        liveLink: "https://strobefast.app",
+        repoLink: "https://github.com/Cuzeth/Rapid-Serial-Visual-Presentation"
+    },
+    {
         id: 1,
         title: "Out There Social Club",
         description: "Comprehensive digital platform for a 501(c)(3) nonprofit, featuring a web portal and iOS application.",
@@ -230,14 +239,6 @@ export const projectsData = [
         image: "puzzle",
         technologies: ["Python", "Numpy", "AI"],
         repoLink: "https://github.com/Cuzeth/tetris-solver"
-    },
-    {
-        id: 7,
-        title: "This Site",
-        description: "Personal portfolio and digital showcase engineered with Next.js.",
-        image: "/images/Logo.png",
-        technologies: ["Next.JS", "TypeScript", "TailwindCSS"],
-        repoLink: "https://github.com/Cuzeth/cuzethcom"
     },
     {
         id: 8,
