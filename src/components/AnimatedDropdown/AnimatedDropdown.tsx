@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './AnimatedDropdown.module.css';
 import CenteredTextSection from '@/components/CenteredTextSection/CenteredTextSection';

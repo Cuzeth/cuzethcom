@@ -10,8 +10,8 @@ const rateLimitCache = new LRUCache<string, { count: number, timestamp: number }
 const RATE_LIMIT = 5; // Number of requests
 const TIME_WINDOW = 60 * 1000; // Time window in milliseconds (60 seconds)
 
-export async function middleware(request: NextRequest) {
-    const ip = request.headers.get('x-real-ip') || request.ip || 'default-ip';
+export default async function proxy(request: NextRequest) {
+    const ip = request.headers.get('x-real-ip') || request.headers.get('x-forwarded-for')?.split(',')[0] || 'default-ip';
 
     if (!ip) {
         return new NextResponse('IP address not found', { status: 400 });
@@ -44,5 +44,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-    matcher: '/api/:path*', // Apply middleware to all /api routes
+    matcher: '/api/:path*', // Apply proxy to all /api routes
 };
