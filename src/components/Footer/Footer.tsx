@@ -54,7 +54,7 @@ export default function Footer() {
                         </motion.div>
                         <motion.div variants={itemVariants}>
                             <small className={styles['website-rights']}>
-                                CUZETH &copy; {new Date().getFullYear()}
+                                Jaafar Abdeen &copy; {new Date().getFullYear()}
                             </small>
                         </motion.div>
                         <div className={styles['social-icons']}>

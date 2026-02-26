@@ -1,19 +1,26 @@
 import type { Metadata, Viewport } from "next";
+import { Space_Grotesk } from 'next/font/google';
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import "@/styles/globals.css";
 import Navbar from '@/components/Navbar/Navbar';
 import Footer from '@/components/Footer/Footer';
 
+const inter = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+});
+
 export const metadata: Metadata = {
   title: {
     template: "%s | Cuzeth",
-    default: "Cuzeth - Web Developer & CS Student"
+    default: "Cuzeth — Software Engineer"
   },
   alternates: {
     canonical: '/',
   },
-  description: "Portfolio of Cuzeth, a Computer Science student and developer specializing in modern web applications and software solutions.",
+  description: "Cuzeth — software engineer building fast, private, well-crafted software.",
   applicationName: "Cuzeth",
   metadataBase: new URL("https://cuzeth.com"),
   icons: [
@@ -28,8 +35,8 @@ export const metadata: Metadata = {
     siteName: "Cuzeth",
     type: "website",
     url: "https://cuzeth.com/",
-    title: "Cuzeth - Web Developer & CS Student",
-    description: "Portfolio of Cuzeth, a Computer Science student and developer specializing in modern web applications and software solutions.",
+    title: "Cuzeth — Software Engineer",
+    description: "Portfolio of Jaafar Abdeen — software engineer building fast, private, well-crafted software.",
     images: [
       {
         url: "/images/banner.png",
@@ -41,15 +48,15 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cuzeth - Web Developer & CS Student",
-    description: "Portfolio of Cuzeth, a Computer Science student and developer specializing in modern web applications and software solutions.",
+    title: "Cuzeth — Software Engineer",
+    description: "Portfolio of Jaafar Abdeen — software engineer building fast, private, well-crafted software.",
     images: "/images/banner.png",
     creator: "@Cuzeth",
   },
-  keywords: "Cuzeth, developer, web development, portfolio, projects, software engineering, discord bot, full stack, computer science, student developer",
+  keywords: "Jaafar Abdeen, Cuzeth, developer, web development, portfolio, software engineering, iOS, Swift, full stack, computer science",
   authors: [
     {
-      name: "Cuzeth",
+      name: "Jaafar Abdeen",
       url: "https://cuzeth.com",
     },
   ],
@@ -68,7 +75,7 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   themeColor: [
-    { color: "#1A1A1A", media: "(prefers-color-scheme: dark)" },
+    { color: "#080808", media: "(prefers-color-scheme: dark)" },
     { color: "#FAF9F7", media: "(prefers-color-scheme: light)" },
   ],
 };
@@ -79,7 +86,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="font-sans">
+    <html lang="en" className={inter.variable}>
       <Analytics />
       <SpeedInsights />
       <body>

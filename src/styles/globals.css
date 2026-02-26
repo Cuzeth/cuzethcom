@@ -17,28 +17,28 @@
 }
 
 :root {
-  /* Default dark theme - Red and Gray */
+  /* Default dark theme - Linear/Vercel inspired */
   color-scheme: dark;
-  /* Dark theme colors */
-  --maincolor: #121212;
-  --supportingcolor: #1E1E1E;
-  --text: #D1D5DB;
-  --heading: #FFFFFF;
+  --maincolor: #080808;
+  --supportingcolor: #111111;
+  --text: #A1A1AA;
+  --heading: #FAFAFA;
   --primary: #DC2626;
   --accent: #DC2626;
   --accent-hover: #B91C1C;
-  --accent-glow: rgba(220, 38, 38, 0.5);
-  --card-bg: #1E1E1E;
-  
+  --accent-glow: rgba(220, 38, 38, 0.4);
+  --card-bg: #0F0F0F;
+  --font-mono: 'ui-monospace', 'SF Mono', 'Menlo', monospace;
+
   /* Unified color system - Dark theme */
   --color-white: #ffffff;
   --color-black: #000000;
-  --color-cream: #E5E5E5; /* Mapped to light gray */
+  --color-cream: #E5E5E5;
   --color-gray-light: #d1d5db;
-  --color-gray-medium: #9ca3af;
-  --color-gray-dark: #6b7280;
-  --color-border-light: rgba(255, 255, 255, 0.1);
-  --color-border-medium: rgba(255, 255, 255, 0.15);
+  --color-gray-medium: #71717A;
+  --color-gray-dark: #52525B;
+  --color-border-light: rgba(255, 255, 255, 0.05);
+  --color-border-medium: rgba(255, 255, 255, 0.09);
   --color-overlay-light: rgba(255, 255, 255, 0.05);
   --color-overlay-medium: rgba(255, 255, 255, 0.1);
   --color-success: #16a34a;
@@ -51,52 +51,36 @@
   --color-scroll-button-hover: #b91c1c;
 }
 
-/* Light theme */
+/* Force dark mode regardless of system preference */
 @media (prefers-color-scheme: light) {
   :root {
-    color-scheme: light;
-    /* Light theme colors - Red and Gray */
-    --maincolor: #FFFFFF;
-    --supportingcolor: #F3F4F6;
-    --text: #374151;
-    --heading: #111827;
-    --primary: #DC2626;
-    --accent: #DC2626;
-    --accent-hover: #B91C1C;
-    --card-bg: #FFFFFF;
-    
-    /* Unified color system - Light theme */
-    --color-white: #ffffff;
-    --color-black: #000000;
-    --color-cream: #F3F4F6; /* Mapped to light gray */
-    --color-gray-light: #6b7280;
-    --color-gray-medium: #9ca3af;
-    --color-gray-dark: #d1d5db;
-    --color-border-light: rgba(0, 0, 0, 0.1);
-    --color-border-medium: rgba(0, 0, 0, 0.15);
-    --color-overlay-light: rgba(0, 0, 0, 0.05);
-    --color-overlay-medium: rgba(0, 0, 0, 0.1);
-    --color-success: #16a34a;
-    --color-success-hover: #15803d;
-    --color-code-bg: #f3f4f6;
-    --color-code-text: #374151;
-    --color-code-border: rgba(0, 0, 0, 0.1);
-    --color-emphasis: #DC2626;
-    --color-scroll-button: #dc2626;
-    --color-scroll-button-hover: #b91c1c;
+    color-scheme: dark;
+    --maincolor: #080808;
+    --supportingcolor: #111111;
+    --text: #A1A1AA;
+    --heading: #FAFAFA;
+    --card-bg: #0F0F0F;
+    --color-border-light: rgba(255, 255, 255, 0.05);
+    --color-border-medium: rgba(255, 255, 255, 0.09);
+    --color-overlay-light: rgba(255, 255, 255, 0.05);
+    --color-overlay-medium: rgba(255, 255, 255, 0.1);
+    --color-code-bg: #2d2d2d;
+    --color-code-text: #e5e5e5;
+    --color-code-border: rgba(255, 255, 255, 0.1);
   }
 }
 
 html {
   scroll-behavior: smooth;
   background-color: var(--maincolor);
+  color-scheme: dark;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Junicode', Georgia, 'Times New Roman', serif;
+  font-family: var(--font-inter), Inter, system-ui, -apple-system, sans-serif;
   position: relative;
   font-feature-settings: 'kern' 1, 'liga' 1, 'hist' 1;
   text-rendering: optimizeLegibility;

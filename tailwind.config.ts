@@ -50,8 +50,8 @@ const config: Config = {
         }
       },
       fontFamily: {
-        sans: ['Junicode', 'Georgia', 'Times New Roman', 'serif'],
-        serif: ['Junicode', 'Georgia', 'Times New Roman', 'serif']
+        sans: ['var(--font-inter)', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        mono: ['var(--font-mono)', 'ui-monospace', 'SF Mono', 'Menlo', 'monospace'],
       },
       spacing: {
         '128': '32rem',

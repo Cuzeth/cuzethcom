@@ -66,7 +66,7 @@ export const aboutObj: HeroData = {
         { text: 'Creator, ', emphasize: true },
         { text: 'Student', emphasize: false }
     ],
-    description: `I architect modern digital solutions with a focus on performance and privacy. As a ${calculateAge(new Date('2004-10-27T00:00:00'))}-year-old Computer Science major, I blend academic rigor with practical application. Whether building full-stack applications or exploring new frameworks, I am driven by a passion for efficient code and exceptional user experiences.`,
+    description: `I architect modern digital solutions with a focus on performance and privacy. As a ${calculateAge(new Date('2004-10-27T00:00:00'))}-year-old Computer Science (Cybersecurity) major, I blend academic rigor with practical application. Whether building full-stack applications or exploring new frameworks, I am driven by a passion for efficient code and exceptional user experiences.`,
     img: about,
     alt: 'Website',
     imgStart: true,
@@ -95,7 +95,11 @@ Beyond the terminal, I am dedicated to the intersection of technology and design
 
 ## Academic Focus
 
-Currently pursuing a Bachelor of Science in Computer Science. My studies emphasize software engineering principles, system architecture, and algorithmic efficiency, complemented by continuous self-directed learning.
+Currently pursuing a Bachelor of Science in Computer Science (Cybersecurity). My studies emphasize software engineering principles, system architecture, and algorithmic efficiency, complemented by continuous self-directed learning.
+
+---
+
+View my full CV at [jaafar.cv](https://jaafar.cv).
 `;
 
 // Da Boiz TOS
