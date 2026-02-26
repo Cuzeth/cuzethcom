@@ -18,6 +18,13 @@ export default function Navbar() {
 
     const pathname = usePathname();
 
+    const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    const handleNavClick = () => {
+        closeMobileMenu();
+        scrollToTop();
+    };
+
     useEffect(() => {
         closeMobileMenu();
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -72,7 +79,7 @@ export default function Navbar() {
                 variants={navVariants}
             >
                 <div className={`${styles['navbar-container']} ${styles.container}`}>
-                    <Link href="/" className={styles['navbar-logo']} onClick={closeMobileMenu}>
+                    <Link href="/" className={styles['navbar-logo']} onClick={handleNavClick}>
                         <Image src={logo} alt="Cuzeth" height={38} unoptimized />
                     </Link>
                     <div
@@ -87,13 +94,13 @@ export default function Navbar() {
                     {/* Desktop Menu */}
                     <ul className={`${styles['nav-menu']} hidden md:flex`}>
                         <li className={styles['nav-item']}>
-                            <Link href="/" className={styles['nav-links']}>Home</Link>
+                            <Link href="/" className={styles['nav-links']} onClick={scrollToTop}>Home</Link>
                         </li>
                         <li className={styles['nav-item']}>
-                            <Link href="/projects" className={styles['nav-links']}>Projects</Link>
+                            <Link href="/projects" className={styles['nav-links']} onClick={scrollToTop}>Projects</Link>
                         </li>
                         <li className={styles['nav-item']}>
-                            <Link href="/about" className={styles['nav-links']}>About</Link>
+                            <Link href="/about" className={styles['nav-links']} onClick={scrollToTop}>About</Link>
                         </li>
                     </ul>
 
@@ -108,17 +115,17 @@ export default function Navbar() {
                                 variants={menuVariants}
                             >
                                 <motion.li className={styles['nav-item']} variants={itemVariants}>
-                                    <Link href="/" className={styles['nav-links']} onClick={closeMobileMenu}>
+                                    <Link href="/" className={styles['nav-links']} onClick={handleNavClick}>
                                         Home
                                     </Link>
                                 </motion.li>
                                 <motion.li className={styles['nav-item']} variants={itemVariants}>
-                                    <Link href="/projects" className={styles['nav-links']} onClick={closeMobileMenu}>
+                                    <Link href="/projects" className={styles['nav-links']} onClick={handleNavClick}>
                                         Projects
                                     </Link>
                                 </motion.li>
                                 <motion.li className={styles['nav-item']} variants={itemVariants}>
-                                    <Link href="/about" className={styles['nav-links']} onClick={closeMobileMenu}>
+                                    <Link href="/about" className={styles['nav-links']} onClick={handleNavClick}>
                                         About
                                     </Link>
                                 </motion.li>

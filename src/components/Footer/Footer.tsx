@@ -42,7 +42,7 @@ export default function Footer() {
                 <section className={styles['social-media']}>
                     <div className={styles['social-media-wrap']}>
                         <motion.div variants={itemVariants} className={styles['footer-logo']}>
-                            <Link href="/" className={`${styles['social-logo']} animate-on-hover`}>
+                            <Link href="/" className={`${styles['social-logo']} animate-on-hover`} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                                 <motion.h1
                                     className={`${styles['footer-img']} cuzeth`}
                                     animate={{ opacity: [1, 0.8, 1] }}
