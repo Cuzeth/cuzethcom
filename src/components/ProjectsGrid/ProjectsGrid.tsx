@@ -5,9 +5,9 @@ import Image from 'next/image';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { HiQrcode } from 'react-icons/hi';
 import { PiPasswordFill } from 'react-icons/pi';
-import { FaLink, FaDiscord } from 'react-icons/fa6';
+import { FaLink, FaDiscord, FaVideo } from 'react-icons/fa6';
 import { IoExtensionPuzzle } from 'react-icons/io5';
-import { SiAdobeaftereffects, SiNextdotjs } from 'react-icons/si';
+import { SiNextdotjs } from 'react-icons/si';
 import React from 'react';
 
 // Re-using the icon map logic
@@ -18,7 +18,7 @@ const iconMap: { [key: string]: React.ComponentType<{ size?: number; className?:
     puzzle: IoExtensionPuzzle,
     site: SiNextdotjs,
     discord: FaDiscord,
-    video: SiAdobeaftereffects
+    video: FaVideo
 };
 
 interface ProjectsGridProps {
