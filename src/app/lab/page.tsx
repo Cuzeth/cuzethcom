@@ -13,6 +13,11 @@ const labItems = [
     description: 'Create a 2×2 album art collage. Upload images or search for album art.',
     href: '/lab/coverquad',
   },
+  {
+    title: 'Password Generator',
+    description: 'Generate memorable, secure passwords inspired by Apple Keychain.',
+    href: '/lab/pwgen',
+  },
 ];
 
 export default function LabPage() {

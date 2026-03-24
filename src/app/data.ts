@@ -224,9 +224,9 @@ export const projectsData = [
         title: "Memorable Password Generator",
         description: "Secure password generator focused on high entropy and memorability.",
         image: "/images/password.svg",
-        technologies: ["Flask", "Python", "CSS", "Vercel"],
-        liveLink: "https://pwgen.cuzeth.com",
-        repoLink: "https://github.com/Cuzeth/memorable-password-generator"
+        technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+        liveLink: "https://cuzeth.com/lab/pwgen",
+        repoLink: "https://github.com/Cuzeth/cuzethcom/tree/main/src/app/lab/pwgen"
     },
     {
         id: 5,
