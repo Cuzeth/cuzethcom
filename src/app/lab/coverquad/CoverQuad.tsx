@@ -15,19 +15,11 @@ type SlotState = SlotData | null;
 
 type ModalState = 'none' | 'choice' | 'search';
 
-interface ITunesAlbum {
-  collectionId: number;
-  collectionName: string;
-  artistName: string;
-  artworkUrl100: string;
-  collectionType: string;
-  wrapperType: string;
-}
-
 interface AlbumResult {
-  id: number;
+  id: string;
   title: string;
   artist: string;
+  year: string;
   thumb: string;
   fullArt: string;
 }
@@ -193,8 +185,7 @@ export default function CoverQuad() {
     setLoadingSlot(slotIndex);
 
     try {
-      const artUrl = `/api/album-art?mbid=${encodeURIComponent(album.mbid)}&size=1200`;
-      const { img, objectUrl } = await loadImageFromUrl(artUrl);
+      const { img, objectUrl } = await loadImageFromUrl(album.fullArt);
       setSlot(slotIndex, { img, objectUrl, label: `${album.title} — ${album.artist}` });
     } catch {
       alert('Failed to fetch artwork.');
@@ -395,17 +386,13 @@ export default function CoverQuad() {
               <div className={styles.searchResultsGrid}>
                 {searchResults.map((album) => (
                   <button
-                    key={album.mbid}
+                    key={album.id}
                     className={styles.searchResult}
-                    title={`${album.title} — ${album.artist}${album.year ? ` (${album.year})` : ''}`}
+                    title={`${album.title} — ${album.artist}`}
                     onClick={() => selectAlbumArt(album)}
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={`/api/album-art?mbid=${encodeURIComponent(album.mbid)}&size=250`}
-                      alt={album.title}
-                      loading="lazy"
-                    />
+                    <img src={album.thumb} alt={album.title} loading="lazy" />
                   </button>
                 ))}
               </div>
