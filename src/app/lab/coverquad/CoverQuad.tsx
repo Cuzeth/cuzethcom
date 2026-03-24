@@ -13,19 +13,64 @@ interface SlotData {
 
 type SlotState = SlotData | null;
 
+type ModalState = 'none' | 'choice' | 'search';
+
+interface AlbumResult {
+  id: string;
+  title: string;
+  artist: string;
+  year: string;
+  thumb: string;
+  fullArt: string;
+}
+
 type ExportSize = 3000 | 2000 | 1000;
 
 // --- Component ---
 
 export default function CoverQuad() {
   const [slots, setSlots] = useState<[SlotState, SlotState, SlotState, SlotState]>([null, null, null, null]);
+  const [activeSlot, setActiveSlot] = useState<number | null>(null);
+  const [modal, setModal] = useState<ModalState>('none');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchResults, setSearchResults] = useState<AlbumResult[]>([]);
+  const [failedThumbs, setFailedThumbs] = useState<Set<string>>(new Set());
+  const [searchError, setSearchError] = useState('');
+  const [searching, setSearching] = useState(false);
+  const [loadingSlot, setLoadingSlot] = useState<number | null>(null);
   const [exportSize, setExportSize] = useState<ExportSize>(3000);
 
   const fileInputRefs = useRef<(HTMLInputElement | null)[]>([null, null, null, null]);
 
   const allFilled = slots.every(Boolean);
 
+  // --- Modal helpers ---
+  const closeAllModals = useCallback(() => {
+    setModal('none');
+    setSearchQuery('');
+    setSearchResults([]);
+    setSearchError('');
+    setSearching(false);
+  }, []);
+
   // --- Image loading ---
+  const loadImageFromUrl = useCallback((url: string): Promise<{ img: HTMLImageElement; objectUrl: string }> => {
+    return fetch(url)
+      .then((res) => res.blob())
+      .then((blob) => {
+        const objectUrl = URL.createObjectURL(blob);
+        return new Promise<{ img: HTMLImageElement; objectUrl: string }>((resolve, reject) => {
+          const img = new Image();
+          img.onload = () => resolve({ img, objectUrl });
+          img.onerror = () => {
+            URL.revokeObjectURL(objectUrl);
+            reject(new Error('Failed to load image'));
+          };
+          img.src = objectUrl;
+        });
+      });
+  }, []);
+
   const loadImageFromFile = useCallback((file: File): Promise<{ img: HTMLImageElement; objectUrl: string }> => {
     return new Promise((resolve, reject) => {
       const objectUrl = URL.createObjectURL(file);
@@ -51,11 +96,26 @@ export default function CoverQuad() {
 
   // --- Slot interactions ---
   const handleSlotClick = (index: number) => {
-    fileInputRefs.current[index]?.click();
+    setActiveSlot(index);
+    setModal('choice');
   };
 
   const handleClear = (index: number) => {
     setSlot(index, null);
+  };
+
+  const handleUploadChoice = () => {
+    setModal('none');
+    if (activeSlot !== null) {
+      fileInputRefs.current[activeSlot]?.click();
+    }
+  };
+
+  const handleSearchChoice = () => {
+    setModal('search');
+    setSearchQuery('');
+    setSearchResults([]);
+    setSearchError('');
   };
 
   const handleFileChange = async (e: ChangeEvent<HTMLInputElement>, index: number) => {
@@ -84,6 +144,56 @@ export default function CoverQuad() {
       setSlot(index, { img, objectUrl, label: file.name });
     } catch {
       // silently fail
+    }
+  };
+
+  // --- Search ---
+  const performSearch = async () => {
+    const term = searchQuery.trim();
+    if (!term) return;
+
+    setSearchResults([]);
+    setFailedThumbs(new Set());
+    setSearchError('');
+    setSearching(true);
+
+    try {
+      const res = await fetch(`/api/album-search?q=${encodeURIComponent(term)}`);
+      const data = (await res.json()) as { results: AlbumResult[] };
+      setSearching(false);
+
+      if (!data.results || data.results.length === 0) {
+        setSearchError('No results found.');
+        return;
+      }
+
+      setSearchResults(data.results);
+    } catch {
+      setSearching(false);
+      setSearchError('Search failed. Try again.');
+    }
+  };
+
+  const handleSearchKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') performSearch();
+  };
+
+  const selectAlbumArt = async (album: AlbumResult) => {
+    if (activeSlot === null) return;
+    const slotIndex = activeSlot;
+
+    closeAllModals();
+    setLoadingSlot(slotIndex);
+
+    try {
+      // Proxy through our API to avoid CORS canvas tainting
+      const proxyUrl = `/api/cover-proxy?url=${encodeURIComponent(album.fullArt)}`;
+      const { img, objectUrl } = await loadImageFromUrl(proxyUrl);
+      setSlot(slotIndex, { img, objectUrl, label: `${album.title} — ${album.artist}` });
+    } catch {
+      // silently fail
+    } finally {
+      setLoadingSlot(null);
     }
   };
 
@@ -128,6 +238,11 @@ export default function CoverQuad() {
     }, 'image/png');
   };
 
+  // --- Keyboard: escape closes modals ---
+  const handleOverlayKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === 'Escape') closeAllModals();
+  };
+
   // --- Render ---
   return (
     <div className={styles.wrapper}>
@@ -163,6 +278,11 @@ export default function CoverQuad() {
                 &times;
               </button>
             )}
+            {loadingSlot === i && (
+              <div className={styles.slotLoading}>
+                <div className={styles.spinner} />
+              </div>
+            )}
             <input
               ref={(el) => { fileInputRefs.current[i] = el; }}
               type="file"
@@ -193,6 +313,92 @@ export default function CoverQuad() {
           Export PNG
         </button>
       </div>
+
+      {/* Choice Modal */}
+      {modal === 'choice' && (
+        <div className={styles.overlay} onClick={closeAllModals} onKeyDown={handleOverlayKeyDown} tabIndex={-1}>
+          <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+            <button className={styles.modalClose} onClick={closeAllModals}>&times;</button>
+            <div className={styles.modalTitle}>Add Cover Art</div>
+            <div className={styles.choiceButtons}>
+              <button className={styles.choiceBtn} onClick={handleUploadChoice}>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                  <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                  <polyline points="17 8 12 3 7 8" />
+                  <line x1="12" y1="3" x2="12" y2="15" />
+                </svg>
+                Upload Image
+              </button>
+              <button className={styles.choiceBtn} onClick={handleSearchChoice}>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                  <circle cx="11" cy="11" r="8" />
+                  <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                </svg>
+                Search Album Art
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Search Modal */}
+      {modal === 'search' && (
+        <div className={styles.overlay} onClick={closeAllModals} onKeyDown={handleOverlayKeyDown} tabIndex={-1}>
+          <div className={`${styles.modal} ${styles.searchModal}`} onClick={(e) => e.stopPropagation()}>
+            <button className={styles.modalClose} onClick={closeAllModals}>&times;</button>
+            <div className={styles.modalTitle}>Search Album Art</div>
+            <div className={styles.searchBar}>
+              <input
+                className={styles.searchInput}
+                type="text"
+                placeholder="Artist or album name…"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                onKeyDown={handleSearchKeyDown}
+                autoFocus
+              />
+              <button className={styles.btnSearch} onClick={performSearch} disabled={searching}>
+                Search
+              </button>
+            </div>
+
+            {searching && (
+              <div className={styles.searchSpinner}>
+                <div className={styles.spinner} />
+              </div>
+            )}
+
+            {searchError && <div className={styles.searchMessage}>{searchError}</div>}
+
+            {searchResults.length > 0 && failedThumbs.size === searchResults.length && (
+              <div className={styles.searchMessage}>No cover art available for these results.</div>
+            )}
+
+            {searchResults.length > 0 && (
+              <div className={styles.searchResultsGrid}>
+                {searchResults
+                  .filter((album) => !failedThumbs.has(album.id))
+                  .map((album) => (
+                  <button
+                    key={album.id}
+                    className={styles.searchResult}
+                    onClick={() => selectAlbumArt(album)}
+                    title={`${album.title} — ${album.artist}${album.year ? ` (${album.year})` : ''}`}
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={`/api/cover-proxy?url=${encodeURIComponent(album.thumb)}`}
+                      alt={`${album.title} by ${album.artist}`}
+                      loading="lazy"
+                      onError={() => setFailedThumbs((prev) => new Set(prev).add(album.id))}
+                    />
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
