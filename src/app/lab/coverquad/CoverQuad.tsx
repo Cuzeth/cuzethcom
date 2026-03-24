@@ -147,7 +147,7 @@ export default function CoverQuad() {
     }
   };
 
-  // --- Search ---
+  // --- Search (direct client-side call to MusicBrainz) ---
   const performSearch = async () => {
     const term = searchQuery.trim();
     if (!term) return;
@@ -158,16 +158,47 @@ export default function CoverQuad() {
     setSearching(true);
 
     try {
-      const res = await fetch(`/api/album-search?q=${encodeURIComponent(term)}`);
-      const data = (await res.json()) as { results: AlbumResult[] };
+      const mbUrl = `https://musicbrainz.org/ws/2/release-group?query=${encodeURIComponent(term)}&fmt=json&limit=16`;
+      const res = await fetch(mbUrl, {
+        headers: { Accept: 'application/json' },
+      });
+
+      if (!res.ok) throw new Error('Search failed');
+
+      const data = await res.json() as {
+        'release-groups': {
+          id: string;
+          title: string;
+          'primary-type'?: string;
+          'first-release-date'?: string;
+          'artist-credit'?: { name: string }[];
+        }[];
+      };
+
+      const groups = data['release-groups'] || [];
+      const results: AlbumResult[] = groups
+        .filter((g) => g.title && g['artist-credit']?.length)
+        .map((g) => {
+          const artist = g['artist-credit']!.map((a) => a.name).join(', ');
+          const year = g['first-release-date']?.slice(0, 4) || '';
+          return {
+            id: g.id,
+            title: g.title,
+            artist,
+            year,
+            thumb: `https://coverartarchive.org/release-group/${g.id}/front-250`,
+            fullArt: `https://coverartarchive.org/release-group/${g.id}/front-1200`,
+          };
+        });
+
       setSearching(false);
 
-      if (!data.results || data.results.length === 0) {
+      if (results.length === 0) {
         setSearchError('No results found.');
         return;
       }
 
-      setSearchResults(data.results);
+      setSearchResults(results);
     } catch {
       setSearching(false);
       setSearchError('Search failed. Try again.');
