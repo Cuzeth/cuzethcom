@@ -100,6 +100,9 @@ export default function Navbar() {
                             <Link href="/projects" className={styles['nav-links']} onClick={scrollToTop}>Projects</Link>
                         </li>
                         <li className={styles['nav-item']}>
+                            <Link href="/lab" className={styles['nav-links']} onClick={scrollToTop}>Lab</Link>
+                        </li>
+                        <li className={styles['nav-item']}>
                             <Link href="/about" className={styles['nav-links']} onClick={scrollToTop}>About</Link>
                         </li>
                     </ul>
@@ -122,6 +125,11 @@ export default function Navbar() {
                                 <motion.li className={styles['nav-item']} variants={itemVariants}>
                                     <Link href="/projects" className={styles['nav-links']} onClick={handleNavClick}>
                                         Projects
+                                    </Link>
+                                </motion.li>
+                                <motion.li className={styles['nav-item']} variants={itemVariants}>
+                                    <Link href="/lab" className={styles['nav-links']} onClick={handleNavClick}>
+                                        Lab
                                     </Link>
                                 </motion.li>
                                 <motion.li className={styles['nav-item']} variants={itemVariants}>
