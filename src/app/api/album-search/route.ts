@@ -209,9 +209,7 @@ export async function GET(request: NextRequest) {
   try {
     const spotifyData = await searchSpotify(query);
     return processResults(spotifyData);
-  } catch (err) {
-    const message = err instanceof Error ? err.message : 'Unknown error';
-    console.error('[album-search]', message);
-    return NextResponse.json({ error: message }, { status: 500 });
+  } catch {
+    return NextResponse.json({ error: 'Search failed' }, { status: 500 });
   }
 }
