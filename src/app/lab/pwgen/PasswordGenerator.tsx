@@ -1,3 +1,10 @@
+// Memorable Password Generator
+// Recreates Apple's discontinued "generate memorable password" from Keychain.
+// Format: [13-letter word][6-digit number][special character][8-letter word]
+//
+// Word list credit:
+// common-words.txt sourced from https://github.com/MichaelWehar/Public-Domain-Word-Lists
+
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
