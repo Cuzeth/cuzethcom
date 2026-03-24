@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { HiQrcode } from 'react-icons/hi';
 import { PiPasswordFill } from 'react-icons/pi';
@@ -83,15 +84,25 @@ function GridCard({ project, index }: { project: any, index: number }) {
                     </h3>
                     <div className="flex gap-2">
                          {project.liveLink && (
-                            <a 
-                                href={project.liveLink} 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                className="text-gray-medium hover:text-heading transition-colors p-1"
-                                title="Live Demo"
-                            >
-                                <FaExternalLinkAlt size={14} />
-                            </a>
+                            project.liveLink.startsWith('https://cuzeth.com/') ? (
+                                <Link
+                                    href={project.liveLink.replace('https://cuzeth.com', '')}
+                                    className="text-gray-medium hover:text-heading transition-colors p-1"
+                                    title="Live Demo"
+                                >
+                                    <FaExternalLinkAlt size={14} />
+                                </Link>
+                            ) : (
+                                <a
+                                    href={project.liveLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-gray-medium hover:text-heading transition-colors p-1"
+                                    title="Live Demo"
+                                >
+                                    <FaExternalLinkAlt size={14} />
+                                </a>
+                            )
                         )}
                         {project.repoLink && (
                             <a 
