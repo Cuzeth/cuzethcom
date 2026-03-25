@@ -4,7 +4,7 @@ import FadeInWrapper from '@/components/FadeInWrapper/FadeInWrapper';
 
 export const metadata: Metadata = {
   title: 'Lab',
-  description: 'Experimental tools and creative experiments by Cuzeth.',
+  description: 'Small tools, carefully engineered.',
 };
 
 const labItems = [
@@ -18,6 +18,16 @@ const labItems = [
     description: 'Generate memorable, secure passwords inspired by Apple Keychain.',
     href: '/lab/pwgen',
   },
+  {
+    title: 'Regex Tester',
+    description: 'Test and debug regular expressions with live match highlighting.',
+    href: '/lab/regex',
+  },
+  {
+    title: 'Pomodoro Timer',
+    description: 'A minimal focus timer to stay productive.',
+    href: '/lab/pomodoro',
+  },
 ];
 
 export default function LabPage() {
@@ -29,7 +39,7 @@ export default function LabPage() {
             LAB<span className="text-accent">.</span>
           </h1>
           <p className="text-xl md:text-2xl text-text max-w-2xl font-light">
-            Experimental tools and creative experiments.
+            Small tools, carefully engineered.
           </p>
         </div>
       </FadeInWrapper>
