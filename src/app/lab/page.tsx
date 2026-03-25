@@ -9,6 +9,16 @@ export const metadata: Metadata = {
 
 const labItems = [
   {
+    title: 'QR Generator',
+    description: 'Generate QR codes for text, WiFi, email, and phone.',
+    href: '/lab/qr',
+  },
+  {
+    title: '2FA QR Generator',
+    description: 'Generate QR codes from two-factor authentication secrets.',
+    href: '/lab/2fa',
+  },
+  {
     title: 'CoverQuad',
     description: 'Create a 2×2 album art collage. Upload images or search for album art.',
     href: '/lab/coverquad',
@@ -44,12 +54,12 @@ export default function LabPage() {
         </div>
       </FadeInWrapper>
 
-      <div className="container mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="container mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-3 [&>*]:h-full">
         {labItems.map((item) => (
           <FadeInWrapper key={item.href} direction="up">
             <Link
               href={item.href}
-              className="block rounded-2xl border border-white/10 bg-white/5 p-6 transition-colors hover:bg-white/10"
+              className="block h-full rounded-2xl border border-white/10 bg-white/5 p-6 transition-colors hover:bg-white/10"
             >
               <h2 className="text-xl font-bold text-heading mb-2">{item.title}</h2>
               <p className="text-sm text-text">{item.description}</p>
