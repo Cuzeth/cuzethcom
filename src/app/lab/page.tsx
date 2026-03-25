@@ -14,16 +14,6 @@ const labItems = [
     href: '/lab/coverquad',
   },
   {
-    title: '2FA QR Generator',
-    description: 'Generate QR codes from two-factor authentication secrets.',
-    href: '/lab/2fa',
-  },
-  {
-    title: 'Password Generator',
-    description: 'Generate memorable, secure passwords inspired by Apple Keychain.',
-    href: '/lab/pwgen',
-  },
-  {
     title: 'Regex Tester',
     description: 'Test and debug regular expressions with live match highlighting.',
     href: '/lab/regex',
@@ -32,6 +22,16 @@ const labItems = [
     title: 'Pomodoro Timer',
     description: 'A minimal focus timer to stay productive.',
     href: '/lab/pomodoro',
+  },
+  {
+    title: 'Password Generator',
+    description: 'Generate memorable, secure passwords inspired by Apple Keychain.',
+    href: '/lab/pwgen',
+  },
+  {
+    title: '2FA QR Generator',
+    description: 'Generate QR codes from two-factor authentication secrets.',
+    href: '/lab/2fa',
   },
   {
     title: 'QR Generator',
