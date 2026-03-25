@@ -9,19 +9,14 @@ export const metadata: Metadata = {
 
 const labItems = [
   {
-    title: 'QR Generator',
-    description: 'Generate QR codes for text, WiFi, email, and phone.',
-    href: '/lab/qr',
+    title: 'CoverQuad',
+    description: 'Create a 2×2 album art collage. Upload images or search for album art.',
+    href: '/lab/coverquad',
   },
   {
     title: '2FA QR Generator',
     description: 'Generate QR codes from two-factor authentication secrets.',
     href: '/lab/2fa',
-  },
-  {
-    title: 'CoverQuad',
-    description: 'Create a 2×2 album art collage. Upload images or search for album art.',
-    href: '/lab/coverquad',
   },
   {
     title: 'Password Generator',
@@ -37,6 +32,11 @@ const labItems = [
     title: 'Pomodoro Timer',
     description: 'A minimal focus timer to stay productive.',
     href: '/lab/pomodoro',
+  },
+  {
+    title: 'QR Generator',
+    description: 'Generate QR codes for text, WiFi, email, and phone.',
+    href: '/lab/qr',
   },
 ];
 

@@ -1,10 +1,14 @@
 'use client';
 
-import { useState, useCallback, useEffect } from 'react';
-import QRCode from 'qrcode';
+import { useState, useCallback, useEffect, useRef } from 'react';
+import type QRCodeStyling from 'qr-code-styling';
 import styles from './qr.module.css';
 
 type TabType = 'text' | 'wifi' | 'email' | 'phone';
+type DotType = 'square' | 'dots' | 'rounded' | 'classy' | 'classy-rounded' | 'extra-rounded';
+type CornerSquareType = 'square' | 'dot' | 'extra-rounded';
+type CornerDotType = 'square' | 'dot';
+type GradientType = 'linear' | 'radial';
 
 const TABS: { key: TabType; label: string }[] = [
   { key: 'text', label: 'Text' },
@@ -13,29 +17,53 @@ const TABS: { key: TabType; label: string }[] = [
   { key: 'phone', label: 'Phone' },
 ];
 
+const DOT_STYLES: { value: DotType; label: string }[] = [
+  { value: 'square', label: 'Square' },
+  { value: 'dots', label: 'Dots' },
+  { value: 'rounded', label: 'Rounded' },
+  { value: 'classy', label: 'Classy' },
+  { value: 'classy-rounded', label: 'Classy Rounded' },
+  { value: 'extra-rounded', label: 'Extra Rounded' },
+];
+
+const CORNER_STYLES: { value: CornerSquareType; label: string }[] = [
+  { value: 'square', label: 'Square' },
+  { value: 'dot', label: 'Rounded' },
+  { value: 'extra-rounded', label: 'Extra Rounded' },
+];
+
 export default function QRGenerator() {
   const [activeTab, setActiveTab] = useState<TabType>('text');
-  const [qrDataUrl, setQrDataUrl] = useState<string | null>(null);
-  const [generating, setGenerating] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [generated, setGenerated] = useState(false);
+  const [showStyle, setShowStyle] = useState(false);
 
-  // Text
+  // Data fields
   const [text, setText] = useState('');
-
-  // WiFi
   const [wifiSSID, setWifiSSID] = useState('');
   const [wifiSecurity, setWifiSecurity] = useState('WPA');
   const [wifiPassword, setWifiPassword] = useState('');
   const [wifiHidden, setWifiHidden] = useState(false);
-
-  // Email
   const [emailTo, setEmailTo] = useState('');
   const [emailSubject, setEmailSubject] = useState('');
   const [emailBody, setEmailBody] = useState('');
-
-  // Phone
   const [phoneNumber, setPhoneNumber] = useState('');
   const [phoneMessage, setPhoneMessage] = useState('');
+
+  // Style options
+  const [dotStyle, setDotStyle] = useState<DotType>('rounded');
+  const [cornerStyle, setCornerStyle] = useState<CornerSquareType>('dot');
+  const [cornerDotStyle, setCornerDotStyle] = useState<CornerDotType>('dot');
+  const [dotColor, setDotColor] = useState('#000000');
+  const [bgColor, setBgColor] = useState('#ffffff');
+  const [useGradient, setUseGradient] = useState(false);
+  const [gradientColor1, setGradientColor1] = useState('#000000');
+  const [gradientColor2, setGradientColor2] = useState('#4a00e0');
+  const [gradientType, setGradientType] = useState<GradientType>('linear');
+
+  const qrRef = useRef<HTMLDivElement>(null);
+  const qrInstance = useRef<QRCodeStyling | null>(null);
+  const lastData = useRef<string>('');
 
   const buildQRData = useCallback((): string | null => {
     switch (activeTab) {
@@ -73,34 +101,100 @@ export default function QRGenerator() {
     }
   }, [activeTab, text, wifiSSID, wifiSecurity, wifiPassword, wifiHidden, emailTo, emailSubject, emailBody, phoneNumber, phoneMessage]);
 
+  const getStyleOptions = useCallback(() => {
+    const dotsOptions: Record<string, unknown> = {
+      type: dotStyle,
+    };
+    if (useGradient) {
+      dotsOptions.gradient = {
+        type: gradientType,
+        colorStops: [
+          { offset: 0, color: gradientColor1 },
+          { offset: 1, color: gradientColor2 },
+        ],
+      };
+    } else {
+      dotsOptions.color = dotColor;
+    }
+
+    return {
+      width: 300,
+      height: 300,
+      margin: 8,
+      dotsOptions,
+      cornersSquareOptions: {
+        type: cornerStyle,
+        color: useGradient ? gradientColor1 : dotColor,
+      },
+      cornersDotOptions: {
+        type: cornerDotStyle,
+        color: useGradient ? gradientColor2 : dotColor,
+      },
+      backgroundOptions: {
+        color: bgColor,
+      },
+      qrOptions: {
+        errorCorrectionLevel: 'M',
+      },
+    };
+  }, [dotStyle, cornerStyle, cornerDotStyle, dotColor, bgColor, useGradient, gradientColor1, gradientColor2, gradientType]);
+
+  // Initialize QR instance via dynamic import (avoids SSR issues)
+  useEffect(() => {
+    let cancelled = false;
+    import('qr-code-styling').then((mod) => {
+      if (cancelled) return;
+      const QRCodeStylingClass = mod.default;
+      const instance = new QRCodeStylingClass({
+        ...getStyleOptions(),
+        data: ' ',
+      } as ConstructorParameters<typeof QRCodeStylingClass>[0]);
+      qrInstance.current = instance;
+      if (qrRef.current) {
+        // Clear container before appending
+        while (qrRef.current.firstChild) {
+          qrRef.current.removeChild(qrRef.current.firstChild);
+        }
+        instance.append(qrRef.current);
+      }
+    });
+    return () => { cancelled = true; };
+    // Only run once on mount
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Update style when options change (only after first generate)
+  useEffect(() => {
+    if (!qrInstance.current || !generated) return;
+    qrInstance.current.update({
+      ...getStyleOptions(),
+      data: lastData.current,
+    } as Parameters<QRCodeStyling['update']>[0]);
+  }, [getStyleOptions, generated]);
+
   const generate = useCallback(async () => {
     setError(null);
     const data = buildQRData();
     if (!data) return;
 
-    setGenerating(true);
-    try {
-      const url = await QRCode.toDataURL(data, {
-        width: 300,
-        margin: 2,
-        color: { dark: '#2d3748', light: '#ffffff' },
-        errorCorrectionLevel: 'M',
-      });
-      setQrDataUrl(url);
-    } catch {
-      setError('Error generating QR code');
-    } finally {
-      setGenerating(false);
+    lastData.current = data;
+
+    if (qrInstance.current) {
+      qrInstance.current.update({
+        ...getStyleOptions(),
+        data,
+      } as Parameters<QRCodeStyling['update']>[0]);
+      setGenerated(true);
     }
-  }, [buildQRData]);
+  }, [buildQRData, getStyleOptions]);
 
   const download = useCallback(() => {
-    if (!qrDataUrl) return;
-    const link = document.createElement('a');
-    link.download = `qrcode-${activeTab}.png`;
-    link.href = qrDataUrl;
-    link.click();
-  }, [qrDataUrl, activeTab]);
+    if (!qrInstance.current || !generated) return;
+    qrInstance.current.download({
+      name: `qrcode-${activeTab}`,
+      extension: 'png',
+    });
+  }, [generated, activeTab]);
 
   // Ctrl/Cmd + Enter shortcut
   useEffect(() => {
@@ -234,30 +328,153 @@ export default function QRGenerator() {
       </div>
 
       {/* Generate */}
-      <button
-        className={styles.generateBtn}
-        onClick={generate}
-        disabled={generating}
-      >
-        {generating ? 'Generating...' : 'Generate QR Code'}
+      <button className={styles.generateBtn} onClick={generate}>
+        Generate QR Code
       </button>
 
       {error && <p className={styles.error}>{error}</p>}
 
-      {/* Output */}
-      {qrDataUrl && (
-        <div className={styles.output}>
-          <img
-            src={qrDataUrl}
-            alt="Generated QR code"
-            width={300}
-            height={300}
-            className={styles.qrImage}
-          />
-          <button className={styles.downloadBtn} onClick={download}>
-            Download PNG
-          </button>
+      {/* Style Panel */}
+      <button
+        className={`${styles.styleToggle} ${showStyle ? styles.styleToggleActive : ''}`}
+        onClick={() => setShowStyle(!showStyle)}
+      >
+        {showStyle ? 'Hide Style Options' : 'Customize Style'}
+      </button>
+
+      {showStyle && (
+        <div className={styles.styleSection}>
+          <div className={styles.styleGrid}>
+            <div className={styles.styleField}>
+              <label className={styles.label}>Dot Style</label>
+              <select
+                className={styles.styleSelect}
+                value={dotStyle}
+                onChange={(e) => setDotStyle(e.target.value as DotType)}
+              >
+                {DOT_STYLES.map(({ value, label }) => (
+                  <option key={value} value={value}>{label}</option>
+                ))}
+              </select>
+            </div>
+
+            <div className={styles.styleField}>
+              <label className={styles.label}>Corner Style</label>
+              <select
+                className={styles.styleSelect}
+                value={cornerStyle}
+                onChange={(e) => setCornerStyle(e.target.value as CornerSquareType)}
+              >
+                {CORNER_STYLES.map(({ value, label }) => (
+                  <option key={value} value={value}>{label}</option>
+                ))}
+              </select>
+            </div>
+
+            <div className={styles.styleField}>
+              <label className={styles.label}>Corner Dot</label>
+              <select
+                className={styles.styleSelect}
+                value={cornerDotStyle}
+                onChange={(e) => setCornerDotStyle(e.target.value as CornerDotType)}
+              >
+                <option value="square">Square</option>
+                <option value="dot">Rounded</option>
+              </select>
+            </div>
+
+            <div className={styles.styleField}>
+              <label className={styles.label}>Background</label>
+              <div className={styles.colorRow}>
+                <input
+                  type="color"
+                  className={styles.colorPicker}
+                  value={bgColor}
+                  onChange={(e) => setBgColor(e.target.value)}
+                />
+                <span className={styles.colorHex}>{bgColor}</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Color / Gradient */}
+          <div className={styles.colorSection}>
+            <label className={styles.checkRow}>
+              <input
+                type="checkbox"
+                checked={useGradient}
+                onChange={(e) => setUseGradient(e.target.checked)}
+              />
+              Use gradient
+            </label>
+
+            {useGradient ? (
+              <div className={styles.gradientRow}>
+                <div className={styles.styleField}>
+                  <label className={styles.label}>Color 1</label>
+                  <div className={styles.colorRow}>
+                    <input
+                      type="color"
+                      className={styles.colorPicker}
+                      value={gradientColor1}
+                      onChange={(e) => setGradientColor1(e.target.value)}
+                    />
+                    <span className={styles.colorHex}>{gradientColor1}</span>
+                  </div>
+                </div>
+                <div className={styles.styleField}>
+                  <label className={styles.label}>Color 2</label>
+                  <div className={styles.colorRow}>
+                    <input
+                      type="color"
+                      className={styles.colorPicker}
+                      value={gradientColor2}
+                      onChange={(e) => setGradientColor2(e.target.value)}
+                    />
+                    <span className={styles.colorHex}>{gradientColor2}</span>
+                  </div>
+                </div>
+                <div className={styles.styleField}>
+                  <label className={styles.label}>Type</label>
+                  <select
+                    className={styles.styleSelect}
+                    value={gradientType}
+                    onChange={(e) => setGradientType(e.target.value as GradientType)}
+                  >
+                    <option value="linear">Linear</option>
+                    <option value="radial">Radial</option>
+                  </select>
+                </div>
+              </div>
+            ) : (
+              <div className={styles.styleField}>
+                <label className={styles.label}>Dot Color</label>
+                <div className={styles.colorRow}>
+                  <input
+                    type="color"
+                    className={styles.colorPicker}
+                    value={dotColor}
+                    onChange={(e) => setDotColor(e.target.value)}
+                  />
+                  <span className={styles.colorHex}>{dotColor}</span>
+                </div>
+              </div>
+            )}
+          </div>
+
         </div>
+      )}
+
+      {/* Output */}
+      <div
+        ref={qrRef}
+        className={`${styles.output} ${generated ? styles.outputVisible : ''}`}
+      />
+
+      {generated && (
+        <button className={styles.downloadBtn} onClick={download}>
+          Download PNG
+        </button>
       )}
 
       <p className={styles.hint}>Ctrl+Enter to generate</p>
