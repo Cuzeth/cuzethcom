@@ -13,7 +13,7 @@ export default function PasswordGeneratorPage() {
     <FadeInWrapper direction="up">
       <main className="min-h-screen flex flex-col items-center px-4 py-8 sm:py-12">
         <h1 className="text-2xl font-bold text-heading tracking-tight">Password Generator</h1>
-        <p className="text-sm text-text mb-6">Generate memorable, secure passwords</p>
+        <p className="text-sm text-text mb-8 opacity-60">Memorable &middot; Secure &middot; Precise</p>
         <PasswordGenerator />
       </main>
     </FadeInWrapper>
