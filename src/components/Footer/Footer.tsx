@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 // import Image from 'next/image';
-import { FaYoutube, FaGithub, FaGitlab, FaTwitch, FaEnvelope } from 'react-icons/fa';
+import { FaYoutube, FaGithub, FaGitlab, FaTwitch, FaEnvelope, FaFileAlt } from 'react-icons/fa';
 import { SiBuymeacoffee } from 'react-icons/si';
 import { motion } from 'framer-motion';
 import styles from './Footer.module.css';
@@ -14,6 +14,7 @@ export default function Footer() {
         { href: "https://github.com/Cuzeth", icon: FaGithub, label: "GitHub" },
         { href: "https://gitlab.com/Cuzeth", icon: FaGitlab, label: "GitLab" },
         { href: "https://buymeacoffee.com/cuzeth", icon: SiBuymeacoffee, label: "Buy Me a Coffee" },
+        { href: "https://jaafar.cv", icon: FaFileAlt, label: "CV" },
     ];
 
     const containerVariants = {

@@ -73,9 +73,10 @@ export default function ModernHomepage() {
                         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                     >
                         <p className="text-accent font-mono text-xs tracking-widest mb-8 uppercase">// Software Engineer & Builder</p>
-                        <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-[0.9] mb-8 text-heading">
+                        <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-[0.9] mb-2 text-heading">
                             Cuzeth
                         </h1>
+                        <p className="text-sm font-mono text-gray-medium tracking-wide mb-8">Jaafar Abdeen</p>
                         <p className="text-text text-lg md:text-xl max-w-sm mb-10 leading-relaxed font-light">
                             I build fast, private,<br />well-crafted software.
                         </p>
@@ -201,6 +202,14 @@ export default function ModernHomepage() {
                             className="inline-flex items-center gap-1.5 font-mono text-sm text-text hover:text-heading transition-colors duration-200"
                         >
                             github.com/Cuzeth <HiArrowUpRight size={13} />
+                        </a>
+                        <a
+                            href="https://jaafar.cv"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 font-mono text-sm text-text hover:text-heading transition-colors duration-200"
+                        >
+                            jaafar.cv <HiArrowUpRight size={13} />
                         </a>
                     </div>
                 </motion.div>

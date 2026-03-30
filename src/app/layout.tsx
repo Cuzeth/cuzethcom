@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
-  description: "Cuzeth — software engineer building fast, private, well-crafted software.",
+  description: "Jaafar Abdeen (Cuzeth) — software engineer building fast, private, well-crafted software.",
   applicationName: "Cuzeth",
   metadataBase: new URL("https://cuzeth.com"),
   icons: [
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://cuzeth.com/",
     title: "Cuzeth — Software Engineer",
-    description: "Portfolio of Jaafar Abdeen — software engineer building fast, private, well-crafted software.",
+    description: "Portfolio of Jaafar Abdeen (Cuzeth) — software engineer building fast, private, well-crafted software.",
     images: [
       {
         url: "/images/banner.png",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Cuzeth — Software Engineer",
-    description: "Portfolio of Jaafar Abdeen — software engineer building fast, private, well-crafted software.",
+    description: "Portfolio of Jaafar Abdeen (Cuzeth) — software engineer building fast, private, well-crafted software.",
     images: "/images/banner.png",
     creator: "@Cuzeth",
   },
@@ -85,8 +85,43 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Jaafar Abdeen",
+    alternateName: "Cuzeth",
+    url: "https://cuzeth.com",
+    jobTitle: "Software Engineer",
+    sameAs: [
+      "https://jaafar.cv",
+      "https://github.com/Cuzeth",
+      "https://linkedin.com/in/jaafar-abdeen",
+      "https://gitlab.com/Cuzeth",
+    ],
+    alumniOf: {
+      "@type": "CollegeOrUniversity",
+      name: "Arizona State University",
+    },
+    knowsAbout: [
+      "Software Engineering",
+      "Web Development",
+      "iOS Development",
+      "Cybersecurity",
+      "TypeScript",
+      "Swift",
+      "React",
+      "Next.js",
+    ],
+  };
+
   return (
     <html lang="en" className={inter.variable}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <Analytics />
       <SpeedInsights />
       <body>
