@@ -105,9 +105,6 @@ export default function Navbar() {
                         <li className={styles['nav-item']}>
                             <Link href="/about" className={styles['nav-links']} onClick={scrollToTop}>About</Link>
                         </li>
-                        <li className={styles['nav-item']}>
-                            <a href="https://jaafar.cv" className={styles['nav-links']} target="_blank" rel="noopener noreferrer">CV</a>
-                        </li>
                     </ul>
 
                     {/* Mobile Menu Overlay */}
@@ -139,11 +136,6 @@ export default function Navbar() {
                                     <Link href="/about" className={styles['nav-links']} onClick={handleNavClick}>
                                         About
                                     </Link>
-                                </motion.li>
-                                <motion.li className={styles['nav-item']} variants={itemVariants}>
-                                    <a href="https://jaafar.cv" className={styles['nav-links']} target="_blank" rel="noopener noreferrer" onClick={closeMobileMenu}>
-                                        CV
-                                    </a>
                                 </motion.li>
                             </motion.ul>
                         )}
