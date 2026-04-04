@@ -100,7 +100,7 @@ export default function Navbar() {
                             <Link href="/projects" className={styles['nav-links']} onClick={scrollToTop}>Projects</Link>
                         </li>
                         <li className={styles['nav-item']}>
-                            <Link href="/lab" className={styles['nav-links']} onClick={scrollToTop}>Lab</Link>
+                            <a href="https://abdeen.dev" className={styles['nav-links']} target="_blank" rel="noopener noreferrer">Lab</a>
                         </li>
                         <li className={styles['nav-item']}>
                             <Link href="/about" className={styles['nav-links']} onClick={scrollToTop}>About</Link>
@@ -128,9 +128,9 @@ export default function Navbar() {
                                     </Link>
                                 </motion.li>
                                 <motion.li className={styles['nav-item']} variants={itemVariants}>
-                                    <Link href="/lab" className={styles['nav-links']} onClick={handleNavClick}>
+                                    <a href="https://abdeen.dev" className={styles['nav-links']} onClick={handleNavClick} target="_blank" rel="noopener noreferrer">
                                         Lab
-                                    </Link>
+                                    </a>
                                 </motion.li>
                                 <motion.li className={styles['nav-item']} variants={itemVariants}>
                                     <Link href="/about" className={styles['nav-links']} onClick={handleNavClick}>

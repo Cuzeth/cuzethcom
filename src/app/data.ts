@@ -225,7 +225,7 @@ export const projectsData = [
         description: "Secure password generator focused on high entropy and memorability.",
         image: "/images/password.svg",
         technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
-        liveLink: "https://cuzeth.com/lab/pwgen",
+        liveLink: "https://abdeen.dev/pwgen",
         repoLink: "https://github.com/Cuzeth/cuzethcom/tree/main/src/app/lab/pwgen"
     },
     {

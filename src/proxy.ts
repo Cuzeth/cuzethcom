@@ -11,12 +11,6 @@ const RATE_LIMIT = 5; // Number of requests
 const TIME_WINDOW = 60 * 1000; // Time window in milliseconds (60 seconds)
 
 export default async function proxy(request: NextRequest) {
-    // Skip rate limiting for cover-proxy (image passthrough)
-    const { pathname } = request.nextUrl;
-    if (pathname.startsWith('/api/cover-proxy')) {
-        return NextResponse.next();
-    }
-
     const ip = request.headers.get('x-real-ip') || request.headers.get('x-forwarded-for')?.split(',')[0] || 'default-ip';
 
     if (!ip) {
