@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Space_Grotesk } from 'next/font/google';
 import { Analytics } from "@vercel/analytics/next"
-import { SpeedInsights } from "@vercel/speed-insights/next"
 import "@/styles/globals.css";
 import Navbar from '@/components/Navbar/Navbar';
 import Footer from '@/components/Footer/Footer';
@@ -123,7 +122,6 @@ export default function RootLayout({
         />
       </head>
       <Analytics />
-      <SpeedInsights />
       <body>
         <div className="root">
           <Navbar />
