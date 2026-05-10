@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
-  description: "Jaafar Abdeen (Cuzeth) — software engineer building fast, private, well-crafted software.",
+  description: "(Cuzeth) — software engineer building fast, private, well-crafted software.",
   applicationName: "Cuzeth",
   metadataBase: new URL("https://cuzeth.com"),
   icons: [
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://cuzeth.com/",
     title: "Cuzeth — Software Engineer",
-    description: "Portfolio of Jaafar Abdeen (Cuzeth) — software engineer building fast, private, well-crafted software.",
+    description: "Portfolio of Cuzeth — software engineer building fast, private, well-crafted software.",
     images: [
       {
         url: "/images/banner.png",
@@ -48,14 +48,14 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Cuzeth — Software Engineer",
-    description: "Portfolio of Jaafar Abdeen (Cuzeth) — software engineer building fast, private, well-crafted software.",
+    description: "Portfolio of Cuzeth — software engineer building fast, private, well-crafted software.",
     images: "/images/banner.png",
     creator: "@Cuzeth",
   },
-  keywords: "Jaafar Abdeen, Cuzeth, developer, web development, portfolio, software engineering, iOS, Swift, full stack, computer science",
+  keywords: "Cuzeth, developer, web development, portfolio, software engineering, iOS, Swift, full stack, computer science",
   authors: [
     {
-      name: "Jaafar Abdeen",
+      name: "Abdeen",
       url: "https://cuzeth.com",
     },
   ],
@@ -94,7 +94,6 @@ export default function RootLayout({
     sameAs: [
       "https://jaafar.cv",
       "https://github.com/Cuzeth",
-      "https://linkedin.com/in/jaafar-abdeen",
       "https://gitlab.com/Cuzeth",
     ],
     alumniOf: {
